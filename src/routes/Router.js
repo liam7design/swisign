@@ -22,6 +22,8 @@ import SaleList from '../pages/SaleList';
 import SaleDetail from '../pages/SaleDetail';
 import ScheduleList from '../pages/ScheduleList';
 import CertificateCheck from '../pages/CertificateCheck';
+import Contract from '../pages/Contract';
+import ContractInput  from '../pages/ContractInput';
 
 const Router = () => {
   return (
@@ -48,6 +50,8 @@ const Router = () => {
         <Route path="/SaleDetail/:id" element={<SaleDetail />} />
         <Route path="/ScheduleList" element={<ScheduleList />} />
         <Route path="/CertificateCheck" element={<CertificateCheck />} />
+        <Route path="/Contract" element={<Contract />} />
+        <Route path="/Contract/Input" element={<ContractInput />} />
       </Routes> 
     </>
   );

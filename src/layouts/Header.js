@@ -55,7 +55,7 @@ const Header = ({ title, showBackButton = false, showCloseButton = false, enable
     { name: '매물요청 현황', path: '/SaleList' },
     { name: '일정', path: '/ScheduleList' },
     { name: '공인중개사 공제증서 확인', path: '/CertificateCheck' },
-    // { name: '지도테스트', path: '/MapList' },
+    { name: '전자계약서', path: '/Contract' },
   ];
 
   const Gnb = () => (
