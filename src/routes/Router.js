@@ -24,6 +24,8 @@ import ScheduleList from '../pages/ScheduleList';
 import CertificateCheck from '../pages/CertificateCheck';
 import Contract from '../pages/Contract';
 import ContractInput  from '../pages/ContractInput';
+import LocalSaleList from '../pages/LocalSaleList';
+import LocalSaleDetail from '../pages/LocalSaleDetail';
 
 const Router = () => {
   return (
@@ -52,6 +54,8 @@ const Router = () => {
         <Route path="/CertificateCheck" element={<CertificateCheck />} />
         <Route path="/Contract" element={<Contract />} />
         <Route path="/Contract/Input" element={<ContractInput />} />
+        <Route path="/LocalSaleList" element={<LocalSaleList />} />
+        <Route path="/LocalSaleDetail/:id" element={<LocalSaleDetail />} />
       </Routes> 
     </>
   );

@@ -6,6 +6,8 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CloseIcon from '@mui/icons-material/Close';
+import ShareIcon from '@mui/icons-material/Share';
+import { LikedIconOff, LikedIconOn } from '../assets/icons/SvgIcons';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',
@@ -22,8 +24,9 @@ const HeaderTitle = styled(Typography)({
   fontWeight: '500',
 });
 
-const Header = ({ title, showBackButton = false, showCloseButton = false, enableDrawer = false }) => {
+const Header = ({ title, showBackButton = false, showCloseButton = false, showDetailButton = false, enableDrawer = false }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [likes, setLikes] = useState(false);
   const navigate = useNavigate();
 
    // Drawer 상태 변경 함수
@@ -37,6 +40,10 @@ const Header = ({ title, showBackButton = false, showCloseButton = false, enable
   // 뒤로가기 버튼 클릭 시 이전 페이지로 이동
   const handleBack = () => {
     navigate(-1);
+  };
+
+  const onLikeToggle = () => {
+    setLikes(!likes);
   };
 
   // 메뉴 데이터
@@ -56,6 +63,7 @@ const Header = ({ title, showBackButton = false, showCloseButton = false, enable
     { name: '일정', path: '/ScheduleList' },
     { name: '공인중개사 공제증서 확인', path: '/CertificateCheck' },
     { name: '전자계약서', path: '/Contract' },
+    { name: '지역매물', path: '/LocalSaleList' },
   ];
 
   const Gnb = () => (
@@ -66,8 +74,8 @@ const Header = ({ title, showBackButton = false, showCloseButton = false, enable
       style={{ width: 250 }}
     >
       <MenuList>
-        {menuItems.map((item) => (
-          <MenuItem button component={Link} to={item.path}>
+        {menuItems.map((item, menuIndex) => (
+          <MenuItem key={menuIndex} component={Link} to={item.path}>
             <ListItemText primary={item.name} />
           </MenuItem>
         ))}
@@ -93,10 +101,22 @@ const Header = ({ title, showBackButton = false, showCloseButton = false, enable
           )}
 
           {/* SubpageLayout Header */}
-          {showBackButton && (
+          {showBackButton && !showDetailButton && (
             <>
               <IconButton edge="start" color="inherit" aria-label="back" onClick={handleBack}><ArrowBackIcon /></IconButton>
               <HeaderTitle variant="h2" sx={{ paddingLeft: '0.25rem', textAlign: 'left' }} >{title}</HeaderTitle>
+            </>
+          )}
+
+          {/* SubpageLayout2 Header */}
+          {showBackButton && showDetailButton && (
+            <>
+              <IconButton edge="start" color="inherit" aria-label="back" onClick={handleBack}><ArrowBackIcon /></IconButton>
+              <HeaderTitle variant="h2" sx={{ paddingLeft: '0.25rem', textAlign: 'left' }} >{title}</HeaderTitle>
+              <IconButton color="inherit" aria-label="Share"><ShareIcon /></IconButton>
+              <IconButton edge="end" aria-label="like" onClick={onLikeToggle}>
+                {likes ? <LikedIconOn stroke="black" /> : <LikedIconOff stroke="black" />}
+              </IconButton>
             </>
           )}
 

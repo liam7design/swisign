@@ -41,6 +41,10 @@ const getTitle = (pathname) => {
       return '일정 ';
     case pathname === '/CertificateCheck':
       return '공인중개사 공제증서 확인';
+    case pathname === '/LocalSaleList':
+      return '지역매물';
+    case pathname.startsWith('/LocalSaleDetail'):
+      return '';
     default:
       return 'SWISIGN';
   }

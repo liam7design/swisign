@@ -13,12 +13,14 @@ import RecentPosts from '../components/board/RecentPosts';
 import Banner from '../components/ui/Banner';
 import RealEstateInfo from '../components/content/RealEstateInfo';
 import ProgressCard from "../components/content/ProgressCard";
+import LocalSaleRecommend from '../components/localsale/LocalSaleRecommend';
 
 import NoticeData from '../data/NoticeData.json';
 import YoutubeData from '../data/YoutubeData.json';
 import NewsData from '../data/NewsData.json';
 import SaleData from '../data/SaleData.json';
 import ScheduleData from '../data/ScheduleData.json';
+import LocalSaleData from '../data/LocalSaleData.json';
 
 // Button 스타일 정의, active 클래스에 따른 스타일 지정
 const UserChoiceButton = styled(Button)(({ theme }) => ({
@@ -128,10 +130,6 @@ const Main = () => {
         </Box>
       </Box>
 
-      <Box mb={5}>
-        <Banner />
-      </Box>
-
       {activeButton === 'userType3' && (
         <>
           <Box mb={5}>
@@ -145,7 +143,20 @@ const Main = () => {
           </Box>
         </>
       )}
-      
+
+      <Box mb={5}>
+        <Banner />
+      </Box>
+
+      <Box mb={5}>
+        <LocalSaleRecommend 
+          title="지역매물 추천"
+          link="/LocalSaleList"
+          detailLink="/LocalSaleDetail"
+          data={LocalSaleData}
+        />
+      </Box>
+            
       <Box mb={5}>
         <RecentPosts
           title="공지사항"
