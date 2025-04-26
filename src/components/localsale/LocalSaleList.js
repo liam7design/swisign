@@ -168,7 +168,6 @@ const LocalSaleList = () => {
       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, ...(selectedChips.length > 0 && { mt: 2 }) }}>
         {selectedChips.length > 0 ? selectedChips : null}
       </Box>
-      {/* ...검색창, 칩 등 기타 UI... */}
       {filteredItems.length > 0 ? (
         <>
           <Box sx={{ mt: 5, mb: 5}}>

@@ -44,17 +44,17 @@ const dummyProfileData = [
     title: '전세 6억 2,000만원',
     avatar: '/images/img_avatar_02.jpg',
     name: '행운 공인중개사',
-    매매: 5,
-    전세: 18,
-    월세: 120,
+    sale: 5,
+    jeonse: 18,
+    monthly: 120,
   },
   {
     title: '월세 2,000/85',
     avatar: '/images/img_avatar_03.jpg',
     name: '프리미엄 공인중개사',
-    매매: 2,
-    전세: 8,
-    월세: 45,
+    sale: 2,
+    jeonse: 8,
+    monthly: 45,
   },
 ];
 
