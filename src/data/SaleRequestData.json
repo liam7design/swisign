@@ -1,0 +1,89 @@
+[
+  {
+    "id": 1,
+    "propertyType": "아파트",
+    "address": "서울특별시 강남구 테헤란로 152 (역삼동)",
+    "units": [
+      { "id": 1, "floor": "1층", "unit": "101호", "area": "84.56m²", "startDate": "2024.06.01", "endDate": "2025.05.31" },
+      { "id": 2, "floor": "2층", "unit": "202호", "area": "76.34m²", "startDate": "2023.01.01", "endDate": "2024.05.31" },
+      { "id": 3, "floor": "3층", "unit": "302호", "area": "76.34m²", "startDate": "2024.01.01", "endDate": "2025.12.31" },
+      { "id": 4, "floor": "4층", "unit": "402호", "area": "76.34m²", "startDate": "2024.01.01", "endDate": "2025.12.31" }
+    ]
+  },
+  {
+    "id": 2,
+    "propertyType": "오피스텔",
+    "address": "부산광역시 해운대구 센텀중앙로 79 (우동)",
+    "units": [
+      { "id": 1, "floor": "10층", "unit": "1001호", "area": "120.34m²", "startDate": "2024.01.01", "endDate": "2026.12.31" }
+    ]
+  },
+  {
+    "id": 3,
+    "propertyType": "빌라주택",
+    "address": "인천광역시 연수구 컨벤시아대로 204 (송도동)",
+    "units": [
+      { "id": 1, "floor": "7층", "unit": "701호", "area": "95.00m²", "startDate": "2022.06.01", "endDate": "2024.04.01" },
+      { "id": 2, "floor": "8층", "unit": "801호", "area": "88.50m²", "startDate": "2024.05.01", "endDate": "2026.04.30" }
+    ]
+  },
+  {
+    "id": 4,
+    "propertyType": "원룸투룸",
+    "address": "대전광역시 유성구 대학로 99 (궁동)",
+    "units": [
+      { "id": 1, "floor": "2층", "unit": "201호", "area": "75.00m²", "startDate": "2023.07.01", "endDate": "2024.07.01" },
+      { "id": 2, "floor": "4층", "unit": "401호", "area": "80.00m²", "startDate": "2024.08.01", "endDate": "2026.07.31" }
+    ]
+  },
+  {
+    "id": 5,
+    "propertyType": "아파트",
+    "address": "광주광역시 동구 충장로 1 (충장동)",
+    "units": [
+      { "id": 1, "floor": "1층", "unit": "101호", "area": "60.00m²", "startDate": "2024.01.01", "endDate": "2025.01.01" }
+    ]
+  },
+  {
+    "id": 6,
+    "propertyType": "오피스텔",
+    "address": "경기도 성남시 분당구 판교역로 235 (삼평동)",
+    "units": [
+      { "id": 1, "floor": "5층", "unit": "501호", "area": "85.00m²", "startDate": "2024.03.01", "endDate": "2025.02.28" },
+      { "id": 2, "floor": "6층", "unit": "601호", "area": "90.00m²", "startDate": "2025.03.01", "endDate": "2027.02.28" }
+    ]
+  },
+  {
+    "id": 7,
+    "propertyType": "빌라주택",
+    "address": "제주특별자치도 서귀포시 중문관광로 72번길 75 (색달동)",
+    "units": [
+      { "id": 1, "floor": "3층", "unit": "301호", "area": "70.00m²", "startDate": "2022.05.01", "endDate": "2023.05.01" }
+    ]
+  },
+  {
+    "id": 8,
+    "propertyType": "원룸투룸",
+    "address": "강원도 춘천시 남춘로 85 (효자동)",
+    "units": [
+      { "id": 1, "floor": "8층", "unit": "801호", "area": "95.00m²", "startDate": "2024.01.01", "endDate": "2025.12.31" },
+      { "id": 2, "floor": "9층", "unit": "901호", "area": "100.00m²", "startDate": "2025.01.01", "endDate": "2027.12.31" }
+    ]
+  },
+  {
+    "id": 9,
+    "propertyType": "아파트",
+    "address": "전라북도 전주시 완산구 풍남문2길 53 (전동)",
+    "units": [
+      { "id": 1, "floor": "4층", "unit": "401호", "area": "80.00m²", "startDate": "2023.09.01", "endDate": "2024.03.31" }
+    ]
+  },
+  {
+    "id": 10,
+    "propertyType": "오피스텔",
+    "address": "대구광역시 동구 동대구로 550 (신천동)",
+    "units": [
+      { "id": 1, "floor": "6층", "unit": "601호", "area": "85.00m²", "startDate": "2024.06.01", "endDate": "2026.05.31" }
+    ]
+  }
+]
