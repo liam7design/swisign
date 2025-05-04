@@ -14,7 +14,7 @@ const FloatingButton = ({ buttons = [] }) => {
         borderColor: 'divider',
         px: { xs: 2, sm: 3 },
         py: 2,
-        zIndex: 9999
+        zIndex: 999
       }}
     >
       <Box sx={{ 

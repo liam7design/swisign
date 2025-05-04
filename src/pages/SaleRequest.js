@@ -210,11 +210,7 @@ const SaleRequest = () => {
               <ListUnit title="주소" content={selectedAddress.address} />
               <ListUnit
                 title="층/호/면적"
-                content={
-                  selectedUnit
-                    ? `${selectedUnit.floor}층 / ${selectedUnit.unit}호 / ${selectedUnit.area}m²`
-                    : ''
-                }
+                content={selectedUnit ? `${selectedUnit.floor} / ${selectedUnit.unit} / ${selectedUnit.area}` : '' }
               />
             </List>
 

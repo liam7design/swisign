@@ -4,16 +4,14 @@ import {
   ToggleButtonGroup,
   ToggleButton,
   TextField,
-  RadioGroup,
   FormControlLabel,
-  Radio,
   Checkbox,
   Typography,
   styled
 } from '@mui/material';
 import { LocalizationProvider, DatePicker  } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import koLocale from 'date-fns/locale/en-US';
+import { ko } from 'date-fns/locale';
 
 const FormBox = styled(Box)(({ theme }) => ({
   display: 'flex',
@@ -30,15 +28,25 @@ const FormBox = styled(Box)(({ theme }) => ({
 const CustomToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
   display: 'flex',
   width: '100%',
+  height: 48,
   '& > *': {
     flex: 1,
     maxWidth: 'none',
+    height: 48,
+    fontSize: 16,
+    whiteSpace: 'nowrap'
   },
 }));
 
 const NumberTextField = styled(TextField)({
+  '& .MuiInputBase-root': {
+    height: 48,
+    boxSizing: 'border-box',
+  },
   '& input[type=number]': {
     MozAppearance: 'textfield',
+    paddingTop: 12.5,
+    paddingBottom: 12.5,
     textAlign: 'right'
   },
   '& input[type=number]::-webkit-outer-spin-button, & input[type=number]::-webkit-inner-spin-button': {
@@ -49,6 +57,7 @@ const NumberTextField = styled(TextField)({
 
 const EndAdornment = styled('span')({
   paddingLeft: '8px',
+  fontSize: 14,
   whiteSpace: 'nowrap'
 });
 
@@ -110,6 +119,7 @@ const PhotoUploadGrid = ({ onChange }) => {
             InputProps={{ endAdornment: <EndAdornment>만원</EndAdornment> }}
             sx={{ width: 140 }}
           />
+          /
           <NumberTextField
             type="number"
             value={rent}
@@ -125,14 +135,15 @@ const PhotoUploadGrid = ({ onChange }) => {
       <Box sx={{ mt: 4 }}>
         <Typography variant="h6" sx={{ mb: 1.5, fontSize: 18 }}>관리비</Typography>
         <FormBox>
-          <RadioGroup
-            row
+          <CustomToggleButtonGroup
             value={hasMgmtFee ? '있음' : '없음'}
+            exclusive
             onChange={(_, val) => setHasMgmtFee(val === '있음')}
+            fullWidth
           >
-            <FormControlLabel value="없음" control={<Radio />} label="없음" />
-            <FormControlLabel value="있음" control={<Radio />} label="있음" />
-          </RadioGroup>
+            <ToggleButton value="없음">없음</ToggleButton>
+            <ToggleButton value="있음">있음</ToggleButton>
+          </CustomToggleButtonGroup>
           <NumberTextField
             type="number"
             value={mgmtFee}
@@ -148,14 +159,15 @@ const PhotoUploadGrid = ({ onChange }) => {
       <Box sx={{ mt: 4 }}>
         <Typography variant="h6" sx={{ mb: 1.5, fontSize: 18 }}>주차</Typography>
         <FormBox>
-          <RadioGroup
-            row
+          <CustomToggleButtonGroup
             value={parking}
+            exclusive
             onChange={(_, val) => setParking(val)}
+            fullWidth
           >
-            <FormControlLabel value="불가능" control={<Radio />} label="불가능" />
-            <FormControlLabel value="가능" control={<Radio />} label="가능" />
-          </RadioGroup>
+            <ToggleButton value="불가능">불가능</ToggleButton>
+            <ToggleButton value="가능">가능</ToggleButton>
+          </CustomToggleButtonGroup>
           <NumberTextField
             type="number"
             value={parkingFee}
@@ -187,11 +199,14 @@ const PhotoUploadGrid = ({ onChange }) => {
       <Box sx={{ mt: 4 }}>
         <Typography variant="h6" sx={{ mb: 1.5, fontSize: 18 }}>입주가능일</Typography>
         <FormBox>
-          <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={koLocale}>
+          <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={ko}>
             <DatePicker
               value={moveInDate}
               onChange={setMoveInDate}
-              inputFormat="yyyy.MM.dd"
+              inputFormat="yyyy년 MM월 dd일"
+              slotProps={{
+                calendarHeader: { format: 'yyyy년 M월' },
+              }}
             />
           </LocalizationProvider>
         </FormBox>
