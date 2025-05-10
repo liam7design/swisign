@@ -13,6 +13,10 @@ import PhotoUploadGrid from '../components/form/PhotoUploadGrid';
 import RealEstateAgencyList from '../components/content/RealEstateAgencyList';
 import saleRequestData from '../data/SaleRequestData.json';
 
+import HomeWorkOutlinedIcon from '@mui/icons-material/HomeWorkOutlined';
+import LibraryAddOutlinedIcon from '@mui/icons-material/LibraryAddOutlined';
+import { useNavigate } from 'react-router-dom';
+
 const GuideMsg = styled(Card)(({ theme }) => ({
   display: 'flex',
   gap: '0.5rem',
@@ -59,12 +63,29 @@ const ListUnit = ({ title, content, selectItem, onClick }) => {
   )
 }
 
+const LinkButton = ({ icon: IconComponent, title, content, onClick }) => {
+  return (
+    <Button
+      variant="outlined"
+      onClick={onClick}
+      sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', p: 3, borderRadius: 2 }}
+      fullWidth
+    >
+      <IconComponent sx={{ fontSize: 36, mb: 1, color: 'primary.main' }} />
+      <Typography gutterBottom variant="h6" component="div" sx={{ fontSize: 18 }}>{title}</Typography>
+      <Typography variant="body2" sx={{ color: 'text.secondary', wordBreak: 'keep-all' }}>{content}</Typography>
+    </Button>
+  );
+}
+
 const SaleRequest = () => {
-  const [state, setState] = useState('SaleOption');
+  const [state, setState] = useState('SaleIntro');
   const [selectedAddress, setSelectedAddress] = useState(saleRequestData[0]);
   const [selectedUnit, setSelectedUnit] = useState(null); //eslint-disable-line no-unused-vars
   const [dialogOpen, setDialogOpen] = useState(false);
   const [photos, setPhotos] = useState([]);
+
+  const navigate = useNavigate();
 
   const handleAddressChange = (addressObj) => {
     setSelectedAddress(addressObj);
@@ -144,6 +165,23 @@ const SaleRequest = () => {
 
   return (
     <SubpageLayout>
+      {/* 매물등록요청 처음화면 */}
+      {state === 'SaleIntro' && (
+        <Box sx={{ display: 'flex', gap: 2 }}>
+          <LinkButton
+            icon={HomeWorkOutlinedIcon}
+            title="임대관리" 
+            content="임대관리에서 임대하실 물건을 등록하실 수 있습니다."
+            onClick={() => navigate('/RentalManagement')}
+          />
+          <LinkButton
+            icon={LibraryAddOutlinedIcon}
+            title="매물등록" 
+            content="매물등록에서 매매/전월세 매물을 등록하실 수 있습니다."
+            onClick={() => setState('SaleOption')}
+          />
+        </Box>
+      )}
       {/* 임대매물 선택 */}
       {state === 'SaleOption' && (
         <>
@@ -192,14 +230,14 @@ const SaleRequest = () => {
           <CustomDialog
             open={dialogOpen}
             onClose={() => setDialogOpen(false)}
-            onClick={() => setDialogOpen(false)}
+            onClick1={() => setDialogOpen(false)}
             title="매물등록불가"
             message="계약기간이 2개월 이상 남아있어 매물등록을 할 수 없습니다."
           />
         </>
       )}
       {/* 매물 등록 프로세스 */}
-      {state !== 'SaleOption' && (
+      {state !== 'SaleIntro' && state !== 'SaleOption' && (
         <ContentBox variant="block">
           <ContentBox.Content>
             {/* 선택매물 기본정보 */}
@@ -213,7 +251,6 @@ const SaleRequest = () => {
                 content={selectedUnit ? `${selectedUnit.floor} / ${selectedUnit.unit} / ${selectedUnit.area}` : '' }
               />
             </List>
-
             {/* 정보 입력 */}
             {state === 'SaleInfo' && (
               <>

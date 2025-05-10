@@ -4,10 +4,70 @@
     "propertyType": "아파트",
     "address": "서울특별시 강남구 테헤란로 152 (역삼동)",
     "units": [
-      { "id": 1, "floor": "1층", "unit": "101호", "area": "84.56m²", "startDate": "2024.06.01", "endDate": "2025.05.31" },
-      { "id": 2, "floor": "2층", "unit": "202호", "area": "76.34m²", "startDate": "2023.01.01", "endDate": "2024.05.31" },
-      { "id": 3, "floor": "3층", "unit": "302호", "area": "76.34m²", "startDate": "2024.01.01", "endDate": "2025.12.31" },
-      { "id": 4, "floor": "4층", "unit": "402호", "area": "76.34m²", "startDate": "2024.01.01", "endDate": "2025.12.31" }
+      {
+        "id": 1,
+        "floor": "1층",
+        "unit": "101호",
+        "area": "84.56m²",
+        "startDate": "2024.06.01",
+        "endDate": "2025.05.31",
+        "type": "월세",
+        "lessee": "김임차",
+        "contact": "010-1234-5678",
+        "deposit": "3000만원",
+        "rent": "70만원",
+        "fee": "5만원",
+        "depositDate": "15일(월)",
+        "depositCompleted": true
+      },
+      {
+        "id": 2,
+        "floor": "2층",
+        "unit": "202호",
+        "area": "76.34m²",
+        "startDate": "2023.01.01",
+        "endDate": "2024.05.31",
+        "type": "전세",
+        "lessee": "박임차",
+        "contact": "010-2345-6789",
+        "deposit": "2억",
+        "rent": "0원",
+        "fee": "6만원",
+        "depositDate": "1일(월)",
+        "depositCompleted": true
+      },
+      {
+        "id": 3,
+        "floor": "3층",
+        "unit": "302호",
+        "area": "76.34m²",
+        "startDate": "2024.01.01",
+        "endDate": "2025.12.31",
+        "type": "월세",
+        "lessee": "최임차",
+        "contact": "010-3456-7890",
+        "deposit": "2500만원",
+        "rent": "60만원",
+        "fee": "4만원",
+        "depositDate": "20일(월)",
+        "depositCompleted": false
+      },
+      {
+        "id": 4,
+        "floor": "4층",
+        "unit": "402호",
+        "area": "76.34m²",
+        "startDate": "2024.01.01",
+        "endDate": "2025.12.31",
+        "type": "월세",
+        "lessee": "이임차",
+        "contact": "010-4567-8901",
+        "deposit": "2000만원",
+        "rent": "55만원",
+        "fee": "3만원",
+        "depositDate": "10일(월)",
+        "depositCompleted": true
+      }
     ]
   },
   {
@@ -15,7 +75,22 @@
     "propertyType": "오피스텔",
     "address": "부산광역시 해운대구 센텀중앙로 79 (우동)",
     "units": [
-      { "id": 1, "floor": "10층", "unit": "1001호", "area": "120.34m²", "startDate": "2024.01.01", "endDate": "2026.12.31" }
+      {
+        "id": 1,
+        "floor": "10층",
+        "unit": "1001호",
+        "area": "120.34m²",
+        "startDate": "2024.01.01",
+        "endDate": "2026.12.31",
+        "type": "월세",
+        "lessee": "정임차",
+        "contact": "010-5678-9012",
+        "deposit": "5000만원",
+        "rent": "120만원",
+        "fee": "10만원",
+        "depositDate": "25일(월)",
+        "depositCompleted": true
+      }
     ]
   },
   {
@@ -23,8 +98,38 @@
     "propertyType": "빌라주택",
     "address": "인천광역시 연수구 컨벤시아대로 204 (송도동)",
     "units": [
-      { "id": 1, "floor": "7층", "unit": "701호", "area": "95.00m²", "startDate": "2022.06.01", "endDate": "2024.04.01" },
-      { "id": 2, "floor": "8층", "unit": "801호", "area": "88.50m²", "startDate": "2024.05.01", "endDate": "2026.04.30" }
+      {
+        "id": 1,
+        "floor": "7층",
+        "unit": "701호",
+        "area": "95.00m²",
+        "startDate": "2022.06.01",
+        "endDate": "2024.04.01",
+        "type": "전세",
+        "lessee": "오임차",
+        "contact": "010-6789-0123",
+        "deposit": "1억 8000만원",
+        "rent": "0원",
+        "fee": "7만원",
+        "depositDate": "5일(월)",
+        "depositCompleted": true
+      },
+      {
+        "id": 2,
+        "floor": "8층",
+        "unit": "801호",
+        "area": "88.50m²",
+        "startDate": "2024.05.01",
+        "endDate": "2026.04.30",
+        "type": "월세",
+        "lessee": "장임차",
+        "contact": "010-7890-1234",
+        "deposit": "2200만원",
+        "rent": "55만원",
+        "fee": "3만원",
+        "depositDate": "17일(월)",
+        "depositCompleted": false
+      }
     ]
   },
   {
@@ -32,8 +137,38 @@
     "propertyType": "원룸투룸",
     "address": "대전광역시 유성구 대학로 99 (궁동)",
     "units": [
-      { "id": 1, "floor": "2층", "unit": "201호", "area": "75.00m²", "startDate": "2023.07.01", "endDate": "2024.07.01" },
-      { "id": 2, "floor": "4층", "unit": "401호", "area": "80.00m²", "startDate": "2024.08.01", "endDate": "2026.07.31" }
+      {
+        "id": 1,
+        "floor": "2층",
+        "unit": "201호",
+        "area": "75.00m²",
+        "startDate": "2023.07.01",
+        "endDate": "2024.07.01",
+        "type": "월세",
+        "lessee": "윤임차",
+        "contact": "010-8901-2345",
+        "deposit": "1000만원",
+        "rent": "40만원",
+        "fee": "2만원",
+        "depositDate": "21일(월)",
+        "depositCompleted": true
+      },
+      {
+        "id": 2,
+        "floor": "4층",
+        "unit": "401호",
+        "area": "80.00m²",
+        "startDate": "2024.08.01",
+        "endDate": "2026.07.31",
+        "type": "월세",
+        "lessee": "임임차",
+        "contact": "010-9012-3456",
+        "deposit": "1200만원",
+        "rent": "45만원",
+        "fee": "2만원",
+        "depositDate": "18일(월)",
+        "depositCompleted": false
+      }
     ]
   },
   {
@@ -41,7 +176,22 @@
     "propertyType": "아파트",
     "address": "광주광역시 동구 충장로 1 (충장동)",
     "units": [
-      { "id": 1, "floor": "1층", "unit": "101호", "area": "60.00m²", "startDate": "2024.01.01", "endDate": "2025.01.01" }
+      {
+        "id": 1,
+        "floor": "1층",
+        "unit": "101호",
+        "area": "60.00m²",
+        "startDate": "2024.01.01",
+        "endDate": "2025.01.01",
+        "type": "전세",
+        "lessee": "심임차",
+        "contact": "010-2345-6780",
+        "deposit": "1억 2000만원",
+        "rent": "0원",
+        "fee": "4만원",
+        "depositDate": "10일(월)",
+        "depositCompleted": true
+      }
     ]
   },
   {
@@ -49,8 +199,38 @@
     "propertyType": "오피스텔",
     "address": "경기도 성남시 분당구 판교역로 235 (삼평동)",
     "units": [
-      { "id": 1, "floor": "5층", "unit": "501호", "area": "85.00m²", "startDate": "2024.03.01", "endDate": "2025.02.28" },
-      { "id": 2, "floor": "6층", "unit": "601호", "area": "90.00m²", "startDate": "2025.03.01", "endDate": "2027.02.28" }
+      {
+        "id": 1,
+        "floor": "5층",
+        "unit": "501호",
+        "area": "85.00m²",
+        "startDate": "2024.03.01",
+        "endDate": "2025.02.28",
+        "type": "월세",
+        "lessee": "하임차",
+        "contact": "010-3456-7891",
+        "deposit": "1800만원",
+        "rent": "55만원",
+        "fee": "3만원",
+        "depositDate": "11일(월)",
+        "depositCompleted": false
+      },
+      {
+        "id": 2,
+        "floor": "6층",
+        "unit": "601호",
+        "area": "90.00m²",
+        "startDate": "2025.03.01",
+        "endDate": "2027.02.28",
+        "type": "월세",
+        "lessee": "노임차",
+        "contact": "010-4567-8902",
+        "deposit": "2000만원",
+        "rent": "60만원",
+        "fee": "3만원",
+        "depositDate": "21일(월)",
+        "depositCompleted": true
+      }
     ]
   },
   {
@@ -58,7 +238,22 @@
     "propertyType": "빌라주택",
     "address": "제주특별자치도 서귀포시 중문관광로 72번길 75 (색달동)",
     "units": [
-      { "id": 1, "floor": "3층", "unit": "301호", "area": "70.00m²", "startDate": "2022.05.01", "endDate": "2023.05.01" }
+      {
+        "id": 1,
+        "floor": "3층",
+        "unit": "301호",
+        "area": "70.00m²",
+        "startDate": "2022.05.01",
+        "endDate": "2023.05.01",
+        "type": "전세",
+        "lessee": "구임차",
+        "contact": "010-5678-9013",
+        "deposit": "1억",
+        "rent": "0원",
+        "fee": "2만원",
+        "depositDate": "6일(월)",
+        "depositCompleted": true
+      }
     ]
   },
   {
@@ -66,8 +261,38 @@
     "propertyType": "원룸투룸",
     "address": "강원도 춘천시 남춘로 85 (효자동)",
     "units": [
-      { "id": 1, "floor": "8층", "unit": "801호", "area": "95.00m²", "startDate": "2024.01.01", "endDate": "2025.12.31" },
-      { "id": 2, "floor": "9층", "unit": "901호", "area": "100.00m²", "startDate": "2025.01.01", "endDate": "2027.12.31" }
+      {
+        "id": 1,
+        "floor": "8층",
+        "unit": "801호",
+        "area": "95.00m²",
+        "startDate": "2024.01.01",
+        "endDate": "2025.12.31",
+        "type": "월세",
+        "lessee": "류임차",
+        "contact": "010-6789-0124",
+        "deposit": "1100만원",
+        "rent": "35만원",
+        "fee": "1만원",
+        "depositDate": "7일(월)",
+        "depositCompleted": false
+      },
+      {
+        "id": 2,
+        "floor": "9층",
+        "unit": "901호",
+        "area": "100.00m²",
+        "startDate": "2025.01.01",
+        "endDate": "2027.12.31",
+        "type": "월세",
+        "lessee": "문임차",
+        "contact": "010-7890-1235",
+        "deposit": "1300만원",
+        "rent": "38만원",
+        "fee": "2만원",
+        "depositDate": "19일(월)",
+        "depositCompleted": true
+      }
     ]
   },
   {
@@ -75,7 +300,22 @@
     "propertyType": "아파트",
     "address": "전라북도 전주시 완산구 풍남문2길 53 (전동)",
     "units": [
-      { "id": 1, "floor": "4층", "unit": "401호", "area": "80.00m²", "startDate": "2023.09.01", "endDate": "2024.03.31" }
+      {
+        "id": 1,
+        "floor": "4층",
+        "unit": "401호",
+        "area": "80.00m²",
+        "startDate": "2023.09.01",
+        "endDate": "2024.03.31",
+        "type": "전세",
+        "lessee": "서임차",
+        "contact": "010-8901-2346",
+        "deposit": "1억 5000만원",
+        "rent": "0원",
+        "fee": "3만원",
+        "depositDate": "13일(월)",
+        "depositCompleted": true
+      }
     ]
   },
   {
@@ -83,7 +323,22 @@
     "propertyType": "오피스텔",
     "address": "대구광역시 동구 동대구로 550 (신천동)",
     "units": [
-      { "id": 1, "floor": "6층", "unit": "601호", "area": "85.00m²", "startDate": "2024.06.01", "endDate": "2026.05.31" }
+      {
+        "id": 1,
+        "floor": "6층",
+        "unit": "601호",
+        "area": "85.00m²",
+        "startDate": "2024.06.01",
+        "endDate": "2026.05.31",
+        "type": "월세",
+        "lessee": "이임차",
+        "contact": "010-0000-0000",
+        "deposit": "2000만원",
+        "rent": "50만원",
+        "fee": "2만원",
+        "depositDate": "21일(월)",
+        "depositCompleted": false
+      }
     ]
   }
 ]
