@@ -1,42 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Box, Typography, Button } from '@mui/material';
-import { List, ListItem, ListItemText, Chip, IconButton, styled } from '@mui/material';
-import { grey, green } from '@mui/material/colors';
+import { Box, Typography, Button, List, ListItem, IconButton, FormControl, Select, MenuItem } from '@mui/material';
+import { grey } from '@mui/material/colors';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
-import CallIcon from '@mui/icons-material/Call';
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
-
-const ReplyList = styled(List)(({ theme }) => ({
-  padding: '0',
-  marginBottom: '2rem',
-  '& > li': {
-    gap: '0.5rem',
-    border: `1px solid ${grey[300]}`,
-    borderRadius: '0.25rem',
-  },
-  '& > li:not(:first-child)': {
-    marginTop: '0.5rem'
-  },
-}));
+import SaleConditionForm from '../form/SaleConditionForm';
+import PhotoUploadGrid from '../form/PhotoUploadGrid';
 
 const BoardDetail = ({ data, type, showYoutube = false, showSource = false }) => {
+  const [photos, setPhotos] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
   const boardItem = data.find((item) => item.id === parseInt(id));
+  const [state, setState] = useState('request');
+
+  const handleChange = (event) => {
+    setState(event.target.value);
+  };
 
   if (!boardItem) {
     return <Box>해당 게시물을 찾을 수 없습니다.</Box>;
   }
+
+  // 파일 선택 핸들러
+  const handleAddPhoto = () => {
+    // 실제 구현에서는 input type="file" 사용!
+    // 여기선 임시로 랜덤 이미지 추가
+    if (photos.length >= 10) return;
+    const nextId = photos.length + 1;
+    setPhotos([
+      ...photos,
+      {
+        id: nextId,
+        url: `/images/img_localsale_${nextId}.jpg`
+      }
+    ]);
+  };
+
+  const handleRemovePhoto = (photo, idx) => {
+    setPhotos(photos.filter((_, i) => i !== idx));
+  };
 
   // type에 따라 switch 문으로 레이아웃 구분
   switch (type) {
     case "sale":
       return (
         <>
-        
-          <Typography variant="h6" mb={2}>기본정보</Typography>
-
+          <Typography variant="h6" sx={{ mb: 1.5, fontSize: 18 }}>매물정보</Typography> 
           <List sx={{ marginBottom: '2rem', padding: '0', borderTop: `1px solid ${grey[300]}` }}>
             <ListItem sx={{ minHeight: '2.5rem', padding: '0.5rem 0.25rem', borderBottom: `1px solid ${grey[300]}` }}>
               <Typography variant="body2" sx={{ flex: '0 0 6rem', color: grey[800] }}>주소</Typography>
@@ -59,89 +68,33 @@ const BoardDetail = ({ data, type, showYoutube = false, showSource = false }) =>
             </ListItem>
             <ListItem sx={{ minHeight: '2.5rem', padding: '0.5rem 0.25rem', borderBottom: `1px solid ${grey[300]}` }}>
               <Typography variant="body2" sx={{ flex: '0 0 6rem', color: grey[800] }}>진행상태</Typography>
-              <Chip color="primary" size="small" label="등록" sx={{ fontSize: '0.875rem', color: 'white', backgroundColor: green[500], borderRadius: '0.25rem' }} />
+              <FormControl size="small" fullWidth>
+                <Select
+                  value={state}
+                  onChange={handleChange}
+                  displayEmpty
+                  inputProps={{ 'aria-label': 'Without label' }}
+                >
+                  <MenuItem value="request">요청</MenuItem>
+                  <MenuItem value="register">등록</MenuItem>
+                  <MenuItem value="inProgress">진행</MenuItem>
+                  <MenuItem value="complete">완료</MenuItem>
+                  <MenuItem value="cancel">취소</MenuItem>
+                </Select>
+              </FormControl>
             </ListItem>
             <ListItem sx={{ minHeight: '2.5rem', padding: '0.5rem 0.25rem', borderBottom: `1px solid ${grey[300]}` }}>
               <Typography variant="body2" sx={{ flex: '0 0 6rem', color: grey[800] }}>등록일시</Typography>
               <Typography variant="body2">2024.10.03</Typography>
             </ListItem>
           </List>
-
-          <Typography variant="h6" mb={2}>진행내용</Typography>
-
-          <ReplyList>
-            <ListItem secondaryAction={
-              <IconButton edge="end" aria-label="call">
-                <CallIcon />
-              </IconButton>
-            }>
-              <ListItemText 
-                primary={
-                  <React.Fragment>
-                    <Typography variant="body1" sx={{ color: 'text.primary' }}>
-                    방문하여 보고 싶어요...
-                    </Typography>
-                  </React.Fragment>
-                }
-                secondary={
-                <React.Fragment>
-                  <Box mt={0.5} sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Typography variant="body2" sx={{ color: 'text.primary' }}>a***d</Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>&nbsp;&nbsp;|&nbsp;&nbsp;2024.10.12</Typography>
-                  </Box>
-                </React.Fragment>
-                }
-              />
-            </ListItem>
-            <ListItem secondaryAction={
-              <IconButton edge="end" aria-label="call">
-                <CallIcon />
-              </IconButton>
-            }>
-              <ListItemText 
-                primary={
-                  <React.Fragment>
-                    <Typography variant="body1" sx={{ color: 'text.primary' }}>
-                    방문하여 보고 싶어요...
-                    </Typography>
-                  </React.Fragment>
-                }
-                secondary={
-                <React.Fragment>
-                  <Box mt={0.5} sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Typography variant="body2" sx={{ color: 'text.primary' }}>c****k</Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>&nbsp;&nbsp;|&nbsp;&nbsp;2024.10.12</Typography>
-                  </Box>
-                </React.Fragment>
-                }
-              />
-            </ListItem>
-            <ListItem secondaryAction={
-              <IconButton edge="end" aria-label="call">
-                <CallIcon />
-              </IconButton>
-            }>
-              <ListItemText 
-                primary={
-                  <React.Fragment>
-                    <Typography variant="body1" sx={{ color: 'text.primary' }}>
-                    방문하여 보고 싶어요...
-                    </Typography>
-                  </React.Fragment>
-                }
-                secondary={
-                <React.Fragment>
-                  <Box mt={0.5} sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Typography variant="body2" sx={{ color: 'text.primary' }}>e****y</Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>&nbsp;&nbsp;|&nbsp;&nbsp;2024.10.12</Typography>
-                  </Box>
-                </React.Fragment>
-                }
-              />
-            </ListItem>
-          </ReplyList>
-          
-          <Button variant="text" fullWidth sx={{ fontWeight: '500' }}><AddRoundedIcon sx={{ fontSize: '1rem' }} /> 10개 더보기</Button>
+          <SaleConditionForm />
+          <PhotoUploadGrid
+            photos={photos}
+            onAddPhoto={handleAddPhoto}
+            onRemovePhoto={handleRemovePhoto}
+            maxCount={10}
+          />
         </>
       );
     default:
