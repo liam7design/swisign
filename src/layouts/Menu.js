@@ -85,7 +85,7 @@ const menuItems = [
     name: '임차인',
     children: [
       { name: 'REPORT(MONTH)', path: '/' },
-      { name: '전세사기체크', path: '/SafetyCheckList' },
+      { name: '전세안전체크', path: '/SafetyCheckList' },
       { name: '주변 시세', path: '/MarketPrice' },
       { name: '등기부등본 조회', path: '/' },
       { name: '중개인 조회', path: '/' }
