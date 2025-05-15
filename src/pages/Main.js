@@ -143,7 +143,7 @@ const Main = () => {
 
       {activeButton === 'userType3' && (
         <>
-          <Box mb={5}>
+          <Box mt={5} mb={5}>
             <RecentPosts
               title="일정"
               link="/ScheduleList"
