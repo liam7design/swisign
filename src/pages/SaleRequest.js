@@ -7,7 +7,7 @@ import ContentBox from '../layouts/ContentBox';
 import BottomSheet from '../components/ui/BottomSheet';
 import CustomDialog from '../components/ui/CustomDialog';
 import GuideMessage from '../components/ui/GuideMessage';
-import FloatingButton from '../components/ui/FloatingButton';
+import { FloatingBox, FloatingButton } from '../components/ui/FloatingButton';
 import SaleConditionForm from '../components/form/SaleConditionForm';
 import PhotoUploadGrid from '../components/form/PhotoUploadGrid';
 import RealEstateAgencyList from '../components/content/RealEstateAgencyList';
@@ -129,40 +129,6 @@ const SaleRequest = () => {
     setPhotos(photos.filter((_, i) => i !== idx));
   };
 
-  const SaleInfoButtons = [
-    {
-      label: "이전",
-      variant: "outlined",
-      onClick: () => setState('SaleOption')
-    },
-    {
-      label: "다음", 
-      variant: "contained",
-      onClick: () => setState('SalePhoto')
-    }
-  ];
-
-  const SalePhotoButtons = [
-    {
-      label: "이전",
-      variant: "outlined",
-      onClick: () => setState('SaleInfo')
-    },
-    {
-      label: "다음", 
-      variant: "contained",
-      onClick: () => setState('SaleAgency')
-    }
-  ];
-
-  const SaleAgencyButtons = [
-    {
-      label: "매물등록 요청", 
-      variant: "contained",
-      onClick: () => setState('SaleOption')
-    }
-  ];
-
   return (
     <SubpageLayout>
       {/* 매물등록요청 처음화면 */}
@@ -255,8 +221,10 @@ const SaleRequest = () => {
             {state === 'SaleInfo' && (
               <>
                 <SaleConditionForm />
-                <Box sx={{ height: 76 }} />
-                <FloatingButton buttons={SaleInfoButtons} />
+                <FloatingBox>
+                  <FloatingButton label="이전" onClick={() => setState('SaleOption')} />
+                  <FloatingButton variant="contained" label="다음" onClick={() => setState('SalePhoto')} />
+                </FloatingBox>
               </>
             )}
             {/* 사진 첨부 */}
@@ -276,8 +244,10 @@ const SaleRequest = () => {
                     maxCount={10}
                   />
                 </Box>
-                <Box sx={{ height: 76 }} />
-                <FloatingButton buttons={SalePhotoButtons} />
+                <FloatingBox>
+                  <FloatingButton label="이전" onClick={() => setState('SaleInfo')} />
+                  <FloatingButton variant="contained" label="다음" onClick={() => setState('SaleAgency')} />
+                </FloatingBox>
               </>
             )}
             {/* 부동산중개소 선택 */}
@@ -291,8 +261,9 @@ const SaleRequest = () => {
                   <Button variant="outlined" fullWidth sx={{ mb: 2 }}>주변 검색</Button>
                   <RealEstateAgencyList />
                 </Box>
-                <Box sx={{ height: 76 }} />
-                <FloatingButton buttons={SaleAgencyButtons} />
+                <FloatingBox>
+                  <FloatingButton variant="contained" label="매물등록 요청" onClick={() => setState('SaleOption')} />
+                </FloatingBox>
               </>
             )}
           </ContentBox.Content>

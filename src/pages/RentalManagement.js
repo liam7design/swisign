@@ -19,7 +19,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import PhoneIcon from '@mui/icons-material/Phone';
 import SubpageLayout from '../layouts/SubpageLayout';
 import CustomDialog from '../components/ui/CustomDialog';
-import FloatingButton from '../components/ui/FloatingButton';
+import { FloatingBox, FloatingButton } from '../components/ui/FloatingButton';
 import SaleConditionForm from '../components/form/SaleConditionForm';
 import BuildingData from '../data/BuildingData.json';
 import saleRequestData from '../data/SaleRequestData.json';
@@ -140,32 +140,6 @@ const RentalManagement = () => {
       setSelectedList([...selectedList, { buildingIdx, infoIdx }]);
     }
   };
-
-  const SaleLoadedButtons = [
-    {
-      label: '등록 취소',
-      variant: 'outlined',
-      onClick: () => setState('initial')
-    },
-    {
-      label: '다음',
-      variant: 'contained',
-      onClick: () => setState('SaleInfo')
-    }
-  ];
-
-  const SaleInfoButtons = [
-    {
-      label: '이전',
-      variant: 'outlined',
-      onClick: () => setState('loaded')
-    },
-    {
-      label: '완료',
-      variant: 'contained',
-      onClick: () => setDialogOpen(true)
-    }
-  ];
 
   // 선택된 매물 정보 추출 (여러 개)
   const selectedInfos = selectedList
@@ -326,8 +300,10 @@ const RentalManagement = () => {
               임대할 호수선택해주세요. (중복선택 가능)
             </Typography>
           </GuideMsg>
-          <Box sx={{ height: 76 }} />
-          <FloatingButton buttons={SaleLoadedButtons} />
+          <FloatingBox>
+            <FloatingButton label="등록 취소" onClick={() => setState('initial')} />
+            <FloatingButton variant="contained" label="다음" onClick={() => setState('SaleInfo')} />
+          </FloatingBox>
         </>
       )}
 
@@ -362,8 +338,10 @@ const RentalManagement = () => {
             </Typography>
           )}
           <SaleConditionForm />
-          <Box sx={{ height: 76 }} />
-          <FloatingButton buttons={SaleInfoButtons} />
+          <FloatingBox>
+            <FloatingButton label="이전" onClick={() => setState('loaded')} />
+            <FloatingButton variant="contained" label="완료" onClick={() => setDialogOpen(true)} />
+          </FloatingBox>
           <CustomDialog
             open={dialogOpen}
             onClose={() => setDialogOpen(false)}
