@@ -27,6 +27,7 @@ import ContractInput  from '../pages/ContractInput';
 import LocalSaleList from '../pages/LocalSaleList';
 import LocalSaleDetail from '../pages/LocalSaleDetail';
 import RentalManagement from '../pages/RentalManagement';
+import Login from '../pages/Login';
 
 const Router = () => {
   return (
@@ -58,6 +59,7 @@ const Router = () => {
         <Route path="/LocalSaleList" element={<LocalSaleList />} />
         <Route path="/LocalSaleDetail/:id" element={<LocalSaleDetail />} />
         <Route path="/RentalManagement" element={<RentalManagement />} />
+        <Route path="/Login" element={<Login />} />
       </Routes> 
     </>
   );

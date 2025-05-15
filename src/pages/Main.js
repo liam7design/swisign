@@ -1,26 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-
 import { Box, ButtonGroup, Button, styled } from '@mui/material';
-
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import GradingOutlinedIcon from '@mui/icons-material/GradingOutlined';
 import LibraryAddCheckOutlinedIcon from '@mui/icons-material/LibraryAddCheckOutlined';
 import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
-
 import DefaultLayout from '../layouts/DefaultLayout';
 import RecentPosts from '../components/board/RecentPosts';
 import Banner from '../components/ui/Banner';
 import RealEstateInfo from '../components/content/RealEstateInfo';
 import ProgressCard from "../components/content/ProgressCard";
 import LocalSaleRecommend from '../components/localsale/LocalSaleRecommend';
-
 import NoticeData from '../data/NoticeData.json';
 import YoutubeData from '../data/YoutubeData.json';
 import NewsData from '../data/NewsData.json';
 import SaleData from '../data/SaleData.json';
 import ScheduleData from '../data/ScheduleData.json';
 import LocalSaleData from '../data/LocalSaleData.json';
+import { AuthContext } from '../context/AuthContext';
 
 // Button 스타일 정의, active 클래스에 따른 스타일 지정
 const UserChoiceButton = styled(Button)(({ theme }) => ({
@@ -48,9 +45,23 @@ const MainButton = styled(Button)({
 });
 
 const Main = () => {
+  const { user } = useContext(AuthContext);
 
-  // 로컬 스토리지에서 저장된 activeButton 상태를 불러옴
-  const [activeButton, setActiveButton] = useState(localStorage.getItem('activeButton') || 'userType1');
+  // 로그인한 유저가 있으면 user.type, 없으면 localStorage 또는 기본값
+  const getInitialActiveButton = () => {
+    if (user && user.type) return user.type;
+    return localStorage.getItem('activeButton') || 'userType1';
+  };
+
+  const [activeButton, setActiveButton] = useState(getInitialActiveButton());
+
+  // 유저 변경시 activeButton을 동기화
+  useEffect(() => {
+    if (user && user.type) {
+      setActiveButton(user.type);
+      localStorage.setItem('activeButton', user.type);
+    }
+  }, [user]);
 
   // 버튼 클릭 이벤트 핸들러
   const handleButtonClick = (role) => {
@@ -60,10 +71,10 @@ const Main = () => {
 
   useEffect(() => {
     const savedActiveButton = localStorage.getItem('activeButton');
-    if (savedActiveButton) {
-      setActiveButton(savedActiveButton); // 컴포넌트가 처음 마운트될 때 로컬 스토리지의 값으로 설정
+    if (!user && savedActiveButton) {
+      setActiveButton(savedActiveButton); // 로그아웃 등으로 user가 없을 때 localStorage 값 사용
     }
-  }, []);
+  }, [user]);
 
   return (
     <DefaultLayout>
