@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, CardContent, CardActions, Typography, IconButton, Avatar, Box, Button } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import { LikedIconOff, LikedIconOn } from '../../assets/icons/SvgIcons';
 
 const ProfileCard = ({
@@ -25,7 +24,7 @@ const ProfileCard = ({
           <Typography gutterBottom variant="h6">
             {title}
           </Typography>
-          <IconButton edge="end" aria-label="bookmark" onClick={onBookmarkToggle} sx={{ mt: -1 }}>
+          <IconButton edge="end" aria-label="bookmark" onClick={onBookmarkToggle} sx={{ width: '40px', height: '40px', mt: -0.5 }}>
             {bookmark ? <BookmarkIcon color="primary" /> : <BookmarkIcon color="disabled" />}
           </IconButton>
         </Box>
