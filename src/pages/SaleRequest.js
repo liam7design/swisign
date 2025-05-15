@@ -230,20 +230,12 @@ const SaleRequest = () => {
             {/* 사진 첨부 */}
             {state === 'SalePhoto' && (
               <>
-                <Box sx={{ mt: 4 }}>
-                  <Typography variant="h6" sx={{ mb: 0.5, fontSize: 18 }}>사진 첨부</Typography>
-                  <Typography variant="body2" sx={{ mb: 1 }}>임대물건에 대한 사진을 첨부하고 빠른 계약 진행하세요.</Typography>
-                  <GuideMsg variant="outlined" sx={{ mb: 2 }}>
-                    <ErrorIcon fontSize="small" />
-                    <Typography variant="body2">최대 10개까지 등록 가능합니다.</Typography>
-                  </GuideMsg>
-                  <PhotoUploadGrid
-                    photos={photos}
-                    onAddPhoto={handleAddPhoto}
-                    onRemovePhoto={handleRemovePhoto}
-                    maxCount={10}
-                  />
-                </Box>
+                <PhotoUploadGrid
+                  photos={photos}
+                  onAddPhoto={handleAddPhoto}
+                  onRemovePhoto={handleRemovePhoto}
+                  maxCount={10}
+                />
                 <FloatingBox>
                   <FloatingButton label="이전" onClick={() => setState('SaleInfo')} />
                   <FloatingButton variant="contained" label="다음" onClick={() => setState('SaleAgency')} />
