@@ -8,6 +8,7 @@ const ScheduleList = () => {
     <SubpageLayout>
       <BoardList
         data={ScheduleData}
+        detailLink="/ScheduleDetail" 
         type="schedule"
       />
     </SubpageLayout>

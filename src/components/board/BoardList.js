@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Typography, List, ListItem, Button, Card, CardMedia, CardContent, CardActionArea, Chip } from '@mui/material';
+import { Box, Typography, List, ListItem, Button, Card, CardMedia, CardContent, CardActionArea, Chip, IconButton } from '@mui/material';
 import { orange, green, blue, grey, red } from '@mui/material/colors';
 import BoardSearch from './BoardSearch';
 import PeriodSelect from './PeriodSelect';
 import BoardSort from './BoardSort';
-import BoardFilter from './BoardFilter'; // BoardFilter 추가
-import BoardCalendar from './BoardCalendar'; // BoardCalendar 추가
+import BoardFilter from './BoardFilter';
+import BoardCalendar from './BoardCalendar';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined';
 
 const BoardList = ({ data, detailLink, type, showSource = false }) => {
   const [filteredData, setFilteredData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('latest');
-  const [filterOption, setFilterOption] = useState('all'); // 필터 옵션 추가
+  const [filterOption, setFilterOption] = useState('all');
   const [visibleCount, setVisibleCount] = useState(10);
-  const [selectedDate, setSelectedDate] = useState(null); // 선택한 날짜 상태 추가
+  const [selectedDate, setSelectedDate] = useState(null);
   const [selectedDateRange, setSelectedDateRange] = useState(null);
 
   const getDateTime = (item) => {
@@ -144,10 +145,15 @@ const BoardList = ({ data, detailLink, type, showSource = false }) => {
               {filteredData.map((item) => (
                 <ListItem key={item.id} sx={{ display: 'flex', alignItems: 'center', p: 0, pt: 1.5, pb: 1.5, borderBottom: 1, borderColor: 'grey.200' }}>
                   <Box sx={{ pr: 4 }}>
-                    <Typography sx={{ fontSize: '1.063rem', fontWeight: 'medium',}}>{item.date}&nbsp;&nbsp;{item.time}</Typography>
-                    <Typography sx={{ mt: 0.5, fontSize: '0.938rem', color: 'grey.600' }}>{item.address}</Typography>
+                    <Typography sx={{ fontSize: '1rem', fontWeight: 'medium',}}>{item.date}&nbsp;&nbsp;{item.time}</Typography>
+                    <Typography sx={{ mt: 0.5, fontSize: '0.875rem', color: 'grey.600' }}>{item.address}</Typography>
                   </Box>
-                  <Chip variant="outlined" color="primary" label={item.content} sx={{ ml: 'auto', fontSize: '0.875rem', fontWeight: '500', borderRadius: '0.25rem' }} />
+                  <Box sx={{ ml: 'auto', display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <Chip size="small" color="primary"  label={item.content} sx={{ borderRadius: '0.25rem' }} />
+                    <IconButton aria-label="memo" component={Link} to={`${detailLink}/${item.id}`}>
+                      <CommentOutlinedIcon />
+                    </IconButton>
+                  </Box>
                 </ListItem>
               ))}
             </List>
@@ -188,7 +194,8 @@ const BoardList = ({ data, detailLink, type, showSource = false }) => {
                     whiteSpace: 'nowrap'
                   }}>{item.date}</Typography>
                 </Box>
-                <Box sx={{ ml: 'auto' }}><Chip color="primary" size="small" label={item.state} sx={{ ml: { xs: 2, sm: 4 }, fontSize: '0.875rem', color: 'white', backgroundColor: getChipColor(item.state), borderRadius: '0.25rem' }} /> 
+                <Box sx={{ ml: 'auto' }}>
+                  <Chip color="primary" size="small" label={item.state} sx={{ ml: { xs: 2, sm: 4 }, fontSize: '0.875rem', color: 'white', backgroundColor: getChipColor(item.state), borderRadius: '0.25rem' }} /> 
                 </Box>
               </ListItem>
               ))}

@@ -110,9 +110,11 @@ const RecentPosts = ({ title, link, detailLink, data, type, showSource = false }
               <ListItem key={item.id} sx={{ display: 'flex', alignItems: 'center', p: 0, pt: 1.5, pb: 1.5, borderBottom: 1, borderColor: 'grey.200' }}>
                 <Box sx={{ pr: 4 }}>
                   <Typography sx={{ fontSize: '1rem', fontWeight: 'medium',}}>{item.date}&nbsp;&nbsp;{item.time}</Typography>
-                  <Typography sx={{ mt: 0.5, fontSize: '1rem', color: 'grey.800' }}>{item.address}</Typography>
+                  <Typography sx={{ mt: 0.5, fontSize: '0.875rem', color: 'grey.600' }}>{item.address}</Typography>
                 </Box>
-                <Chip variant="outlined" color="primary" label={item.content} sx={{ ml: 'auto', fontSize: '0.875rem', fontWeight: '500', borderRadius: '0.25rem' }} />
+                <Box sx={{ ml: 'auto' }}>
+                  <Chip size="small" color="primary"  label={item.content} sx={{ borderRadius: '0.25rem' }} />
+                </Box>
               </ListItem>
             ))}
           </List>

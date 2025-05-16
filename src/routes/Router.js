@@ -21,6 +21,7 @@ import SaleRequest from '../pages/SaleRequest';
 import SaleList from '../pages/SaleList';
 import SaleDetail from '../pages/SaleDetail';
 import ScheduleList from '../pages/ScheduleList';
+import ScheduleDetail from '../pages/ScheduleDetail';
 import CertificateCheck from '../pages/CertificateCheck';
 import Contract from '../pages/Contract';
 import ContractInput  from '../pages/ContractInput';
@@ -53,6 +54,7 @@ const Router = () => {
         <Route path="/SaleList" element={<SaleList />} />
         <Route path="/SaleDetail/:id" element={<SaleDetail />} />
         <Route path="/ScheduleList" element={<ScheduleList />} />
+        <Route path="/ScheduleDetail/:id/*" element={<ScheduleDetail />} />
         <Route path="/CertificateCheck" element={<CertificateCheck />} />
         <Route path="/Contract" element={<Contract />} />
         <Route path="/Contract/Input" element={<ContractInput />} />
