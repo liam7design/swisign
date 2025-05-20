@@ -43,7 +43,7 @@ const RenderMenu = ({
     <MenuList disablePadding>
       {data.map((item) =>
         item.children ? (
-          <React.Fragment key={item.name}>
+          <div key={item.name}>
             <Menu1Depth
               onClick={(e) => handleToggle(item.name, e)}
               selected={!!openMenus[item.name]}
@@ -68,7 +68,7 @@ const RenderMenu = ({
                 ))}
               </MenuList>
             </Collapse>
-          </React.Fragment>
+          </div>
         ) : (
           <Menu1Depth
             component={Link}
