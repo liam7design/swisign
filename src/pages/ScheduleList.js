@@ -5,7 +5,7 @@ import ScheduleData from '../data/ScheduleData.json';
 
 const ScheduleList = () => {
   return (
-    <SubpageLayout>
+    <SubpageLayout customBackPath="/">
       <BoardList
         data={ScheduleData}
         detailLink="/ScheduleDetail" 
