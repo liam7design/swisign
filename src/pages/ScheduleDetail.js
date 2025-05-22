@@ -17,7 +17,7 @@ const ScheduleDetail = () => {
         <Route
           path="/"
           element={
-            <SubpageLayout customTitle={detailItem.address}>
+            <SubpageLayout customTitle={detailItem.address} customBackPath="/ScheduleList">
               <ScheduleDetailComponent data={ScheduleData} />
             </SubpageLayout>
           }

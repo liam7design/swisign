@@ -30,7 +30,8 @@ const Header = ({
   showBackButton = false,
   showCloseButton = false,
   showDetailButton = false,
-  enableDrawer = false
+  enableDrawer = false,
+  customBackPath
 }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [likes, setLikes] = useState(false);
@@ -45,7 +46,11 @@ const Header = ({
   };
 
   const handleBack = () => {
-    navigate(-1);
+    if (customBackPath) {
+      navigate(customBackPath);
+    } else {
+      navigate(-1);
+    }
   };
 
   const onLikeToggle = () => {
