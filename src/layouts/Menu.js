@@ -40,8 +40,8 @@ const MenuContent = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  height: 'calc(100% - 48px)',
-  padding: '24px 0',
+  height: 'calc(100% - 24px)',
+  padding: '12px 0',
   overflowY: 'auto'
 }));
 
@@ -52,7 +52,9 @@ const Menu = ({ open, onClose }) => {
     <MenuDrawer anchor="left" open={open} onClose={onClose}>
       <MenuTopBox>
         <Typography variant="h2" sx={{ flexGrow: 1, fontSize: '1.125rem', fontWeight: 500 }}>SWISIGN</Typography>
-        <IconButton color="inherit" aria-label="Settings" href="/Settings"><SettingsOutlinedIcon /></IconButton>
+        {user &&
+          <IconButton color="inherit" aria-label="Settings" href="/Settings"><SettingsOutlinedIcon /></IconButton>
+        }
         <IconButton edge="end" color="inherit" aria-label="close" onClick={onClose}><CloseIcon /></IconButton>
       </MenuTopBox>
       <MenuTopBox>

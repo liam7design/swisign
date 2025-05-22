@@ -4,7 +4,7 @@ import { MenuList, MenuItem, ListItemText, Collapse, ListItemIcon, ListItemButto
 import { ExpandLess, ExpandMore, ChevronRight } from '@mui/icons-material';
 
 const Menu1Depth = styled(ListItemButton)(({ theme }) => ({
-  padding: '16px',
+  padding: '12px 16px',
   '& .MuiListItemText-root': {
     margin: 0
   },
