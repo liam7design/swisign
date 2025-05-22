@@ -4,7 +4,7 @@
     "pw": "pass1",
     "name": "유지민",
     "nickname": "카리나",
-    "photo": "/images/img_user_01.jpg",
+    "photo": "/images/img_avatar_01.jpg",
     "email": "user1@example.com",
     "type": "userType1"
   },
@@ -13,7 +13,7 @@
     "pw": "pass2",
     "name": "김애리",
     "nickname": "지젤", 
-    "photo": "/images/img_user_02.jpg",
+    "photo": "/images/img_avatar_02.jpg",
     "email": "user2@example.com",
     "type": "userType2"
   },
@@ -22,7 +22,7 @@
     "pw": "pass3",
     "name": "김민정",
     "nickname": "윈터",
-    "photo": "/images/img_user_03.jpg",
+    "photo": "/images/img_avatar_03.jpg",
     "email": "user3@example.com",
     "type": "userType3"
   }
