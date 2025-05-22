@@ -8,16 +8,23 @@ import {
   Divider,
   Link,
   Stack,
-  TextField,
   Typography,
 } from '@mui/material';
 import { KakaoIcon, NaverIcon, GoogleIcon, AppleIcon } from '../assets/icons/SvgIcons';
 import { AuthContext } from '../context/AuthContext';
+import InputForm from '../components/form/InputForm';
 import userData from '../data/UserData.json';
+
+const snsIconButtonStyle = {
+  width: '48px',
+  height: '48px',
+  borderRadius: 2
+};
 
 const Login = () => {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
+
   const [form, setForm] = useState({ username: '', password: '' });
   const [errors, setErrors] = useState({ username: '', password: '' });
 
@@ -65,12 +72,6 @@ const Login = () => {
     setErrors({ ...errors, [e.target.name]: '' });
   };
 
-  const snsIconButtonStyle = {
-    width: '48px',
-    height: '48px',
-    borderRadius: 2
-  };
-
   return (
     <main>
       <Container sx={{ maxWidth: 480, pt: 6, pb: { xs: 4, sm: 6 } }}>
@@ -82,27 +83,22 @@ const Login = () => {
         </Typography>
         {/* 로그인 폼 */}
         <form onSubmit={handleSubmit} noValidate>
-          <Stack spacing={1}>
-            <TextField
+          <Stack spacing={2}>
+            <InputForm
               label="아이디"
               name="username"
               value={form.username}
               onChange={handleChange}
-              error={!!errors.username}
-              helperText={errors.username}
-              fullWidth
-              autoComplete="username"
+              error={errors.username}
+              autoFocus
             />
-            <TextField
+            <InputForm
+              use="password"
               label="비밀번호"
               name="password"
-              type="password"
               value={form.password}
               onChange={handleChange}
-              error={!!errors.password}
-              helperText={errors.password}
-              fullWidth
-              autoComplete="current-password"
+              error={errors.password}
             />
             <Button
               type="submit"
