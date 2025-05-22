@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { Container } from '@mui/material';
 import getTitle from '../utils/getTitle';
 
-const SubpageLayout = ({ children, customTitle, customBackPath }) => {
+const SubpageLayout = ({ children, customTitle, customBackPath, containerSx }) => {
   const location = useLocation();
   const headerTitle = customTitle || getTitle(location.pathname);
   
@@ -17,6 +17,7 @@ const SubpageLayout = ({ children, customTitle, customBackPath }) => {
           pt: { xs: 4, sm: 6 }, 
           pb: { xs: 6, sm: 8 },
           textAlign: 'left',
+          ...containerSx
         }}>{children}</Container>
       </main>
     </>
