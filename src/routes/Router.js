@@ -29,6 +29,10 @@ import LocalSaleList from '../pages/LocalSaleList';
 import LocalSaleDetail from '../pages/LocalSaleDetail';
 import RentalManagement from '../pages/RentalManagement';
 import Login from '../pages/Login';
+import Settings from '../pages/Settings';
+import LoginManagement from '../pages/LoginManagement';
+import PasswordManagement from '../pages/PasswordManagement';
+import PrivacyManagement from '../pages/PrivacyManagement';
 
 const Router = () => {
   return (
@@ -62,6 +66,10 @@ const Router = () => {
         <Route path="/LocalSaleDetail/:id" element={<LocalSaleDetail />} />
         <Route path="/RentalManagement" element={<RentalManagement />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/Settings" element={<Settings />} />
+        <Route path="/LoginManagement" element={<LoginManagement />} />
+        <Route path="/PasswordManagement" element={<PasswordManagement />} />
+        <Route path="/PrivacyManagement" element={<PrivacyManagement />} />
       </Routes> 
     </>
   );

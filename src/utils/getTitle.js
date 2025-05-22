@@ -45,6 +45,14 @@ const getTitle = (pathname) => {
       return '지역매물';
     case pathname.startsWith('/LocalSaleDetail'):
       return '';
+    case pathname === '/Settings':
+      return '환경설정';
+    case pathname === '/LoginManagement':
+      return '로그인 관리';
+    case pathname === '/PasswordManagement':
+      return '비밀번호 변경';
+    case pathname === '/PrivacyManagement':
+      return '개인정보 변경';
     default:
       return 'SWISIGN';
   }
