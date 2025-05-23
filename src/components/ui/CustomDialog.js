@@ -4,7 +4,8 @@ import { Box, Button, Dialog, DialogTitle, DialogContent, DialogContentText, Dia
 
 const DialogBox = styled(Dialog)(({ theme }) => ({
   '& .MuiDialog-paper': {
-    minWidth: 'calc(320px - 64px)',
+    minWidth: 'calc(360px - 32px)',
+    margin: 16,
     padding: 24,
     boxSizing: 'border-box'
   },
