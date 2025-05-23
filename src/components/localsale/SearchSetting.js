@@ -176,13 +176,19 @@ const SearchSetting = ({ onClose, onSearch }) => {
         {/* 주거형태 */}
         <Box>
           <Typography variant="subtitle1" sx={{ mb: 1 }}>주거형태</Typography>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: 1,
+            }}
+          >
             {HOUSING_TYPES.map(type => (
               <Button
                 key={type}
                 variant={housingType === type ? 'contained' : 'outlined'}
                 onClick={() => setHousingType(type)}
-                sx={{ flex: 1, minWidth: '120px' }}
+                fullWidth
               >
                 {type}
               </Button>
@@ -192,13 +198,19 @@ const SearchSetting = ({ onClose, onSearch }) => {
         {/* 주택유형 */}
         <Box>
           <Typography variant="subtitle1" sx={{ mb: 1 }}>주택유형</Typography>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: 1,
+            }}
+          >
             {SALE_TYPES.map(type => (
               <Button
                 key={type}
                 variant={saleType === type ? 'contained' : 'outlined'}
                 onClick={() => setSaleType(type)}
-                sx={{ flex: 1, minWidth: '80px' }}
+                fullWidth
               >
                 {type}
               </Button>
@@ -208,14 +220,19 @@ const SearchSetting = ({ onClose, onSearch }) => {
         {/* 면적 */}
         <Box>
           <Typography variant="subtitle1" sx={{ mb: 1 }}>면적</Typography>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: 1,
+            }}
+          >
             {AREA_TYPES.map(type => (
               <Button
                 key={type}
                 variant={selectedAreas.includes(type) ? 'contained' : 'outlined'}
                 onClick={() => handleAreaChange(type)}
                 sx={{
-                  flex: '1 1 auto',
                   backgroundColor: selectedAreas.includes(type)
                     ? 'primary.main'
                     : 'background.paper',
@@ -228,6 +245,7 @@ const SearchSetting = ({ onClose, onSearch }) => {
                       : 'action.hover',
                   }
                 }}
+                fullWidth
               >
                 {type}
               </Button>
