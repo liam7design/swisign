@@ -4,7 +4,9 @@ import { Box, Button, Dialog, DialogTitle, DialogContent, DialogContentText, Dia
 
 const DialogBox = styled(Dialog)(({ theme }) => ({
   '& .MuiDialog-paper': {
+    minWidth: 'calc(320px - 64px)',
     padding: 24,
+    boxSizing: 'border-box'
   },
   '& .MuiDialogTitle-root': {
     marginTop: 12,
@@ -28,7 +30,7 @@ const DialogBox = styled(Dialog)(({ theme }) => ({
     '& .MuiButtonBase-root': {
       width: '100%'
     }
-  }
+  },
 }));
 
 const IconBox = styled(Box)(({ theme }) => ({
@@ -48,6 +50,8 @@ const CustomDialog = ({
   title,
   message,
   icon,
+  disabled,
+  children
 }) => {
   return (
     <DialogBox
@@ -57,22 +61,16 @@ const CustomDialog = ({
       aria-labelledby="custom-dialog-title"
       aria-describedby="custom-dialog-description"
     >
-      {icon &&
-        <IconBox>{icon}</IconBox>
-      }
+      {icon && <IconBox>{icon}</IconBox>}
       <DialogTitle id="custom-dialog-title">
         {title}
       </DialogTitle>
       <DialogContent>
-        <DialogContentText id="custom-dialog-description" sx={{ color: 'text.primary', fontSize: 15 }}>
-          {message}
-        </DialogContentText>
+        {message ? <DialogContentText>{message}</DialogContentText> : children}
       </DialogContent>
       <DialogActions>
-        {onClick2 &&
-          <Button variant="outlined" onClick={onClick2} fullWidth>{btn2}</Button>
-        }
-        <Button variant="contained" onClick={onClick1} autoFocus fullWidth>
+        {onClick2 && <Button variant="outlined" onClick={onClick2} fullWidth>{btn2}</Button>}
+        <Button variant="contained" onClick={onClick1} disabled={!!disabled} autoFocus fullWidth>
           {btn1}
         </Button>
       </DialogActions>
@@ -90,6 +88,7 @@ CustomDialog.propTypes = {
   title: PropTypes.node.isRequired,
   message: PropTypes.node.isRequired,
   icon: PropTypes.node,
+  disabled: PropTypes.func,
 };
 
 export default CustomDialog;
