@@ -40,10 +40,7 @@
     "children": [
       { "name": "지도 검색", "path": "/MapSearch" },
       { "name": "주요 변동정보", "path": "/ChangeInfoList" },
-      { "name": "공인중개사 공제증서 확인", "path": "/CertificateCheck" },
-      { "name": "전자계약서", "path": "/Contract" },
-      { "name": "지역매물", "path": "/LocalSaleList" },
-      { "name": "로그인", "path": "/Login" }
+      { "name": "공인중개사 공제증서 확인", "path": "/CertificateCheck" }
     ]
   }
 ]
