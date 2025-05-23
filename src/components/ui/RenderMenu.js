@@ -11,14 +11,28 @@ const Menu1Depth = styled(ListItemButton)(({ theme }) => ({
   '& .MuiTypography-root': {
     fontSize: '16px',
     fontWeight: 500,
+  },
+  
+  '&:hover': {
+    backgroundColor: 'unset',
+  },
+  '&.Mui-selected': {
+    backgroundColor: 'unset',
+    '&:hover': {
+      backgroundColor: 'unset',
+    }
   }
 }));
 
 const Menu2Depth = styled(MenuItem)(({ theme }) => ({
-  padding: '0 16px 0 32px',
+  padding: '11px 16px 11px 32px',
+  minHeight: 'auto',
   '& .MuiTypography-root': {
     fontSize: '15px'
-  }
+  },
+  '&:hover': {
+    backgroundColor: 'unset',
+  },
 }));
 
 const MenuListItemIcon = styled(ListItemIcon)(({ theme }) => ({
@@ -47,9 +61,10 @@ const RenderMenu = ({
             <Menu1Depth
               onClick={(e) => handleToggle(item.name, e)}
               selected={!!openMenus[item.name]}
+              disableRipple
             >
               <ListItemText primary={<Typography>{item.name}</Typography>} />
-              {openMenus[item.name] ? <ExpandLess /> : <ExpandMore />}
+              {openMenus[item.name] ? <ExpandLess fontSize="small" /> : <ExpandMore fontSize="small" />}
             </Menu1Depth>
             <Collapse in={!!openMenus[item.name]} timeout="auto" unmountOnExit>
               <MenuList disablePadding>
@@ -59,6 +74,7 @@ const RenderMenu = ({
                     to={child.path}
                     key={child.name}
                     onClick={onClose}
+                    disableRipple
                   >
                     <ListItemText primary={<Typography>{child.name}</Typography>} />
                     <MenuListItemIcon>
@@ -75,9 +91,10 @@ const RenderMenu = ({
             to={item.path}
             key={item.name}
             onClick={onClose}
+            disableRipple
           >
             <ListItemText primary={<Typography>{item.name}</Typography>} />
-            <ChevronRight />
+            <ChevronRight fontSize="small" />
           </Menu1Depth>
         )
       )}
