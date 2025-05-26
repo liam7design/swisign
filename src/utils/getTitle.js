@@ -53,6 +53,8 @@ const getTitle = (pathname) => {
       return '비밀번호 변경';
     case pathname === '/PrivacyManagement':
       return '개인정보 변경';
+    case pathname === '/RealEstateAgency':
+      return '중개인 조회';
     default:
       return 'SWISIGN';
   }

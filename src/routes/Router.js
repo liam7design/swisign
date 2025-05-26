@@ -34,6 +34,7 @@ import Settings from '../pages/Settings';
 import LoginManagement from '../pages/LoginManagement';
 import PasswordManagement from '../pages/PasswordManagement';
 import PrivacyManagement from '../pages/PrivacyManagement';
+import RealEstateAgency from '../pages/RealEstateAgency';
 
 const Router = () => {
   return (
@@ -72,6 +73,7 @@ const Router = () => {
         <Route path="/LoginManagement" element={<LoginManagement />} />
         <Route path="/PasswordManagement" element={<PasswordManagement />} />
         <Route path="/PrivacyManagement" element={<PrivacyManagement />} />
+        <Route path="/RealEstateAgency" element={<RealEstateAgency />} />
       </Routes> 
     </>
   );
