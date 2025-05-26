@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import ScrollToTop from '../components/ui/ScrollToTop';
 
 import Intro from '../pages/Intro';
@@ -36,22 +36,11 @@ import PasswordManagement from '../pages/PasswordManagement';
 import PrivacyManagement from '../pages/PrivacyManagement';
 
 const Router = () => {
-  const [isFirstVisit, setIsFirstVisit] = useState(true);
-
-  useEffect(() => {
-    const visited = localStorage.getItem('visited');
-    if (!visited) {
-      localStorage.setItem('visited', 'true');
-    } else {
-      setIsFirstVisit(false);
-    }
-  }, []);
-
   return (
     <>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={isFirstVisit ? <Navigate to="/intro" /> : <Main />} />
+        <Route path="/" element={<Main />} />
         <Route path="/intro" element={<Intro />} />
         <Route path="/MapList" element={<MapList />} />
         <Route path="/MapView" element={<MapView />} />
