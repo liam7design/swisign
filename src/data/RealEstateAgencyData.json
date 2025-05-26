@@ -1,17 +1,452 @@
 [
   {
-    "name": "천호역두레공인중개사사무소",
-    "address": "서울 강동구 올림픽로62길 21",
-    "tel": "02-474-7575"
+    "id": 1,
+    "officeName": "천호역두레공인중개사사무소",
+    "regNumber": "11710-2022-00001",
+    "officeAddress": "서울특별시 강동구 올림픽로62길 21",
+    "telNumber": "02-474-7575",
+    "ceoName": "박공인",
+    "orgName": "서울 강동구"
   },
   {
-    "name": "천호더샵공인중개사사무소",
-    "address": "서울 강동구 올림픽로70길 61 105호",
-    "tel": "0507-1472-8247"
+    "id": 2,
+    "officeName": "천호더샵공인중개사사무소",
+    "regNumber": "11710-2022-00002",
+    "officeAddress": "서울특별시 강동구 올림픽로70길 61 105호",
+    "telNumber": "0507-1472-8247",
+    "ceoName": "이상훈",
+    "orgName": "서울 강동구"
   },
   {
-    "name": "천호역부동산공인중개사사무소",
-    "address": "서울 강동구 천호옛길 90 1층",
-    "tel": "02-471-8885"
+    "id": 3,
+    "officeName": "천호역부동산공인중개사사무소",
+    "regNumber": "11710-2022-00003",
+    "officeAddress": "서울특별시 강동구 천호옛길 90 1층",
+    "telNumber": "02-471-8885",
+    "ceoName": "김민정",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 4,
+    "officeName": "천호센트럴공인중개사사무소",
+    "regNumber": "11710-2022-00004",
+    "officeAddress": "서울특별시 강동구 천호대로 100",
+    "telNumber": "02-488-1234",
+    "ceoName": "최영수",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 5,
+    "officeName": "천호스마트공인중개사사무소",
+    "regNumber": "11710-2022-00005",
+    "officeAddress": "서울특별시 강동구 올림픽로 660",
+    "telNumber": "02-488-5678",
+    "ceoName": "정유진",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 6,
+    "officeName": "천호프라임공인중개사사무소",
+    "regNumber": "11710-2022-00006",
+    "officeAddress": "서울특별시 강동구 천호대로 102",
+    "telNumber": "02-486-1357",
+    "ceoName": "이수연",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 7,
+    "officeName": "천호리치공인중개사사무소",
+    "regNumber": "11710-2022-00007",
+    "officeAddress": "서울특별시 강동구 올림픽로 670",
+    "telNumber": "02-485-2468",
+    "ceoName": "박성호",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 8,
+    "officeName": "천호메트로공인중개사사무소",
+    "regNumber": "11710-2022-00008",
+    "officeAddress": "서울특별시 강동구 천호대로 104",
+    "telNumber": "02-487-1357",
+    "ceoName": "이민지",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 9,
+    "officeName": "천호하이츠공인중개사사무소",
+    "regNumber": "11710-2022-00009",
+    "officeAddress": "서울특별시 강동구 올림픽로 680",
+    "telNumber": "02-488-2468",
+    "ceoName": "김지훈",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 10,
+    "officeName": "천호에이스공인중개사사무소",
+    "regNumber": "11710-2022-00010",
+    "officeAddress": "서울특별시 강동구 천호대로 106",
+    "telNumber": "02-489-3579",
+    "ceoName": "정다은",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 11,
+    "officeName": "천호드림공인중개사사무소",
+    "regNumber": "11710-2022-00011",
+    "officeAddress": "서울특별시 강동구 천호옛길 92",
+    "telNumber": "02-471-3579",
+    "ceoName": "최수진",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 12,
+    "officeName": "천호베스트공인중개사사무소",
+    "regNumber": "11710-2022-00012",
+    "officeAddress": "서울특별시 강동구 올림픽로62길 23",
+    "telNumber": "02-473-1357",
+    "ceoName": "이상우",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 13,
+    "officeName": "천호럭키공인중개사사무소",
+    "regNumber": "11710-2022-00013",
+    "officeAddress": "서울특별시 강동구 천호대로 108",
+    "telNumber": "02-472-2468",
+    "ceoName": "박지민",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 14,
+    "officeName": "천호스페셜공인중개사사무소",
+    "regNumber": "11710-2022-00014",
+    "officeAddress": "서울특별시 강동구 천호옛길 94",
+    "telNumber": "02-471-1357",
+    "ceoName": "김민수",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 15,
+    "officeName": "천호하우스공인중개사사무소",
+    "regNumber": "11710-2022-00015",
+    "officeAddress": "서울특별시 강동구 올림픽로70길 63",
+    "telNumber": "02-473-2468",
+    "ceoName": "이정훈",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 16,
+    "officeName": "천호리더스공인중개사사무소",
+    "regNumber": "11710-2022-00016",
+    "officeAddress": "서울특별시 강동구 천호대로 110",
+    "telNumber": "02-475-1357",
+    "ceoName": "정하늘",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 17,
+    "officeName": "천호에버공인중개사사무소",
+    "regNumber": "11710-2022-00017",
+    "officeAddress": "서울특별시 강동구 천호옛길 96",
+    "telNumber": "02-476-2468",
+    "ceoName": "박상민",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 18,
+    "officeName": "천호골드공인중개사사무소",
+    "regNumber": "11710-2022-00018",
+    "officeAddress": "서울특별시 강동구 올림픽로62길 25",
+    "telNumber": "02-477-1357",
+    "ceoName": "이현수",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 19,
+    "officeName": "천호팰리스공인중개사사무소",
+    "regNumber": "11710-2022-00019",
+    "officeAddress": "서울특별시 강동구 천호대로 112",
+    "telNumber": "02-478-2468",
+    "ceoName": "김진우",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 20,
+    "officeName": "천호퍼스트공인중개사사무소",
+    "regNumber": "11710-2022-00020",
+    "officeAddress": "서울특별시 강동구 올림픽로70길 65",
+    "telNumber": "02-479-1357",
+    "ceoName": "오하늘",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 21,
+    "officeName": "천호힐스공인중개사사무소",
+    "regNumber": "11710-2022-00021",
+    "officeAddress": "서울특별시 강동구 천호옛길 98",
+    "telNumber": "02-480-2468",
+    "ceoName": "김주원",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 22,
+    "officeName": "천호에이스2공인중개사사무소",
+    "regNumber": "11710-2022-00022",
+    "officeAddress": "서울특별시 강동구 천호대로 114",
+    "telNumber": "02-481-1357",
+    "ceoName": "장민지",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 23,
+    "officeName": "천호클래식공인중개사사무소",
+    "regNumber": "11710-2022-00023",
+    "officeAddress": "서울특별시 강동구 올림픽로62길 27",
+    "telNumber": "02-482-2468",
+    "ceoName": "박지성",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 24,
+    "officeName": "천호스카이공인중개사사무소",
+    "regNumber": "11710-2022-00024",
+    "officeAddress": "서울특별시 강동구 천호대로 116",
+    "telNumber": "02-483-1357",
+    "ceoName": "이서연",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 25,
+    "officeName": "천호리치2공인중개사사무소",
+    "regNumber": "11710-2022-00025",
+    "officeAddress": "서울특별시 강동구 올림픽로70길 67",
+    "telNumber": "02-484-2468",
+    "ceoName": "김민재",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 26,
+    "officeName": "천호에이스3공인중개사사무소",
+    "regNumber": "11710-2022-00026",
+    "officeAddress": "서울특별시 강동구 천호대로 118",
+    "telNumber": "02-485-1357",
+    "ceoName": "정다은",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 27,
+    "officeName": "천호하이클래스공인중개사사무소",
+    "regNumber": "11710-2022-00027",
+    "officeAddress": "서울특별시 강동구 천호옛길 100",
+    "telNumber": "02-486-2468",
+    "ceoName": "박수현",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 28,
+    "officeName": "천호에버그린공인중개사사무소",
+    "regNumber": "11710-2022-00028",
+    "officeAddress": "서울특별시 강동구 올림픽로62길 29",
+    "telNumber": "02-487-1357",
+    "ceoName": "이승현",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 29,
+    "officeName": "천호럭키2공인중개사사무소",
+    "regNumber": "11710-2022-00029",
+    "officeAddress": "서울특별시 강동구 천호대로 120",
+    "telNumber": "02-488-2468",
+    "ceoName": "김예진",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 30,
+    "officeName": "천호드림2공인중개사사무소",
+    "regNumber": "11710-2022-00030",
+    "officeAddress": "서울특별시 강동구 천호옛길 102",
+    "telNumber": "02-489-1357",
+    "ceoName": "오지민",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 31,
+    "officeName": "천호명가공인중개사사무소",
+    "regNumber": "11710-2022-00031",
+    "officeAddress": "서울특별시 강동구 천호대로 122",
+    "telNumber": "02-490-2468",
+    "ceoName": "이현정",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 32,
+    "officeName": "천호로얄공인중개사사무소",
+    "regNumber": "11710-2022-00032",
+    "officeAddress": "서울특별시 강동구 올림픽로62길 31",
+    "telNumber": "02-491-1357",
+    "ceoName": "박지호",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 33,
+    "officeName": "천호스마트2공인중개사사무소",
+    "regNumber": "11710-2022-00033",
+    "officeAddress": "서울특별시 강동구 천호대로 124",
+    "telNumber": "02-492-2468",
+    "ceoName": "김은지",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 34,
+    "officeName": "천호에이스4공인중개사사무소",
+    "regNumber": "11710-2022-00034",
+    "officeAddress": "서울특별시 강동구 올림픽로70길 69",
+    "telNumber": "02-493-1357",
+    "ceoName": "이준호",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 35,
+    "officeName": "천호스페셜2공인중개사사무소",
+    "regNumber": "11710-2022-00035",
+    "officeAddress": "서울특별시 강동구 천호대로 126",
+    "telNumber": "02-494-2468",
+    "ceoName": "박지윤",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 36,
+    "officeName": "천호골드2공인중개사사무소",
+    "regNumber": "11710-2022-00036",
+    "officeAddress": "서울특별시 강동구 올림픽로62길 33",
+    "telNumber": "02-495-1357",
+    "ceoName": "김상현",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 37,
+    "officeName": "천호리더스2공인중개사사무소",
+    "regNumber": "11710-2022-00037",
+    "officeAddress": "서울특별시 강동구 천호대로 128",
+    "telNumber": "02-496-2468",
+    "ceoName": "이성민",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 38,
+    "officeName": "천호드림3공인중개사사무소",
+    "regNumber": "11710-2022-00038",
+    "officeAddress": "서울특별시 강동구 천호옛길 104",
+    "telNumber": "02-497-1357",
+    "ceoName": "최현우",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 39,
+    "officeName": "천호프라임2공인중개사사무소",
+    "regNumber": "11710-2022-00039",
+    "officeAddress": "서울특별시 강동구 올림픽로70길 71",
+    "telNumber": "02-498-2468",
+    "ceoName": "박지수",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 40,
+    "officeName": "천호클래식2공인중개사사무소",
+    "regNumber": "11710-2022-00040",
+    "officeAddress": "서울특별시 강동구 천호대로 130",
+    "telNumber": "02-499-1357",
+    "ceoName": "이민아",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 41,
+    "officeName": "천호스마트3공인중개사사무소",
+    "regNumber": "11710-2022-00041",
+    "officeAddress": "서울특별시 강동구 올림픽로62길 35",
+    "telNumber": "02-500-2468",
+    "ceoName": "김성훈",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 42,
+    "officeName": "천호리치3공인중개사사무소",
+    "regNumber": "11710-2022-00042",
+    "officeAddress": "서울특별시 강동구 천호대로 132",
+    "telNumber": "02-501-1357",
+    "ceoName": "이승기",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 43,
+    "officeName": "천호하이츠2공인중개사사무소",
+    "regNumber": "11710-2022-00043",
+    "officeAddress": "서울특별시 강동구 올림픽로70길 73",
+    "telNumber": "02-502-2468",
+    "ceoName": "박지현",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 44,
+    "officeName": "천호에이스5공인중개사사무소",
+    "regNumber": "11710-2022-00044",
+    "officeAddress": "서울특별시 강동구 천호대로 134",
+    "telNumber": "02-503-1357",
+    "ceoName": "김태현",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 45,
+    "officeName": "천호드림4공인중개사사무소",
+    "regNumber": "11710-2022-00045",
+    "officeAddress": "서울특별시 강동구 천호옛길 106",
+    "telNumber": "02-504-2468",
+    "ceoName": "이수지",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 46,
+    "officeName": "천호스페셜3공인중개사사무소",
+    "regNumber": "11710-2022-00046",
+    "officeAddress": "서울특별시 강동구 올림픽로62길 37",
+    "telNumber": "02-505-1357",
+    "ceoName": "박민수",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 47,
+    "officeName": "천호골드3공인중개사사무소",
+    "regNumber": "11710-2022-00047",
+    "officeAddress": "서울특별시 강동구 천호대로 136",
+    "telNumber": "02-506-2468",
+    "ceoName": "김하늘",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 48,
+    "officeName": "천호리더스3공인중개사사무소",
+    "regNumber": "11710-2022-00048",
+    "officeAddress": "서울특별시 강동구 올림픽로70길 75",
+    "telNumber": "02-507-1357",
+    "ceoName": "이정민",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 49,
+    "officeName": "천호에버2공인중개사사무소",
+    "regNumber": "11710-2022-00049",
+    "officeAddress": "서울특별시 강동구 천호대로 138",
+    "telNumber": "02-508-2468",
+    "ceoName": "박소연",
+    "orgName": "서울 강동구"
+  },
+  {
+    "id": 50,
+    "officeName": "천호명가2공인중개사사무소",
+    "regNumber": "11710-2022-00050",
+    "officeAddress": "서울특별시 강동구 올림픽로62길 39",
+    "telNumber": "02-509-1357",
+    "ceoName": "김세진",
+    "orgName": "서울 강동구"
   }
 ]

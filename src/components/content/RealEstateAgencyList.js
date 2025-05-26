@@ -17,34 +17,87 @@ const AgencyList = styled(List)(({ theme }) => ({
   },
 }));
 
-const RealEstateAgencyList = () => {
-  return (
-    <AgencyList>
-      {RealEstateAgencyData.map((agency, index) => (
-        <ListItem key={index} secondaryAction={
-          <IconButton edge="end" aria-label="map">
-            <MapOutlinedIcon />
-          </IconButton>
-        }>
-          <Checkbox size="small" />
-          <ListItemText 
-            primary={agency.name} 
-            secondary={
-            <React.Fragment>
+const renderAgencyItem = (type, agency) => {
+  switch (type) {
+    case 'agencyTypeA':
+      return (
+        <ListItemText 
+          primary={agency.officeName} 
+          secondary={
+            <>
               <Typography variant="body2" sx={{ margin: '0.125rem 0', color: 'text.primary' }}>
-                {agency.address}
+                {agency.officeAddress}
               </Typography>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                {agency.tel}
+                {agency.telNumber}
                 <Button variant="text" sx={{ minWidth: '0', marginLeft: '0.75rem', padding: '0', fontSize: '0.813rem', lineHeight: 'inherit' }}>복사</Button>
               </Box>
-            </React.Fragment>
+            </>
+          }
+        />
+      );
+    case 'agencyTypeB':
+      return (
+        <>
+          <ListItemText
+            primary={agency.officeName} 
+            secondary={
+              <>
+                <Typography variant="body2" sx={{ margin: '0.125rem 0', color: 'text.primary' }}>
+                  대표 : {agency.ceoName}
+                </Typography>
+                <Typography variant="body2" sx={{ margin: '0.125rem 0', color: 'text.primary' }}>
+                  소재지 : {agency.officeAddress}
+                </Typography>
+                <Typography variant="body2" sx={{ margin: '0.125rem 0', color: 'text.primary' }}>
+                  등록번호 : {agency.regNumber}
+                </Typography>
+              </>
             }
           />
+        </>
+      );
+    default:
+      return (
+        <ListItemText 
+          primary={agency.officeName} 
+          secondary={
+            <>
+              <Typography variant="body2" sx={{ margin: '0.125rem 0', color: 'text.primary' }}>
+                {agency.officeAddress}
+              </Typography>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                {agency.telNumber}
+              </Box>
+            </>
+          }
+        />
+      );
+  }
+};
+
+const RealEstateAgencyList = ({ type }) => {
+  return (
+    <AgencyList>
+      {RealEstateAgencyData.map((agency) => (
+        <ListItem
+          key={agency.id}
+          secondaryAction={
+            type === 'agencyTypeA'
+              ? (
+                <IconButton edge="end" aria-label="map">
+                  <MapOutlinedIcon />
+                </IconButton>
+              )
+              : null
+          }
+        >
+          <Checkbox size="small" />
+          {renderAgencyItem(type, agency)}
         </ListItem>
       ))}
     </AgencyList>
-  )
-}
+  );
+};
 
 export default RealEstateAgencyList;

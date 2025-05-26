@@ -251,7 +251,7 @@ const SaleRequest = () => {
                     <Typography variant="body2">주변 검색으로 부동산중개소를 선택해주세요.</Typography>
                   </GuideMsg>
                   <Button variant="outlined" fullWidth sx={{ mb: 2 }}>주변 검색</Button>
-                  <RealEstateAgencyList />
+                  <RealEstateAgencyList type="agencyTypeA" />
                 </Box>
                 <FloatingBox>
                   <FloatingButton variant="contained" label="매물등록 요청" onClick={() => setState('SaleOption')} />
