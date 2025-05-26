@@ -32,7 +32,7 @@
       { "name": "매물요청 현황", "path": "/SaleList" },
       { "name": "방문일정 현황", "path": "/ScheduleList" },
       { "name": "주변 시세", "path": "/MarketPrice" },
-      { "name": "계약관리", "path": "/MarketPrice" }
+      { "name": "계약관리", "path": "/" }
     ]
   },
   {
