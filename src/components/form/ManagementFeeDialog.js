@@ -3,9 +3,6 @@ import { ToggleButton } from '@mui/material';
 import { FormBox, CustomToggleButtonGroup, CustomTextField, EndAdornment } from './FormStyle';
 import CustomDialog from '../ui/CustomDialog';
 
-// PropTypes 추가 (타입 안전성 보강)
-import PropTypes from 'prop-types';
-
 const ManagementFeeDialog = ({ 
   open, 
   onClose, 
