@@ -3,28 +3,81 @@ import { ToggleButton } from '@mui/material';
 import { FormBox, CustomToggleButtonGroup, CustomTextField, EndAdornment } from './FormStyle';
 import CustomDialog from '../ui/CustomDialog';
 
+// PropTypes 추가 (타입 안전성 보강)
+import PropTypes from 'prop-types';
+
 const ManagementFeeDialog = ({ 
   open, 
   onClose, 
   onConfirm, 
-  initialValue 
+  initialValue
 }) => {
-  const [feeType, setFeeType] = useState(initialValue?.type || 'fixed');
-  const [fixedFee, setFixedFee] = useState(initialValue?.type === 'fixed' ? initialValue.value : '');
-  const [variableFee, setVariableFee] = useState(initialValue?.type === 'variable' ? initialValue.value : '');
+  // 입력값 유효성 검증을 위한 상태
+  const [feeType, setFeeType] = useState(initialValue?.type === 'variable' ? 'variable' : 'fixed');
+  const [fixedFee, setFixedFee] = useState(
+    initialValue?.type === 'fixed' && typeof initialValue.value === 'string'
+      ? initialValue.value
+      : ''
+  );
+  const [variableFee, setVariableFee] = useState(
+    initialValue?.type === 'variable' && typeof initialValue.value === 'string'
+      ? initialValue.value
+      : ''
+  );
+  const [error, setError] = useState('');
 
+  // 상태 동기화
   useEffect(() => {
-    setFeeType(initialValue?.type || 'fixed');
-    setFixedFee(initialValue?.type === 'fixed' ? initialValue.value : '');
-    setVariableFee(initialValue?.type === 'variable' ? initialValue.value : '');
+    setFeeType(initialValue?.type === 'variable' ? 'variable' : 'fixed');
+    setFixedFee(
+      initialValue?.type === 'fixed' && typeof initialValue.value === 'string'
+        ? initialValue.value
+        : ''
+    );
+    setVariableFee(
+      initialValue?.type === 'variable' && typeof initialValue.value === 'string'
+        ? initialValue.value
+        : ''
+    );
+    setError('');
   }, [initialValue, open]);
 
-  const handleConfirm = () => {
-    const value = feeType === 'fixed'
-      ? { type: 'fixed', value: fixedFee }
-      : { type: 'variable', value: variableFee };
+  // 입력값 검증 함수
+  const validate = () => {
+    if (feeType === 'fixed') {
+      if (!fixedFee || isNaN(fixedFee) || Number(fixedFee) <= 0) {
+        setError('고정 관리비는 1 이상의 숫자를 입력하세요.');
+        return false;
+      }
+    } else if (feeType === 'variable') {
+      if (!variableFee || variableFee.trim().length < 2) {
+        setError('변동 관리비 설명을 2자 이상 입력하세요.');
+        return false;
+      }
+    }
+    setError('');
+    return true;
+  };
+
+   // 확인 버튼 클릭 시
+   const handleConfirm = () => {
+    if (!validate()) return;
+    const value =
+      feeType === 'fixed'
+        ? { type: 'fixed', value: fixedFee }
+        : { type: 'variable', value: variableFee };
     onConfirm(value);
     onClose();
+  };
+
+  // 입력값 변경 핸들러
+  const handleFixedFeeChange = (e) => {
+    setFixedFee(e.target.value.replace(/[^0-9]/g, ''));
+    setError('');
+  };
+  const handleVariableFeeChange = (e) => {
+    setVariableFee(e.target.value);
+    setError('');
   };
 
   return (
@@ -56,20 +109,24 @@ const ManagementFeeDialog = ({
           <CustomTextField
             type="number"
             value={fixedFee}
-            onChange={e => setFixedFee(e.target.value.replace(/[^0-9]/g, ''))}
+            onChange={handleFixedFeeChange}
             InputProps={{ endAdornment: <EndAdornment>만원</EndAdornment> }}
             sx={{ width: 160 }}
             placeholder="관리비 입력"
-            autoFocus
+            autoFocus={feeType === 'fixed'}
+            error={!!error && feeType === 'fixed'}
+            helperText={feeType === 'fixed' ? error : ''}
           />
         ) : (
           <CustomTextField
             type="text"
             value={variableFee}
-            onChange={e => setVariableFee(e.target.value)}
+            onChange={handleVariableFeeChange}
             sx={{ width: 160 }}
             placeholder="예: 세대별 사용량 비례, 세대수 비례"
-            autoFocus
+            autoFocus={feeType === 'variable'}
+            error={!!error && feeType === 'variable'}
+            helperText={feeType === 'variable' ? error : ''}
           />
         )}
       </FormBox>

@@ -86,10 +86,10 @@ CustomDialog.propTypes = {
   onClick2: PropTypes.func,
   btn1: PropTypes.string,
   btn2: PropTypes.string,
-  title: PropTypes.node.isRequired,
-  message: PropTypes.node.isRequired,
+  title: PropTypes.node,
+  message: PropTypes.node,
   icon: PropTypes.node,
-  disabled: PropTypes.func,
+  disabled: PropTypes.bool,
 };
 
 export default CustomDialog;
