@@ -98,24 +98,22 @@ const RealEstateAgencyList = ({
         <>
           <AgencyList>
             {filteredData.slice(0, visibleCount).map((agency) => (
-              <>
-                <ListItem
-                  key={agency.id}
-                  secondaryAction={
-                    type === 'agencyTypeA'
-                      ? (
-                        <IconButton edge="end" aria-label="map">
-                          <MapOutlinedIcon />
-                        </IconButton>
-                      )
-                      : null
-                  }
-                  className={ type === 'agencyTypeA' ? 'isRightBtn' : '' }
-                >
-                  <Checkbox size="small" />
-                  {renderAgencyItem(type, agency)}
-                </ListItem>
-              </>
+              <ListItem
+                key={agency.id}
+                secondaryAction={
+                  type === 'agencyTypeA'
+                    ? (
+                      <IconButton edge="end" aria-label="map">
+                        <MapOutlinedIcon />
+                      </IconButton>
+                    )
+                    : null
+                }
+                className={ type === 'agencyTypeA' ? 'isRightBtn' : '' }
+              >
+                <Checkbox size="small" />
+                {renderAgencyItem(type, agency)}
+              </ListItem>
             ))}
           </AgencyList>
           {filteredData.length > visibleCount && (
