@@ -448,5 +448,455 @@
     "telNumber": "02-509-1357",
     "ceoName": "김세진",
     "orgName": "서울 강동구"
+  },
+  {
+    "id": 51,
+    "officeName": "서초센트럴공인중개사사무소",
+    "regNumber": "11650-2022-00001",
+    "officeAddress": "서울특별시 서초구 서초대로 396",
+    "telNumber": "02-3477-1234",
+    "ceoName": "이서초",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 52,
+    "officeName": "서초프라임공인중개사사무소",
+    "regNumber": "11650-2022-00002",
+    "officeAddress": "서울특별시 서초구 반포대로 222",
+    "telNumber": "02-3482-5678",
+    "ceoName": "박반포",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 53,
+    "officeName": "서초리치공인중개사사무소",
+    "regNumber": "11650-2022-00003",
+    "officeAddress": "서울특별시 서초구 강남대로 369",
+    "telNumber": "02-3472-2468",
+    "ceoName": "김강남",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 54,
+    "officeName": "서초하이츠공인중개사사무소",
+    "regNumber": "11650-2022-00004",
+    "officeAddress": "서울특별시 서초구 효령로 304",
+    "telNumber": "02-3471-1357",
+    "ceoName": "최효령",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 55,
+    "officeName": "서초드림공인중개사사무소",
+    "regNumber": "11650-2022-00005",
+    "officeAddress": "서울특별시 서초구 서초중앙로 110",
+    "telNumber": "02-3462-8888",
+    "ceoName": "정서초",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 56,
+    "officeName": "서초에이스공인중개사사무소",
+    "regNumber": "11650-2022-00006",
+    "officeAddress": "서울특별시 서초구 남부순환로 2636",
+    "telNumber": "02-3473-9999",
+    "ceoName": "오남부",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 57,
+    "officeName": "서초럭키공인중개사사무소",
+    "regNumber": "11650-2022-00007",
+    "officeAddress": "서울특별시 서초구 서초대로 350",
+    "telNumber": "02-3474-1111",
+    "ceoName": "장서초",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 58,
+    "officeName": "서초스마트공인중개사사무소",
+    "regNumber": "11650-2022-00008",
+    "officeAddress": "서울특별시 서초구 반포대로 275",
+    "telNumber": "02-3475-2222",
+    "ceoName": "유스마트",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 59,
+    "officeName": "서초골드공인중개사사무소",
+    "regNumber": "11650-2022-00009",
+    "officeAddress": "서울특별시 서초구 강남대로 381",
+    "telNumber": "02-3476-3333",
+    "ceoName": "강금",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 60,
+    "officeName": "서초하우스공인중개사사무소",
+    "regNumber": "11650-2022-00010",
+    "officeAddress": "서울특별시 서초구 효령로 320",
+    "telNumber": "02-3477-4444",
+    "ceoName": "이하우",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 61,
+    "officeName": "서초클래식공인중개사사무소",
+    "regNumber": "11650-2022-00011",
+    "officeAddress": "서울특별시 서초구 서초중앙로 128",
+    "telNumber": "02-3478-5555",
+    "ceoName": "박클래",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 62,
+    "officeName": "서초스페셜공인중개사사무소",
+    "regNumber": "11650-2022-00012",
+    "officeAddress": "서울특별시 서초구 남부순환로 2650",
+    "telNumber": "02-3479-6666",
+    "ceoName": "최스페",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 63,
+    "officeName": "서초리더스공인중개사사무소",
+    "regNumber": "11650-2022-00013",
+    "officeAddress": "서울특별시 서초구 강남대로 401",
+    "telNumber": "02-3480-7777",
+    "ceoName": "리더서",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 64,
+    "officeName": "서초에버공인중개사사무소",
+    "regNumber": "11650-2022-00014",
+    "officeAddress": "서울특별시 서초구 서초대로 400",
+    "telNumber": "02-3481-8888",
+    "ceoName": "에버초",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 65,
+    "officeName": "서초팰리스공인중개사사무소",
+    "regNumber": "11650-2022-00015",
+    "officeAddress": "서울특별시 서초구 반포대로 300",
+    "telNumber": "02-3482-9999",
+    "ceoName": "팰리초",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 66,
+    "officeName": "서초명가공인중개사사무소",
+    "regNumber": "11650-2022-00016",
+    "officeAddress": "서울특별시 서초구 강남대로 355",
+    "telNumber": "02-3483-1111",
+    "ceoName": "명가초",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 67,
+    "officeName": "서초로얄공인중개사사무소",
+    "regNumber": "11650-2022-00017",
+    "officeAddress": "서울특별시 서초구 효령로 330",
+    "telNumber": "02-3484-2222",
+    "ceoName": "로얄초",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 68,
+    "officeName": "서초에이스2공인중개사사무소",
+    "regNumber": "11650-2022-00018",
+    "officeAddress": "서울특별시 서초구 남부순환로 2660",
+    "telNumber": "02-3485-3333",
+    "ceoName": "에이스초",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 69,
+    "officeName": "서초베스트공인중개사사무소",
+    "regNumber": "11650-2022-00019",
+    "officeAddress": "서울특별시 서초구 강남대로 410",
+    "telNumber": "02-3486-4444",
+    "ceoName": "베스트초",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 70,
+    "officeName": "서초퍼스트공인중개사사무소",
+    "regNumber": "11650-2022-00020",
+    "officeAddress": "서울특별시 서초구 서초대로 410",
+    "telNumber": "02-3487-5555",
+    "ceoName": "퍼스트초",
+    "orgName": "서울 서초구"
+  },
+  {
+    "id": 71,
+    "officeName": "해운대베스트공인중개사사무소",
+    "regNumber": "26440-2022-00021",
+    "officeAddress": "부산광역시 해운대구 센텀동로 45",
+    "telNumber": "051-701-1234",
+    "ceoName": "김해운",
+    "orgName": "부산 해운대구"
+  },
+  {
+    "id": 72,
+    "officeName": "수성럭키공인중개사사무소",
+    "regNumber": "27140-2022-00022",
+    "officeAddress": "대구광역시 수성구 동대구로 200",
+    "telNumber": "053-768-5678",
+    "ceoName": "최수성",
+    "orgName": "대구 수성구"
+  },
+  {
+    "id": 73,
+    "officeName": "송도프라임공인중개사사무소",
+    "regNumber": "28177-2022-00023",
+    "officeAddress": "인천광역시 연수구 송도과학로 56",
+    "telNumber": "032-858-1234",
+    "ceoName": "박송도",
+    "orgName": "인천 연수구"
+  },
+  {
+    "id": 74,
+    "officeName": "상무드림공인중개사사무소",
+    "regNumber": "29170-2022-00024",
+    "officeAddress": "광주광역시 서구 상무중앙로 42",
+    "telNumber": "062-383-5678",
+    "ceoName": "정상무",
+    "orgName": "광주 서구"
+  },
+  {
+    "id": 75,
+    "officeName": "둔산센트럴공인중개사사무소",
+    "regNumber": "30200-2022-00025",
+    "officeAddress": "대전광역시 서구 둔산로 117",
+    "telNumber": "042-485-2468",
+    "ceoName": "최둔산",
+    "orgName": "대전 서구"
+  },
+  {
+    "id": 76,
+    "officeName": "삼산스마트공인중개사사무소",
+    "regNumber": "31110-2022-00026",
+    "officeAddress": "울산광역시 남구 삼산로 261",
+    "telNumber": "052-266-3579",
+    "ceoName": "김삼산",
+    "orgName": "울산 남구"
+  },
+  {
+    "id": 77,
+    "officeName": "수원역공인중개사사무소",
+    "regNumber": "41110-2022-00027",
+    "officeAddress": "경기도 수원시 팔달구 덕영대로 924",
+    "telNumber": "031-242-5678",
+    "ceoName": "이수원",
+    "orgName": "경기 수원시 팔달구"
+  },
+  {
+    "id": 78,
+    "officeName": "분당퍼스트공인중개사사무소",
+    "regNumber": "41135-2022-00028",
+    "officeAddress": "경기도 성남시 분당구 황새울로 234",
+    "telNumber": "031-712-8888",
+    "ceoName": "박분당",
+    "orgName": "경기 성남시 분당구"
+  },
+  {
+    "id": 79,
+    "officeName": "일산드림공인중개사사무소",
+    "regNumber": "41280-2022-00029",
+    "officeAddress": "경기도 고양시 일산동구 중앙로 1206",
+    "telNumber": "031-901-1357",
+    "ceoName": "최일산",
+    "orgName": "경기 고양시 일산동구"
+  },
+  {
+    "id": 80,
+    "officeName": "춘천하이츠공인중개사사무소",
+    "regNumber": "42110-2022-00030",
+    "officeAddress": "강원특별자치도 춘천시 중앙로 67",
+    "telNumber": "033-242-1234",
+    "ceoName": "정춘천",
+    "orgName": "강원 춘천시"
+  },
+  {
+    "id": 81,
+    "officeName": "원주센트럴공인중개사사무소",
+    "regNumber": "42750-2022-00031",
+    "officeAddress": "강원특별자치도 원주시 무실로 17",
+    "telNumber": "033-747-2468",
+    "ceoName": "이원주",
+    "orgName": "강원 원주시"
+  },
+  {
+    "id": 82,
+    "officeName": "청주프라임공인중개사사무소",
+    "regNumber": "43110-2022-00032",
+    "officeAddress": "충청북도 청주시 상당구 상당로 99",
+    "telNumber": "043-221-5678",
+    "ceoName": "박청주",
+    "orgName": "충북 청주시 상당구"
+  },
+  {
+    "id": 83,
+    "officeName": "충주스페셜공인중개사사무소",
+    "regNumber": "43760-2022-00033",
+    "officeAddress": "충청북도 충주시 중앙로 98",
+    "telNumber": "043-852-1357",
+    "ceoName": "김충주",
+    "orgName": "충북 충주시"
+  },
+  {
+    "id": 84,
+    "officeName": "천안럭키공인중개사사무소",
+    "regNumber": "44130-2022-00034",
+    "officeAddress": "충청남도 천안시 서북구 불당대로 309",
+    "telNumber": "041-551-2468",
+    "ceoName": "이천안",
+    "orgName": "충남 천안시 서북구"
+  },
+  {
+    "id": 85,
+    "officeName": "아산리더스공인중개사사무소",
+    "regNumber": "44200-2022-00035",
+    "officeAddress": "충청남도 아산시 배방로 100",
+    "telNumber": "041-546-3579",
+    "ceoName": "정아산",
+    "orgName": "충남 아산시"
+  },
+  {
+    "id": 86,
+    "officeName": "전주에이스공인중개사사무소",
+    "regNumber": "45110-2022-00036",
+    "officeAddress": "전북특별자치도 전주시 완산구 전주천동로 20",
+    "telNumber": "063-285-1234",
+    "ceoName": "최전주",
+    "orgName": "전북 전주시 완산구"
+  },
+  {
+    "id": 87,
+    "officeName": "군산스마트공인중개사사무소",
+    "regNumber": "45130-2022-00037",
+    "officeAddress": "전북특별자치도 군산시 대학로 87",
+    "telNumber": "063-452-5678",
+    "ceoName": "김군산",
+    "orgName": "전북 군산시"
+  },
+  {
+    "id": 88,
+    "officeName": "목포프라임공인중개사사무소",
+    "regNumber": "46110-2022-00038",
+    "officeAddress": "전라남도 목포시 영산로 100",
+    "telNumber": "061-272-1357",
+    "ceoName": "박목포",
+    "orgName": "전남 목포시"
+  },
+  {
+    "id": 89,
+    "officeName": "여수명가공인중개사사무소",
+    "regNumber": "46130-2022-00039",
+    "officeAddress": "전라남도 여수시 여문로 32",
+    "telNumber": "061-654-2468",
+    "ceoName": "이여수",
+    "orgName": "전남 여수시"
+  },
+  {
+    "id": 90,
+    "officeName": "포항베스트공인중개사사무소",
+    "regNumber": "47110-2022-00040",
+    "officeAddress": "경상북도 포항시 남구 중앙로 80",
+    "telNumber": "054-273-1357",
+    "ceoName": "최포항",
+    "orgName": "경북 포항시 남구"
+  },
+  {
+    "id": 91,
+    "officeName": "구미드림공인중개사사무소",
+    "regNumber": "47190-2022-00041",
+    "officeAddress": "경상북도 구미시 송정대로 100",
+    "telNumber": "054-464-2468",
+    "ceoName": "김구미",
+    "orgName": "경북 구미시"
+  },
+  {
+    "id": 92,
+    "officeName": "창원에이스공인중개사사무소",
+    "regNumber": "48120-2022-00042",
+    "officeAddress": "경상남도 창원시 성산구 창이대로 18",
+    "telNumber": "055-262-1357",
+    "ceoName": "박창원",
+    "orgName": "경남 창원시 성산구"
+  },
+  {
+    "id": 93,
+    "officeName": "진주골드공인중개사사무소",
+    "regNumber": "48170-2022-00043",
+    "officeAddress": "경상남도 진주시 진양호로 532",
+    "telNumber": "055-743-2468",
+    "ceoName": "이진주",
+    "orgName": "경남 진주시"
+  },
+  {
+    "id": 94,
+    "officeName": "제주드림공인중개사사무소",
+    "regNumber": "50110-2022-00044",
+    "officeAddress": "제주특별자치도 제주시 중앙로 217",
+    "telNumber": "064-753-1357",
+    "ceoName": "최제주",
+    "orgName": "제주 제주시"
+  },
+  {
+    "id": 95,
+    "officeName": "강릉에이스공인중개사사무소",
+    "regNumber": "42150-2022-00045",
+    "officeAddress": "강원특별자치도 강릉시 경강로 123",
+    "telNumber": "033-678-9012",
+    "ceoName": "이강릉",
+    "orgName": "강원 강릉시"
+  },
+  {
+    "id": 96,
+    "officeName": "동해스마트공인중개사사무소",
+    "regNumber": "42230-2022-00046",
+    "officeAddress": "강원특별자치도 동해시 동해로 77",
+    "telNumber": "033-515-1357",
+    "ceoName": "박동해",
+    "orgName": "강원 동해시"
+  },
+  {
+    "id": 97,
+    "officeName": "청주로얄공인중개사사무소",
+    "regNumber": "43110-2022-00047",
+    "officeAddress": "충청북도 청주시 흥덕구 흥덕로 100",
+    "telNumber": "043-567-8901",
+    "ceoName": "박흥덕",
+    "orgName": "충북 청주시 흥덕구"
+  },
+  {
+    "id": 98,
+    "officeName": "천안명가공인중개사사무소",
+    "regNumber": "44130-2022-00048",
+    "officeAddress": "충청남도 천안시 동남구 청수로 77",
+    "telNumber": "041-567-8901",
+    "ceoName": "이동남",
+    "orgName": "충남 천안시 동남구"
+  },
+  {
+    "id": 99,
+    "officeName": "군산명가공인중개사사무소",
+    "regNumber": "45130-2022-00049",
+    "officeAddress": "전북특별자치도 군산시 군산로 88",
+    "telNumber": "063-514-2468",
+    "ceoName": "이군산",
+    "orgName": "전북 군산시"
+  },
+  {
+    "id": 100,
+    "officeName": "서귀포스마트공인중개사사무소",
+    "regNumber": "50130-2022-00050",
+    "officeAddress": "제주특별자치도 서귀포시 중문로 88",
+    "telNumber": "064-515-1357",
+    "ceoName": "박서귀포",
+    "orgName": "제주 서귀포시"
   }
 ]
