@@ -28,7 +28,7 @@ const Chart = () => {
         {
           scaleType: 'point',
           data,
-          tickInterval: 1,
+          // tickInterval: (value, index) => true, // 생략해도 동일
         },
       ]}
       series={[
