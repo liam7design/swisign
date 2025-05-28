@@ -30,6 +30,7 @@ const DateTimeDialog = ({
               views={['year', 'month', 'day']}
               format="yyyy년 MM월 dd일"
               slotProps={{
+                toolbar: { hidden: true }, 
                 calendarHeader: { format: 'yyyy년 M월' },
                 textField: { 
                   fullWidth: true, 
@@ -46,7 +47,7 @@ const DateTimeDialog = ({
               placeholder="시간 선택"
               value={time}
               onChange={setTime}
-              format="HH시 mm분"
+              format="a hh시 mm분"
               slotProps={{
                 textField: { 
                   fullWidth: true, 
