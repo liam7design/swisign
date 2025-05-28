@@ -148,7 +148,7 @@ const LocalSaleDetail = () => {
       <Box>
         <Subtitle variant="h6">상세설명</Subtitle>
         <Box sx={{ mt: 1 }}>
-          <ExpandableBox height="142">
+          <ExpandableBox height={142}>
             1. 역삼역 초역세권 신축급2룸 다세대주택 (월세 5월말~6월초 입주 협의) <br/>
             * &lt;본 호실은 소유자가 유료주차장의 유지비용을 분담하였기에  주차배정을 받을 수 있는 호실입니다.&gt; <br/>
             2. 초역세권 교통편리. 편의시설 많은  고급주택가 초입 위치. 조용하고 치안좋음(GS ,GFC 직주근접) <br/>
@@ -171,7 +171,7 @@ const LocalSaleDetail = () => {
       <Box>
         <Subtitle variant="h6">{dummyProfileData.length}곳에서 등록되어 있어요.</Subtitle>
         <Box sx={{ mt: 1 }}>
-          <ExpandableBox height="188" padding="0" backgroundColor="#ffffff">
+          <ExpandableBox height={188} padding="0" backgroundColor="#ffffff">
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
               {dummyProfileData.map((profile, idx) => (
                 <ProfileCard
