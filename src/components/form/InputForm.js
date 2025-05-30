@@ -49,7 +49,7 @@ function InputForm({
                 edge="end"
                 tabIndex={-1}
               >
-                <ClearIcon />
+                <ClearIcon fontSize="small" />
               </IconButton>
             )}
             {isPassword && (
@@ -59,7 +59,7 @@ function InputForm({
                 edge="end"
                 tabIndex={-1}
               >
-                {show ? <VisibilityOff /> : <Visibility />}
+                {show ? <VisibilityOff fontSize="small" /> : <Visibility fontSize="small" />}
               </IconButton>
             )}
           </InputAdornment>
