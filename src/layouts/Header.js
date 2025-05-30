@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AppBar, Toolbar, IconButton, Typography, styled } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Typography, Box, styled } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
@@ -31,7 +31,8 @@ const Header = ({
   showCloseButton = false,
   showDetailButton = false,
   enableDrawer = false,
-  customBackPath
+  customBackPath,
+  rightElement
 }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [likes, setLikes] = useState(false);
@@ -47,7 +48,8 @@ const Header = ({
 
   const handleBack = () => {
     if (customBackPath) {
-      navigate(customBackPath);
+      // navigate(customBackPath);
+      customBackPath();
     } else {
       navigate(-1);
     }
@@ -73,6 +75,11 @@ const Header = ({
             <>
               <IconButton edge="start" color="inherit" aria-label="back" onClick={handleBack}><ArrowBackIcon /></IconButton>
               <HeaderTitle variant="h2" sx={{ paddingLeft: '0.25rem', textAlign: 'left' }} >{title}</HeaderTitle>
+              {rightElement &&
+                <Box sx={{ marginLeft: 'auto' }}>
+                  {rightElement}
+                </Box>
+              }
             </>
           )}
           {showBackButton && showDetailButton && (

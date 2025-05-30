@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useParams } from 'react-router-dom';
+import { Routes, Route, useParams, useNavigate } from 'react-router-dom';
 import SubpageLayout from '../layouts/SubpageLayout';
 import FullpageLayout from '../layouts/FullpageLayout';
 import ScheduleDetailComponent from '../components/schedule/ScheduleDetail';
@@ -8,6 +8,7 @@ import ScheduleData from '../data/ScheduleData.json';
 import { MemoProvider } from '../context/MemoContext';
 
 const ScheduleDetail = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const detailItem = ScheduleData.find(item => item.id === parseInt(id));
 
@@ -17,7 +18,7 @@ const ScheduleDetail = () => {
         <Route
           path="/"
           element={
-            <SubpageLayout customTitle={detailItem.address} customBackPath="/ScheduleList">
+            <SubpageLayout customTitle={detailItem.address} customBackPath={() => navigate('/ScheduleList')}>
               <ScheduleDetailComponent data={ScheduleData} />
             </SubpageLayout>
           }
