@@ -7,7 +7,10 @@ import CustomDialog from '../ui/CustomDialog';
 
 const DateTimeDialog = ({ 
   open, 
-  onClose
+  onClose,
+  title,
+  dateTitle,
+  timeTitle
 }) => {
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState(new Date());
@@ -17,12 +20,12 @@ const DateTimeDialog = ({
       open={open}
       onClose={onClose}
       onClick1={onClose}
-      title="방문 요청"
+      title={title}
     >
       <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={ko}>
         <Stack direction="column" spacing={2} mt={1}>
           <Box>
-            <Typography variant="subtitle2" sx={{ mb: 1, color: '#555', textAlign: 'left' }}>방문일자 선택</Typography>
+            <Typography variant="subtitle2" sx={{ mb: 1, color: '#555', textAlign: 'left' }}>{dateTitle}</Typography>
             <DatePicker
               placeholder="날짜 선택"
               value={date}
@@ -42,7 +45,7 @@ const DateTimeDialog = ({
             />
           </Box>
           <Box>
-            <Typography variant="subtitle2" sx={{ mb: 1, color: '#555', textAlign: 'left' }}>방문시간 선택</Typography>
+            <Typography variant="subtitle2" sx={{ mb: 1, color: '#555', textAlign: 'left' }}>{timeTitle}</Typography>
             <TimePicker
               placeholder="시간 선택"
               value={time}

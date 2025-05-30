@@ -70,6 +70,9 @@ const ProfileCard = ({
       <DateTimeDialog
         open={dateTimeDialogOpen}
         onClose={() => setDateTimeDialogOpen(false)}
+        title="방문 요청"
+        dateTitle="방문일자 선택"
+        timeTitle="방문시간 선택"
       />
     </>
   );
