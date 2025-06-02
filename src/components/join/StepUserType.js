@@ -22,14 +22,14 @@ const USER_TYPES = [
     key: "agent",
     icon: <BusinessIcon fontSize="large" color="primary" />,
     title: "중개인",
-    desc: "임대물건에 대한 방문일정 확인 및 전자계약을 통한 비대면 계약 드의 편익 제공"
+    desc: "임대물건에 대한 방문일정 확인 및 전자계약을 통한 비대면 계약 등의 편익 제공"
   }
 ];
 
 function StepUserType({ selectedTypes, onSelect, onNext, canNext }) {
   return (
     <>
-      <Typography variant="subtitle1" sx={{ mb: 3, fontWeight: 500 }}>가입자 유형을 선택해주세요.</Typography>
+      <Typography variant="subtitle1" sx={{ mb: 3, fontSize: 18, fontWeight: 500, lineHeight: 1.5 }}>가입자 유형을 선택해주세요.</Typography>
       <Stack spacing={2}>
         {USER_TYPES.map(type => (
           <Card
@@ -46,7 +46,7 @@ function StepUserType({ selectedTypes, onSelect, onNext, canNext }) {
               <CardContent sx={{ display: "flex", alignItems: "center" }}>
                 <Box mr={2}>{type.icon}</Box>
                 <Box>
-                  <Typography fontWeight={600}>{type.title}</Typography>
+                  <Typography sx={{ fontSize: 16, fontWeight: 500 }} gutterBottom>{type.title}</Typography>
                   <Typography variant="body2" color="text.secondary">{type.desc}</Typography>
                 </Box>
                 <Box flexGrow={1} />

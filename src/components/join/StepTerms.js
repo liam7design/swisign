@@ -1,6 +1,9 @@
-import React from "react";
-import { Box, Typography, Checkbox, Button, FormControlLabel, Divider, Dialog, DialogTitle, DialogContent, DialogActions, Stack } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Typography, Checkbox, Button, FormControlLabel, Divider, Stack } from "@mui/material";
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { FloatingBox, FloatingButton } from '../ui/FloatingButton';
+import FullpageDialog from '../ui/FullpageDialog';
+import CustomDialog from '../ui/CustomDialog';
 
 const TERMS = [
   {
@@ -24,22 +27,48 @@ const TERMS = [
 ];
 
 function StepTerms({
-  checkedTerms, allChecked, onTermCheck, onAllCheck,
-  onNext, onCancel, canNext,
-  termDialog, setTermDialog
+  checkedTerms, 
+  allChecked, 
+  onTermCheck, 
+  onAllCheck,
+  onNext, 
+  onCancel, 
+  canNext,
+  termDialog, 
+  setTermDialog
 }) {
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+  const handleDialogClose = () => {
+    setDialogOpen(false);
+    setTermDialog({ open: false, term: null });
+  };
+
+  const handleAgree = () => {
+    if (termDialog.term && !checkedTerms[termDialog.term.key]) {
+      onTermCheck(termDialog.term.key); // 체크박스 체크
+    }
+    setTermDialog({ open: false, term: null }); // 다이얼로그 닫기
+  };
+
   return (
     <>
-      <Typography variant="subtitle1" sx={{ mb: 3, fontWeight: 500 }}>스윗싸인 서비스 이용을 위한 약관 동의가 필요해요.</Typography>
+      <Typography variant="subtitle1" sx={{ mb: 3, fontSize: 18, fontWeight: 500, lineHeight: 1.5 }}>스윗싸인 서비스 이용을 위한 약관 동의가 필요해요.</Typography>
       <FormControlLabel
         control={
           <Checkbox checked={allChecked} onChange={onAllCheck} />
         }
         label="전체 동의"
-        sx={{ mb: 2, fontWeight: 600 }}
+        sx={{ 
+          mb: 2, 
+          '& .MuiFormControlLabel-label': {
+            fontSize: 16, 
+            fontWeight: 500
+          }
+        }}
       />
       <Divider sx={{ mb: 2 }} />
-      <Stack spacing={1}>
+      <Stack spacing={1} sx={{ marginLeft: '-11px' }}>
         {TERMS.map(term => (
           <Box key={term.key} display="flex" alignItems="center">
             <Checkbox
@@ -47,26 +76,57 @@ function StepTerms({
               onChange={() => onTermCheck(term.key)}
             />
             <Button
+              fullWidth
               variant="text"
               onClick={() => setTermDialog({ open: true, term })}
-              sx={{ textAlign: "left", minWidth: 0, color: "text.primary" }}
+              endIcon={<ChevronRightIcon color="primary" fontSize="small" />}
+              disableRipple
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                minWidth: 0,
+                padding: 0,
+                color: "text.primary",
+                fontSize: 16,
+                '&:hover': {
+                  backgroundColor: 'transparent',
+                }
+              }}
             >
               {term.label}
             </Button>
           </Box>
         ))}
       </Stack>
-      <Dialog open={termDialog.open} onClose={() => setTermDialog({ open: false, term: null })} fullWidth>
-        <DialogTitle>{termDialog.term?.label}</DialogTitle>
-        <DialogContent>
-          <Typography variant="body2" whiteSpace="pre-line">
-            {termDialog.term?.content}
-          </Typography>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setTermDialog({ open: false, term: null })}>닫기</Button>
-        </DialogActions>
-      </Dialog>
+      <FullpageDialog
+        open={termDialog.open}
+        onClose={() => setTermDialog({ open: false, term: null })}
+        onClick1={handleAgree}
+        title={termDialog.term?.label}
+        btn1="동의 완료"
+        onClick2={
+          termDialog.term?.key === "promo"
+            ? () => setDialogOpen(true)
+            : undefined
+        }
+        btn2={
+          termDialog.term?.key === "promo"
+            ? "동의 취소"
+            : undefined
+        }
+      >
+        <Typography variant="body2" whiteSpace="pre-line">
+          {termDialog.term?.content}
+        </Typography>
+      </FullpageDialog>
+      <CustomDialog
+        open={dialogOpen}
+        onClose={handleDialogClose}
+        onClick1={handleDialogClose}
+        title="프로모션 정보 수신 미동의"
+        message="스윗싸인에서 제공하는 다양한 이벤트 참여를 제공할 목적으로 이용하며, 수신을 원하실 경우 마이페이지에서 동의해 주시면 원할한 서비스 아용이 가능합니다."
+      />
       <FloatingBox>
         <FloatingButton label="취소" onClick={onCancel} />
         <FloatingButton variant="contained" label="다음" onClick={onNext} disabled={!canNext} />

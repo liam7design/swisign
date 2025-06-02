@@ -24,7 +24,7 @@ function StepPhone({
 
   return (
     <>
-      <Typography variant="subtitle1" sx={{ mb: 3, fontWeight: 500 }}>스윗싸인은 계정으로 사용할 핸드폰 인증이 필요해요.</Typography>
+      <Typography variant="subtitle1" sx={{ mb: 3, fontSize: 18, fontWeight: 500, lineHeight: 1.5 }}>스윗싸인은 계정으로 사용할 핸드폰 인증이 필요해요.</Typography>
       <Stack spacing={2}>
         <Box>
           <Typography variant="subtitle2" sx={inputTitleSx}>휴대폰 번호</Typography>

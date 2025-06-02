@@ -30,7 +30,7 @@ const StepBasicInfo = ({
 
   return (
     <>
-      <Typography variant="subtitle1" sx={{ mb: 3, fontWeight: 500 }}>스윗싸인은 계정의 실제 이름과 비밀번호로 사용이 가능하세요.</Typography>
+      <Typography variant="subtitle1" sx={{ mb: 3, fontSize: 18, fontWeight: 500, lineHeight: 1.5 }}>스윗싸인은 계정의 실제 이름과 비밀번호로 사용이 가능하세요.</Typography>
       <Stack spacing={2}>
         <Box>
           <Typography variant="subtitle2" sx={inputTitleSx}>로그인 ID</Typography>

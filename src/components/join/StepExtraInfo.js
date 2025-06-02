@@ -23,7 +23,7 @@ function StepExtraInfo({
 }) {
   return (
     <>
-      <Typography variant="subtitle1" sx={{ mb: 3, fontWeight: 500 }}>추가 정보는 마이페이지에서도 정보 입력이 가능해요.</Typography>
+      <Typography variant="subtitle1" sx={{ mb: 3, fontSize: 18, fontWeight: 500, lineHeight: 1.5 }}>추가 정보는 마이페이지에서도 정보 입력이 가능해요.</Typography>
       <Box>
         <Typography variant="h6" sx={{mb: 1, fontSize: 18 }}>주택 유형</Typography>
         <Box
