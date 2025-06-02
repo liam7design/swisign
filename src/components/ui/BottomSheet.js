@@ -30,7 +30,9 @@ const BottomSheet = ({
   return (
     <>
       <Stack direction="row" sx={{ alignItems: 'flex-start',  gap: 1, mb: 2 }}>
-        <Chip size="small" color="primary" label={value1} sx={{ borderRadius: '0.25rem' }} />
+        {value1 &&
+          <Chip size="small" color="primary" label={value1} sx={{ borderRadius: '0.25rem' }} />
+        }
         <Typography
           variant="subtitle1"
           component="p"
