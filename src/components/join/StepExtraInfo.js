@@ -5,10 +5,9 @@ import InputForm from '../form/InputForm';
 import { FormBox } from '../form/FormStyle';
 
 const HOUSE_TYPES = [
-  { value: "apartment", label: "아파트" },
-  { value: "villa", label: "빌라/연립" },
-  { value: "officetel", label: "오피스텔" },
-  { value: "house", label: "단독/다가구" },
+  { value: "self", label: "자가" },
+  { value: "jeonse", label: "전세" },
+  { value: "wolse", label: "월세" },
   { value: "etc", label: "기타" }
 ];
 
