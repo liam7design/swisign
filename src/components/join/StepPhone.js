@@ -16,7 +16,6 @@ function StepPhone({
   handleVerifyComplete
 }) {
 
-  // 스타일
   const inputTitleSx = {
     mb: 0.5, 
     color: '#555'
@@ -39,34 +38,36 @@ function StepPhone({
             <Button
               variant="contained"
               onClick={handleSendCode}
-              disabled={sent}
+              disabled={sent || !phone}
               sx={{ minWidth: 86 }}
             >
               인증요청
             </Button>
           </Stack>
         </Box>
-        <Box>
-          <Typography variant="subtitle2" sx={inputTitleSx}>인증번호</Typography>
-          <Stack direction="row" spacing={1}>
-            <InputForm
-              placeholder="인증번호 6자리를 입력해주세요."
-              value={code}
-              onChange={e => setCode(e.target.value.replace(/\D/g, ""))}
-              disabled={!sent || verified}
-              size="small"
-            />
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleCodeCheck}
-              disabled={!sent || verified || code.length === 0}
-              sx={{ minWidth: 86 }}
-            >
-              확인
-            </Button>
-          </Stack>
-        </Box>
+        {sent &&
+          <Box>
+            <Typography variant="subtitle2" sx={inputTitleSx}>인증번호</Typography>
+            <Stack direction="row" spacing={1}>
+              <InputForm
+                placeholder="인증번호 6자리를 입력해주세요."
+                value={code}
+                onChange={e => setCode(e.target.value.replace(/\D/g, ""))}
+                disabled={!sent || verified}
+                size="small"
+              />
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleCodeCheck}
+                disabled={!sent || verified || code.length === 0}
+                sx={{ minWidth: 86 }}
+              >
+                확인
+              </Button>
+            </Stack>
+          </Box>
+        }
       </Stack>
       <FloatingBox>
         <FloatingButton variant="contained" label="인증 완료" onClick={handleVerifyComplete} disabled={!codeChecked || verified} />
