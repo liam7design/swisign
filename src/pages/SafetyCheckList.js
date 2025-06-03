@@ -169,11 +169,11 @@ const initialChecklist = [
   },
 ];
 
-const getComment = (score) => {
+function getComment(score) {
   if (score >= 90) return "매우 안전한 전세입니다.";
-  if (score >= 70) return "대체로 안전하지만, 몇 가지 추가 확인이 필요합니다.";
-  if (score >= 50) return "주의가 필요합니다. 반드시 세부 항목을 확인하세요.";
-  return "위험도가 높으니 신중히 검토하세요.";
+  if (score >= 70) return "대체로 안전하지만,\n몇 가지 추가 확인이 필요합니다.";
+  if (score >= 50) return "주의가 필요합니다.\n반드시 세부 항목을 확인하세요.";
+  return "위험도가 높으니\n신중히 검토하세요.";
 }
 
 const SafetyCheckList = () => {
@@ -260,6 +260,7 @@ const SafetyCheckList = () => {
       />
 
       <Box sx={{ 
+        mt: 4,
         mb: 1,
         padding: '8px 16px',
         border: '1px solid #dbdbdb',
@@ -324,19 +325,20 @@ const SafetyCheckList = () => {
       <Paper
         variant="outlined"
         sx={{
-          mt: 3,
-          p: 2,
+          mt: 4,
+          px: 2,
+          py: 3,
           backgroundColor: "#f5f5f5",
           textAlign: "center",
         }}
       >
-        <Typography variant="h6" sx={{ mb: 1 }}>
-          안전 점수: {score}점
+        <Typography variant="h6" sx={{ mb: 2, fontSize: 40, fontWeight: 700, lineHeight: 1.1 }}>
+          {score}
         </Typography>
         <LinearProgress
           variant="determinate"
           value={score}
-          sx={{ height: 10, borderRadius: 5, mb: 1 }}
+          sx={{ height: 10, borderRadius: 5, mb: 2 }}
           color={
             score >= 90
               ? "success"
@@ -347,7 +349,19 @@ const SafetyCheckList = () => {
               : "error"
           }
         />
-        <Typography variant="body1" color="text.secondary">
+        <Typography 
+          variant="body1" 
+          sx={{ fontWeight: 500, whiteSpace: "pre-line", wordBreak: 'keep-all' }}
+          color={
+            score >= 90
+              ? "success"
+              : score >= 70
+              ? "primary"
+              : score >= 50
+              ? "warning"
+              : "error"
+          }
+        >
           {getComment(score)}
         </Typography>
       </Paper>
