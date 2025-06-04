@@ -6,7 +6,7 @@ import SubpageLayout from '../layouts/SubpageLayout';
 import { AuthContext } from '../context/AuthContext';
 import InputForm from '../components/form/InputForm';
 import CustomDialog from '../components/ui/CustomDialog';
-import { FloatingBox, FloatingButton } from '../components/ui/FloatingButton';
+import { FloatingBox, FloatingButton } from '../components/ui/FloatingBox';
 
 const ChangePassword = () => {
   const { user } = useContext(AuthContext);

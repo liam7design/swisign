@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Typography, Checkbox, Button, FormControlLabel, Divider, Stack } from "@mui/material";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { FloatingBox, FloatingButton } from '../ui/FloatingButton';
+import { FloatingBox, FloatingButton } from '../ui/FloatingBox';
 import FullpageDialog from '../ui/FullpageDialog';
 import CustomDialog from '../ui/CustomDialog';
 

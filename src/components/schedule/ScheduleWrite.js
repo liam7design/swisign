@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { Stack, Typography, Chip, TextField } from '@mui/material';
-import { FloatingBox, FloatingButton } from '../ui/FloatingButton';
+import { FloatingBox, FloatingButton } from '../ui/FloatingBox';
 import { useMemoContext } from '../../context/MemoContext';
 
 const ScheduleWrite = ({ data }) => {

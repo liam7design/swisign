@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Button, Stack } from "@mui/material";
-import { FloatingBox, FloatingButton } from '../ui/FloatingButton';
+import { FloatingBox, FloatingButton } from '../ui/FloatingBox';
 import InputForm from '../form/InputForm';
 import { FormBox } from '../form/FormStyle';
 

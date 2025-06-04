@@ -1,7 +1,7 @@
 import React from 'react';
 import SubpageLayout from '../layouts/SubpageLayout';
 import BoardDetail from '../components/board/BoardDetail';
-import { FloatingBox, FloatingButton } from '../components/ui/FloatingButton';
+import { FloatingBox, FloatingButton } from '../components/ui/FloatingBox';
 import SaleData from '../data/SaleData.json';
 
 const SaleDetail = () => {

@@ -19,7 +19,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import PhoneIcon from '@mui/icons-material/Phone';
 import SubpageLayout from '../layouts/SubpageLayout';
 import CustomDialog from '../components/ui/CustomDialog';
-import { FloatingBox, FloatingButton } from '../components/ui/FloatingButton';
+import { FloatingBox, FloatingButton } from '../components/ui/FloatingBox';
 import SaleConditionForm from '../components/form/SaleConditionForm';
 import BuildingData from '../data/BuildingData.json';
 import saleRequestData from '../data/SaleRequestData.json';

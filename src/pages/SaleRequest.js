@@ -7,7 +7,7 @@ import ContentBox from '../layouts/ContentBox';
 import BottomSheet from '../components/ui/BottomSheet';
 import CustomDialog from '../components/ui/CustomDialog';
 import GuideMessage from '../components/ui/GuideMessage';
-import { FloatingBox, FloatingButton } from '../components/ui/FloatingButton';
+import { FloatingBox, FloatingButton } from '../components/ui/FloatingBox';
 import SaleConditionForm from '../components/form/SaleConditionForm';
 import PhotoUploadGrid from '../components/form/PhotoUploadGrid';
 import RealEstateAgencyList from '../components/content/RealEstateAgencyList';

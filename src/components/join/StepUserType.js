@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Card, CardContent, CardActionArea, Stack } from "@mui/material";
-import { FloatingBox, FloatingButton } from '../ui/FloatingButton';
+import { FloatingBox, FloatingButton } from '../ui/FloatingBox';
 import PersonIcon from '@mui/icons-material/Person';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import BusinessIcon from '@mui/icons-material/Business';

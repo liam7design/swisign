@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FullpageLayout from '../layouts/FullpageLayout';
 import RealEstateAgencyList from '../components/content/RealEstateAgencyList';
 import RealEstateAgencySearch from '../components/content/RealEstateAgencySearch';
-import { FloatingBox, FloatingButton } from '../components/ui/FloatingButton';
+import { FloatingBox, FloatingButton } from '../components/ui/FloatingBox';
 
 const RealEstateAgency = () => {
   const [searchProvince, setSearchProvince] = useState('');
