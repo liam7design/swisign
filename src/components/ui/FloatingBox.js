@@ -1,7 +1,7 @@
 import React, { useRef, useLayoutEffect, useState } from 'react';
 import { Box, Button } from '@mui/material';
 
-export const FloatingBox = ({ children, ...props }) => {
+export const FloatingBox = ({ children, direction = 'row', ...props }) => {
   const fixedBoxRef = useRef(null);
   const [fixedHeight, setFixedHeight] = useState(76); // 기본값 76
 
@@ -39,7 +39,7 @@ export const FloatingBox = ({ children, ...props }) => {
             background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))'
           }}
         />
-        <Box sx={{ display: 'flex', gap: 1 }}>
+        <Box sx={{ display: 'flex', flexDirection: direction, alignItems: 'center', justifyContent: 'center', gap: 1 }}>
           {children}
         </Box>
       </Box>
