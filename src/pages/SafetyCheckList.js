@@ -7,14 +7,14 @@ import {
   AccordionSummary,
   AccordionDetails,
   FormControlLabel,
-  Paper,
-  LinearProgress,
+  CircularProgress,
   styled
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SubpageLayout from '../layouts/SubpageLayout';
 import saleRequestData from '../data/SaleRequestData.json';
 import BottomSheet from '../components/ui/BottomSheet';
+import { FloatingBox } from '../components/ui/FloatingBox';
 
 const ChecklistAccordion = styled(Accordion)(({ theme }) => ({
   border: '1px solid #dbdbdb',
@@ -169,17 +169,10 @@ const initialChecklist = [
   },
 ];
 
-function getComment(score) {
-  if (score >= 90) return "매우 안전한 전세입니다.";
-  if (score >= 70) return "대체로 안전하지만,\n몇 가지 추가 확인이 필요합니다.";
-  if (score >= 50) return "주의가 필요합니다.\n반드시 세부 항목을 확인하세요.";
-  return "위험도가 높으니\n신중히 검토하세요.";
-}
-
 const SafetyCheckList = () => {
   const [selectedAddress, setSelectedAddress] = useState(saleRequestData[0]);
   const [checklist, setChecklist] = useState(initialChecklist);
-
+ 
   const totalCount = checklist.reduce(
     (sum, item) => sum + 1 + item.details.length,
     0
@@ -248,6 +241,40 @@ const SafetyCheckList = () => {
   const handleAddressChange = (addressObj) => {
     setSelectedAddress(addressObj);
   };
+
+  const getSafetyLevel = (value) => {
+    if (value >= 80)
+      return {
+        color: "#238901",
+        status: "안전",
+        comment: "매우 안전한 전세입니다.",
+      };
+    if (value >= 60)
+      return {
+        color: "#68a605",
+        status: "안전",
+        comment: "대체로 안전하지만,\n몇 가지 추가 확인이 필요합니다.",
+      };
+    if (value >= 40)
+      return {
+        color: "#bac305",
+        status: "보통",
+        comment: "주의가 필요합니다.\n반드시 세부 항목을 확인하세요.",
+      };
+    if (value >= 20)
+      return {
+        color: "#e09e0d",
+        status: "불안",
+        comment: "위험도가 높으니\n신중히 검토하세요.",
+      };
+    return {
+      color: "#f13939",
+      status: "불안",
+      comment: "매우 위험한 전세입니다.",
+    };
+  }
+
+  const { color, status, comment } = getSafetyLevel(score);
 
   return (
     <SubpageLayout>
@@ -321,51 +348,38 @@ const SafetyCheckList = () => {
           </ChecklistAccordion>
         ))}
       </Box>
-      
-      <Paper
-        variant="outlined"
-        sx={{
-          mt: 4,
-          px: 2,
-          py: 3,
-          backgroundColor: "#f5f5f5",
-          textAlign: "center",
-        }}
-      >
-        <Typography variant="h6" sx={{ mb: 2, fontSize: 40, fontWeight: 700, lineHeight: 1.1 }}>
-          {score}
-        </Typography>
-        <LinearProgress
-          variant="determinate"
-          value={score}
-          sx={{ height: 10, borderRadius: 5, mb: 2 }}
-          color={
-            score >= 90
-              ? "success"
-              : score >= 70
-              ? "primary"
-              : score >= 50
-              ? "warning"
-              : "error"
-          }
-        />
+      <FloatingBox direction="column">
+        <Box sx={{ position: "relative", display: "inline-flex", width: 110, height: 110, margin: '0 auto' }}>
+          <CircularProgress
+            variant="determinate"
+            value={100}
+            sx={{ position: "absolute", top: 0, left: 0, bottom: 0, right: 0, color: "#f0f0f0" }}
+            size={110}
+            thickness={4}
+          />
+          <CircularProgress
+            variant="determinate"
+            value={score}
+            sx={{ color, strokeLinecap: "round" }}
+            size={110}
+            thickness={4}
+          />
+          <Box sx={{ position: "absolute", top: 0, left: 0, bottom: 0, right: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+            <Typography variant="h5" component="div" color="textPrimary" sx={{ fontWeight: 600 }}>
+              {score}<small>점</small>
+            </Typography>
+            <Typography variant="body2" component="div" sx={{ color, fontWeight: 700 }}>
+              ({status})
+            </Typography>
+          </Box>
+        </Box>
         <Typography 
-          variant="body1" 
-          sx={{ fontWeight: 500, whiteSpace: "pre-line", wordBreak: 'keep-all' }}
-          color={
-            score >= 90
-              ? "success"
-              : score >= 70
-              ? "primary"
-              : score >= 50
-              ? "warning"
-              : "error"
-          }
+          variant="body1" color="textPrimary"
+          sx={{ textAlign: "center", fontWeight: 500, whiteSpace: "pre-line", wordBreak: 'keep-all' }}
         >
-          {getComment(score)}
+          {comment}
         </Typography>
-      </Paper>
-
+      </FloatingBox>
     </SubpageLayout>
   );
 }
