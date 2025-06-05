@@ -43,7 +43,7 @@ const LocalSaleItem = ({
           >
           <CardMedia
             component="img"
-            image={item.image}
+            image={item.image[0]}
             alt={item.propertyType}
             sx={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', cursor: 'pointer' }}
           />

@@ -1,26 +1,12 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Box, Typography, Chip, Divider, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Box, Typography, Chip, Divider, List, ListItem, ListItemIcon, ListItemText, styled } from '@mui/material';
+import { SizeIcon, RoomIcon, ParkingIcon, FloorIcon, DateIcon } from '../../assets/icons/SvgIcons';
 import LocalSaleData from '../../data/LocalSaleData.json';
+import ImageSlider from '../ui/ImageSlider';
 import ExpandableBox from '../ui/ExpendableBox';
 import Banner from '../ui/Banner';
-import { SizeIcon, RoomIcon, ParkingIcon, FloorIcon, DateIcon } from '../../assets/icons/SvgIcons';
 import ProfileCard from '../ui/ProfileCard';
-
-// 반응형 4:3 이미지 박스
-const ImageBox = styled(Box)(({ theme }) => ({
-  position: 'relative',
-  aspectRatio: '4 / 3',
-  overflow: 'hidden',
-  marginBottom: 24,
-  '& img': {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    display: 'block',
-  }
-}));
 
 const CustomDivider = styled(Divider)(({ theme }) => ({
   margin: '24px 0',
@@ -95,7 +81,10 @@ const LocalSaleDetail = () => {
 
   return (
     <>
-      <ImageBox sx={{ ml: { xs: -2, sm: -3 }, mr: { xs: -2, sm: -3 } }}><img src={detailItem.image} alt={detailItem.detailItemType} /></ImageBox>
+      <ImageSlider
+        imageData={detailItem.image}
+        delay={3000}
+      />
       <Box>
         <Typography variant="subtitle2">#대방자이 #신축 #쓰리룸</Typography>
         <Box sx={{ display: 'flex', alignItems: 'center', mt: 1, mb: 1 }}>

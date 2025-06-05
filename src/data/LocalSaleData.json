@@ -2,7 +2,7 @@
   "items": [
     {
       "id": 1,
-      "image": "/images/img_localsale_1.jpg",
+      "image": ["/images/img_localsale_1.jpg", "/images/img_localsale_2.jpg", "/images/img_localsale_3.jpg", "/images/img_localsale_4.jpg"], 
       "propertyType": "아파트",
       "saleType": "매매",
       "price": "8억 5,000만원",
@@ -14,7 +14,7 @@
     },
     {
       "id": 2,
-      "image": "/images/img_localsale_2.jpg",
+      "image": ["/images/img_localsale_2.jpg", "/images/img_localsale_3.jpg", "/images/img_localsale_4.jpg", "/images/img_localsale_5.jpg"], 
       "propertyType": "오피스텔",
       "saleType": "전세",
       "price": "3억 2,000만원",
@@ -26,7 +26,7 @@
     },
     {
       "id": 3,
-      "image": "/images/img_localsale_3.jpg",
+      "image": ["/images/img_localsale_3.jpg", "/images/img_localsale_4.jpg", "/images/img_localsale_5.jpg", "/images/img_localsale_6.jpg"], 
       "propertyType": "빌라주택",
       "saleType": "월세",
       "price": "2000/50",
@@ -38,7 +38,7 @@
     },
     {
       "id": 4,
-      "image": "/images/img_localsale_4.jpg",
+      "image": ["/images/img_localsale_4.jpg", "/images/img_localsale_5.jpg", "/images/img_localsale_6.jpg", "/images/img_localsale_7.jpg"], 
       "propertyType": "원룸투룸",
       "saleType": "월세",
       "price": "1000/45",
@@ -50,7 +50,7 @@
     },
     {
       "id": 5,
-      "image": "/images/img_localsale_5.jpg",
+      "image": ["/images/img_localsale_5.jpg", "/images/img_localsale_6.jpg", "/images/img_localsale_7.jpg", "/images/img_localsale_8.jpg"], 
       "propertyType": "아파트",
       "saleType": "전세",
       "price": "6억 7,000만원",
@@ -62,7 +62,7 @@
     },
     {
       "id": 6,
-      "image": "/images/img_localsale_6.jpg",
+      "image": ["/images/img_localsale_6.jpg", "/images/img_localsale_7.jpg", "/images/img_localsale_8.jpg", "/images/img_localsale_9.jpg"], 
       "propertyType": "오피스텔",
       "saleType": "매매",
       "price": "4억 3,000만원",
@@ -74,7 +74,7 @@
     },
     {
       "id": 7,
-      "image": "/images/img_localsale_7.jpg",
+      "image": ["/images/img_localsale_7.jpg", "/images/img_localsale_8.jpg", "/images/img_localsale_9.jpg", "/images/img_localsale_10.jpg"], 
       "propertyType": "빌라주택",
       "saleType": "매매",
       "price": "7억 1,000만원",
@@ -86,7 +86,7 @@
     },
     {
       "id": 8,
-      "image": "/images/img_localsale_8.jpg",
+      "image": ["/images/img_localsale_8.jpg", "/images/img_localsale_9.jpg", "/images/img_localsale_10.jpg", "/images/img_localsale_11.jpg"], 
       "propertyType": "원룸투룸",
       "saleType": "전세",
       "price": "1억 5,000만원",
@@ -98,7 +98,7 @@
     },
     {
       "id": 9,
-      "image": "/images/img_localsale_9.jpg",
+      "image": ["/images/img_localsale_9.jpg", "/images/img_localsale_10.jpg", "/images/img_localsale_11.jpg", "/images/img_localsale_12.jpg"], 
       "propertyType": "아파트",
       "saleType": "월세",
       "price": "3000/80",
@@ -110,7 +110,7 @@
     },
     {
       "id": 10,
-      "image": "/images/img_localsale_10.jpg",
+      "image": ["/images/img_localsale_10.jpg", "/images/img_localsale_11.jpg", "/images/img_localsale_12.jpg", "/images/img_localsale_13.jpg"], 
       "propertyType": "오피스텔",
       "saleType": "월세",
       "price": "1500/60",
@@ -122,7 +122,7 @@
     },
     {
       "id": 11,
-      "image": "/images/img_localsale_11.jpg",
+      "image": ["/images/img_localsale_11.jpg", "/images/img_localsale_12.jpg", "/images/img_localsale_13.jpg", "/images/img_localsale_14.jpg"], 
       "propertyType": "빌라주택",
       "saleType": "전세",
       "price": "2억 7,000만원",
@@ -134,7 +134,7 @@
     },
     {
       "id": 12,
-      "image": "/images/img_localsale_12.jpg",
+      "image": ["/images/img_localsale_12.jpg", "/images/img_localsale_13.jpg", "/images/img_localsale_14.jpg", "/images/img_localsale_15.jpg"], 
       "propertyType": "아파트",
       "saleType": "매매",
       "price": "11억 2,000만원",
@@ -146,7 +146,7 @@
     },
     {
       "id": 13,
-      "image": "/images/img_localsale_13.jpg",
+      "image": ["/images/img_localsale_13.jpg", "/images/img_localsale_14.jpg", "/images/img_localsale_15.jpg", "/images/img_localsale_16.jpg"], 
       "propertyType": "오피스텔",
       "saleType": "월세",
       "price": "1000/55",
@@ -158,7 +158,7 @@
     },
     {
       "id": 14,
-      "image": "/images/img_localsale_14.jpg",
+      "image": ["/images/img_localsale_14.jpg", "/images/img_localsale_15.jpg", "/images/img_localsale_16.jpg", "/images/img_localsale_17.jpg"], 
       "propertyType": "원룸투룸",
       "saleType": "월세",
       "price": "500/40",
@@ -170,7 +170,7 @@
     },
     {
       "id": 15,
-      "image": "/images/img_localsale_15.jpg",
+      "image": ["/images/img_localsale_15.jpg", "/images/img_localsale_16.jpg", "/images/img_localsale_17.jpg", "/images/img_localsale_18.jpg"], 
       "propertyType": "아파트",
       "saleType": "전세",
       "price": "7억 5,000만원",
@@ -182,7 +182,7 @@
     },
     {
       "id": 16,
-      "image": "/images/img_localsale_16.jpg",
+      "image": ["/images/img_localsale_16.jpg", "/images/img_localsale_17.jpg", "/images/img_localsale_18.jpg", "/images/img_localsale_19.jpg"], 
       "propertyType": "오피스텔",
       "saleType": "매매",
       "price": "3억 8,000만원",
@@ -194,7 +194,7 @@
     },
     {
       "id": 17,
-      "image": "/images/img_localsale_17.jpg",
+      "image": ["/images/img_localsale_17.jpg", "/images/img_localsale_18.jpg", "/images/img_localsale_19.jpg", "/images/img_localsale_20.jpg"], 
       "propertyType": "빌라주택",
       "saleType": "매매",
       "price": "5억 2,000만원",
@@ -206,7 +206,7 @@
     },
     {
       "id": 18,
-      "image": "/images/img_localsale_18.jpg",
+      "image": ["/images/img_localsale_18.jpg", "/images/img_localsale_19.jpg", "/images/img_localsale_20.jpg", "/images/img_localsale_1.jpg"], 
       "propertyType": "원룸투룸",
       "saleType": "전세",
       "price": "1억 8,000만원",
@@ -218,7 +218,7 @@
     },
     {
       "id": 19,
-      "image": "/images/img_localsale_19.jpg",
+      "image": ["/images/img_localsale_19.jpg", "/images/img_localsale_20.jpg", "/images/img_localsale_1.jpg", "/images/img_localsale_2.jpg"], 
       "propertyType": "아파트",
       "saleType": "월세",
       "price": "2500/70",
@@ -230,7 +230,7 @@
     },
     {
       "id": 20,
-      "image": "/images/img_localsale_20.jpg",
+      "image": ["/images/img_localsale_20.jpg", "/images/img_localsale_1.jpg", "/images/img_localsale_2.jpg", "/images/img_localsale_3.jpg"], 
       "propertyType": "오피스텔",
       "saleType": "월세",
       "price": "1200/55",
@@ -242,7 +242,7 @@
     },
     {
       "id": 21,
-      "image": "/images/img_localsale_1.jpg",
+      "image": ["/images/img_localsale_1.jpg", "/images/img_localsale_2.jpg", "/images/img_localsale_3.jpg", "/images/img_localsale_4.jpg"],
       "propertyType": "아파트",
       "saleType": "매매",
       "price": "10억 3,000만원",
@@ -254,7 +254,7 @@
     },
     {
       "id": 22,
-      "image": "/images/img_localsale_2.jpg",
+      "image": ["/images/img_localsale_2.jpg", "/images/img_localsale_3.jpg", "/images/img_localsale_4.jpg", "/images/img_localsale_5.jpg"],
       "propertyType": "오피스텔",
       "saleType": "전세",
       "price": "2억 9,000만원",
@@ -266,7 +266,7 @@
     },
     {
       "id": 23,
-      "image": "/images/img_localsale_3.jpg",
+      "image": ["/images/img_localsale_3.jpg", "/images/img_localsale_4.jpg", "/images/img_localsale_5.jpg", "/images/img_localsale_6.jpg"], 
       "propertyType": "빌라주택",
       "saleType": "월세",
       "price": "1000/45",
@@ -278,7 +278,7 @@
     },
     {
       "id": 24,
-      "image": "/images/img_localsale_4.jpg",
+      "image": ["/images/img_localsale_4.jpg", "/images/img_localsale_5.jpg", "/images/img_localsale_6.jpg", "/images/img_localsale_7.jpg"],
       "propertyType": "원룸투룸",
       "saleType": "월세",
       "price": "800/38",
@@ -290,7 +290,7 @@
     },
     {
       "id": 25,
-      "image": "/images/img_localsale_5.jpg",
+      "image": ["/images/img_localsale_5.jpg", "/images/img_localsale_6.jpg", "/images/img_localsale_7.jpg", "/images/img_localsale_8.jpg"],
       "propertyType": "아파트",
       "saleType": "전세",
       "price": "8억 1,000만원",
@@ -302,7 +302,7 @@
     },
     {
       "id": 26,
-      "image": "/images/img_localsale_6.jpg",
+      "image": ["/images/img_localsale_6.jpg", "/images/img_localsale_7.jpg", "/images/img_localsale_8.jpg", "/images/img_localsale_9.jpg"], 
       "propertyType": "오피스텔",
       "saleType": "매매",
       "price": "4억 9,000만원",
@@ -314,7 +314,7 @@
     },
     {
       "id": 27,
-      "image": "/images/img_localsale_7.jpg",
+      "image": ["/images/img_localsale_7.jpg", "/images/img_localsale_8.jpg", "/images/img_localsale_9.jpg", "/images/img_localsale_10.jpg"], 
       "propertyType": "빌라주택",
       "saleType": "매매",
       "price": "6억 5,000만원",
@@ -326,7 +326,7 @@
     },
     {
       "id": 28,
-      "image": "/images/img_localsale_8.jpg",
+      "image": ["/images/img_localsale_8.jpg", "/images/img_localsale_9.jpg", "/images/img_localsale_10.jpg", "/images/img_localsale_11.jpg"], 
       "propertyType": "원룸투룸",
       "saleType": "전세",
       "price": "1억 3,000만원",
@@ -338,7 +338,7 @@
     },
     {
       "id": 29,
-      "image": "/images/img_localsale_9.jpg",
+      "image": ["/images/img_localsale_9.jpg", "/images/img_localsale_10.jpg", "/images/img_localsale_11.jpg", "/images/img_localsale_12.jpg"], 
       "propertyType": "아파트",
       "saleType": "월세",
       "price": "3000/85",
@@ -350,7 +350,7 @@
     },
     {
       "id": 30,
-      "image": "/images/img_localsale_10.jpg",
+      "image": ["/images/img_localsale_10.jpg", "/images/img_localsale_11.jpg", "/images/img_localsale_12.jpg", "/images/img_localsale_13.jpg"], 
       "propertyType": "오피스텔",
       "saleType": "월세",
       "price": "1300/60",
@@ -362,7 +362,7 @@
     },
     {
       "id": 31,
-      "image": "/images/img_localsale_11.jpg",
+      "image": ["/images/img_localsale_11.jpg", "/images/img_localsale_12.jpg", "/images/img_localsale_13.jpg", "/images/img_localsale_14.jpg"],
       "propertyType": "빌라주택",
       "saleType": "전세",
       "price": "2억 1,000만원",
@@ -374,7 +374,7 @@
     },
     {
       "id": 32,
-      "image": "/images/img_localsale_12.jpg",
+      "image": ["/images/img_localsale_12.jpg", "/images/img_localsale_13.jpg", "/images/img_localsale_14.jpg", "/images/img_localsale_15.jpg"], 
       "propertyType": "아파트",
       "saleType": "매매",
       "price": "12억 6,000만원",
@@ -386,7 +386,7 @@
     },
     {
       "id": 33,
-      "image": "/images/img_localsale_13.jpg",
+      "image": ["/images/img_localsale_13.jpg", "/images/img_localsale_14.jpg", "/images/img_localsale_15.jpg", "/images/img_localsale_16.jpg"],
       "propertyType": "오피스텔",
       "saleType": "월세",
       "price": "1500/65",
@@ -398,7 +398,7 @@
     },
     {
       "id": 34,
-      "image": "/images/img_localsale_14.jpg",
+      "image": ["/images/img_localsale_14.jpg", "/images/img_localsale_15.jpg", "/images/img_localsale_16.jpg", "/images/img_localsale_17.jpg"],
       "propertyType": "원룸투룸",
       "saleType": "월세",
       "price": "700/42",
@@ -410,7 +410,7 @@
     },
     {
       "id": 35,
-      "image": "/images/img_localsale_15.jpg",
+      "image": ["/images/img_localsale_15.jpg", "/images/img_localsale_16.jpg", "/images/img_localsale_17.jpg", "/images/img_localsale_18.jpg"],
       "propertyType": "아파트",
       "saleType": "전세",
       "price": "7억 9,000만원",
@@ -422,7 +422,7 @@
     },
     {
       "id": 36,
-      "image": "/images/img_localsale_16.jpg",
+      "image": ["/images/img_localsale_16.jpg", "/images/img_localsale_17.jpg", "/images/img_localsale_18.jpg", "/images/img_localsale_19.jpg"],
       "propertyType": "오피스텔",
       "saleType": "매매",
       "price": "5억 2,000만원",
@@ -434,7 +434,7 @@
     },
     {
       "id": 37,
-      "image": "/images/img_localsale_17.jpg",
+      "image": ["/images/img_localsale_17.jpg", "/images/img_localsale_18.jpg", "/images/img_localsale_19.jpg", "/images/img_localsale_20.jpg"], 
       "propertyType": "빌라주택",
       "saleType": "매매",
       "price": "6억 8,000만원",
@@ -446,7 +446,7 @@
     },
     {
       "id": 38,
-      "image": "/images/img_localsale_18.jpg",
+      "image": ["/images/img_localsale_18.jpg", "/images/img_localsale_19.jpg", "/images/img_localsale_20.jpg", "/images/img_localsale_1.jpg"], 
       "propertyType": "원룸투룸",
       "saleType": "전세",
       "price": "1억 6,000만원",
@@ -458,7 +458,7 @@
     },
     {
       "id": 39,
-      "image": "/images/img_localsale_19.jpg",
+      "image": ["/images/img_localsale_19.jpg", "/images/img_localsale_20.jpg", "/images/img_localsale_1.jpg", "/images/img_localsale_2.jpg"],
       "propertyType": "아파트",
       "saleType": "월세",
       "price": "2700/90",
@@ -470,7 +470,7 @@
     },
     {
       "id": 40,
-      "image": "/images/img_localsale_20.jpg",
+      "image": ["/images/img_localsale_20.jpg", "/images/img_localsale_1.jpg", "/images/img_localsale_2.jpg", "/images/img_localsale_3.jpg"], 
       "propertyType": "오피스텔",
       "saleType": "월세",
       "price": "1400/62",
@@ -482,7 +482,7 @@
     },
     {
       "id": 41,
-      "image": "/images/img_localsale_1.jpg",
+      "image": ["/images/img_localsale_1.jpg", "/images/img_localsale_2.jpg", "/images/img_localsale_3.jpg", "/images/img_localsale_4.jpg"],
       "propertyType": "빌라주택",
       "saleType": "전세",
       "price": "2억 3,000만원",
@@ -494,7 +494,7 @@
     },
     {
       "id": 42,
-      "image": "/images/img_localsale_2.jpg",
+      "image": ["/images/img_localsale_2.jpg", "/images/img_localsale_3.jpg", "/images/img_localsale_4.jpg", "/images/img_localsale_5.jpg"],
       "propertyType": "아파트",
       "saleType": "매매",
       "price": "13억 4,000만원",
@@ -506,7 +506,7 @@
     },
     {
       "id": 43,
-      "image": "/images/img_localsale_3.jpg",
+      "image": ["/images/img_localsale_3.jpg", "/images/img_localsale_4.jpg", "/images/img_localsale_5.jpg", "/images/img_localsale_6.jpg"], 
       "propertyType": "오피스텔",
       "saleType": "월세",
       "price": "1700/70",
@@ -518,7 +518,7 @@
     },
     {
       "id": 44,
-      "image": "/images/img_localsale_4.jpg",
+      "image": ["/images/img_localsale_4.jpg", "/images/img_localsale_5.jpg", "/images/img_localsale_6.jpg", "/images/img_localsale_7.jpg"],
       "propertyType": "원룸투룸",
       "saleType": "월세",
       "price": "900/48",
@@ -530,7 +530,7 @@
     },
     {
       "id": 45,
-      "image": "/images/img_localsale_5.jpg",
+      "image": ["/images/img_localsale_5.jpg", "/images/img_localsale_6.jpg", "/images/img_localsale_7.jpg", "/images/img_localsale_8.jpg"],
       "propertyType": "아파트",
       "saleType": "전세",
       "price": "8억 7,000만원",
@@ -542,7 +542,7 @@
     },
     {
       "id": 46,
-      "image": "/images/img_localsale_6.jpg",
+      "image": ["/images/img_localsale_6.jpg", "/images/img_localsale_7.jpg", "/images/img_localsale_8.jpg", "/images/img_localsale_9.jpg"], 
       "propertyType": "오피스텔",
       "saleType": "매매",
       "price": "5억 7,000만원",
@@ -554,7 +554,7 @@
     },
     {
       "id": 47,
-      "image": "/images/img_localsale_7.jpg",
+      "image": ["/images/img_localsale_7.jpg", "/images/img_localsale_8.jpg", "/images/img_localsale_9.jpg", "/images/img_localsale_10.jpg"], 
       "propertyType": "빌라주택",
       "saleType": "매매",
       "price": "7억 4,000만원",
@@ -566,7 +566,7 @@
     },
     {
       "id": 48,
-      "image": "/images/img_localsale_8.jpg",
+      "image": ["/images/img_localsale_8.jpg", "/images/img_localsale_9.jpg", "/images/img_localsale_10.jpg", "/images/img_localsale_11.jpg"], 
       "propertyType": "원룸투룸",
       "saleType": "전세",
       "price": "1억 7,000만원",
@@ -578,7 +578,7 @@
     },
     {
       "id": 49,
-      "image": "/images/img_localsale_9.jpg",
+      "image": ["/images/img_localsale_9.jpg", "/images/img_localsale_10.jpg", "/images/img_localsale_11.jpg", "/images/img_localsale_12.jpg"], 
       "propertyType": "아파트",
       "saleType": "월세",
       "price": "3200/95",
@@ -590,7 +590,7 @@
     },
     {
       "id": 50,
-      "image": "/images/img_localsale_10.jpg",
+      "image": ["/images/img_localsale_10.jpg", "/images/img_localsale_11.jpg", "/images/img_localsale_12.jpg", "/images/img_localsale_13.jpg"], 
       "propertyType": "오피스텔",
       "saleType": "월세",
       "price": "1500/65",
