@@ -38,7 +38,20 @@ const ImageSlider = ({
       ml: { xs: -2, sm: -3 }, 
       mr: { xs: -2, sm: -3 },
       '& .swiper-pagination-progressbar .swiper-pagination-progressbar-fill': {
-        backgroundColor: '#000',
+        backgroundColor: '#000'
+      },
+      '& .swiper-pagination-fraction': {
+        left: 'auto',
+        right: 16,
+        bottom: 40,
+        width: 'auto',
+        minWidth: 32,
+        padding: '4px 8px',
+        textAlign: 'center',
+        color: '#fff',
+        fontSize: 12,
+        background: 'rgba(0,0,0,0.4)',
+        borderRadius: 8,
       }
     }}>
       <Swiper 

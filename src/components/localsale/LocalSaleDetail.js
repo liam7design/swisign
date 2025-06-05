@@ -84,6 +84,7 @@ const LocalSaleDetail = () => {
       <ImageSlider
         imageData={detailItem.image}
         delay={3000}
+        paginationType = 'fraction'
       />
       <Box>
         <Typography variant="subtitle2">#대방자이 #신축 #쓰리룸</Typography>
