@@ -8,7 +8,7 @@ const NewsList = () => {
     <SubpageLayout>
       <BoardList
         data={NewsData} 
-        detailLink="/NewsDetail" 
+        detailLink="/news-detail" 
         type="default"
         showSource
       />

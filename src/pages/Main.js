@@ -119,8 +119,8 @@ const Main = () => {
           <Box mb={5}>
             <RecentPosts
               title="매물요청 현황"
-              link="/SaleList"
-              detailLink="/SaleDetail"
+              link="/sale-list"
+              detailLink="/sale-detail"
               data={SaleData}
               type="sale"
             />
@@ -131,12 +131,12 @@ const Main = () => {
       <Box mb={2.5}>
         <Box sx={{ display: 'flex', gap: 1 }}>
           <MainButton variant="outlined"><GradingOutlinedIcon />전세계약작성</MainButton>
-          <MainButton variant="outlined" component={Link} to='/MarketPrice'><MapOutlinedIcon />주변시세</MainButton>
+          <MainButton variant="outlined" component={Link} to='/market-price'><MapOutlinedIcon />주변시세</MainButton>
           {activeButton === 'userType1' && (
-            <MainButton variant="outlined" component={Link} to='/SafetyCheckList'><LibraryAddCheckOutlinedIcon />전세안전체크</MainButton>
+            <MainButton variant="outlined" component={Link} to='/safety-check-list'><LibraryAddCheckOutlinedIcon />전세안전체크</MainButton>
           )}
           {activeButton === 'userType2' && (
-            <MainButton variant="outlined" component={Link} to='/SaleRequest'><MapsHomeWorkOutlinedIcon />매물등록요청</MainButton>
+            <MainButton variant="outlined" component={Link} to='/sale-request'><MapsHomeWorkOutlinedIcon />매물등록요청</MainButton>
           )}
         </Box>
       </Box>
@@ -146,8 +146,8 @@ const Main = () => {
           <Box mt={5} mb={5}>
             <RecentPosts
               title="일정"
-              link="/ScheduleList"
-              detailLink="/ScheduleDetail"
+              link="/schedule-list"
+              detailLink="/schedule-detail"
               data={ScheduleData}
               type="schedule"
             />
@@ -162,8 +162,8 @@ const Main = () => {
       <Box mb={5}>
         <LocalSaleRecommend 
           title="지역매물 추천"
-          link="/LocalSaleList"
-          detailLink="/LocalSaleDetail"
+          link="/local-sale-list"
+          detailLink="/local-sale-detail"
           data={LocalSaleData}
         />
       </Box>
@@ -171,8 +171,8 @@ const Main = () => {
       <Box mb={5}>
         <RecentPosts
           title="공지사항"
-          link="/NoticeList"
-          detailLink="/NoticeDetail"
+          link="/notice-list"
+          detailLink="/notice-detail"
           data={NoticeData}
           type="default"
         />
@@ -180,8 +180,8 @@ const Main = () => {
       <Box mb={5}>
         <RecentPosts
           title="유튜브"
-          link="/YoutubeList"
-          detailLink="/YoutubeDetail"
+          link="/youtube-list"
+          detailLink="/youtube-detail"
           data={YoutubeData}
           type="youtube"
         />
@@ -189,8 +189,8 @@ const Main = () => {
       <Box mb={5}>
         <RecentPosts
           title="뉴스"
-          link="/NewsList"
-          detailLink="/NewsDetail"
+          link="/news-list"
+          detailLink="/news-detail"
           data={NewsData}
           type="default"
           showSource

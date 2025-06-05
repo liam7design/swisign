@@ -2,11 +2,11 @@ import React from 'react';
 import Header from './Header';
 import { useLocation } from 'react-router-dom';
 import { Container } from '@mui/material';
-import getTitle from '../utils/getTitle';
+import GetTitle from '../utils/getTitle';
 
 const SubpageLayout2 = ({ children, customTitle }) => {
   const location = useLocation();
-  const headerTitle = customTitle || getTitle(location.pathname);
+  const headerTitle = customTitle || GetTitle(location.pathname);
   
   return (
     <>

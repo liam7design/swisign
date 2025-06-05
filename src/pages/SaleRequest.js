@@ -138,7 +138,7 @@ const SaleRequest = () => {
             icon={HomeWorkOutlinedIcon}
             title="임대관리" 
             content="임대관리에서 임대하실 물건을 등록하실 수 있습니다."
-            onClick={() => navigate('/RentalManagement')}
+            onClick={() => navigate('/rental-management')}
           />
           <LinkButton
             icon={LibraryAddOutlinedIcon}

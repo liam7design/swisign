@@ -8,7 +8,7 @@ const SaleList = () => {
     <SubpageLayout>
       <BoardList
         data={SaleData} 
-        detailLink="/SaleDetail" 
+        detailLink="/sale-detail" 
         type="sale"
       />
     </SubpageLayout>

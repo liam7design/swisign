@@ -151,7 +151,7 @@ const StepBasicInfo = ({
       <Divider sx={{ my: 3 }} />
       <Stack direction="row" justifyContent="center" spacing={1} sx={{ mt: 4 }}>
         <Typography variant="body2" color="text.primary">이미 계정이 있으신가요?</Typography>
-        <Link href="/Login" underline="hover" variant="body2">
+        <Link href="/login" underline="hover" variant="body2">
           로그인
         </Link>
       </Stack>

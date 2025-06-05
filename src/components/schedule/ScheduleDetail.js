@@ -36,7 +36,7 @@ const ScheduleDetail = ({ data }) => {
           <Button
             variant="outlined"
             component={Link}
-            to={`/ScheduleDetail/${detailItem.id}/Write`}
+            to={`/schedule-detail/${detailItem.id}/write`}
             fullWidth
           >
             메모 작성

@@ -44,38 +44,38 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/intro" element={<Intro />} />
-        <Route path="/MapList" element={<MapList />} />
-        <Route path="/MapView" element={<MapView />} />
-        <Route path="/AddressList" element={<AddressList />} />
-        <Route path="/AddressReg" element={<AddressReg />} />
-        <Route path="/SafetyCheckList" element={<SafetyCheckList />} />
-        <Route path="/MarketPrice" element={<MarketPrice />} />
-        <Route path="/MapSearch" element={<MapSearch />} />
-        <Route path="/ChangeInfoList" element={<ChangeInfoList />} />
-        <Route path="/NoticeList" element={<NoticeList />} />
-        <Route path="/NoticeDetail/:id" element={<NoticeDetail />} />
-        <Route path="/YoutubeList" element={<YoutubeList />} />
-        <Route path="/YoutubeDetail/:id" element={<YoutubeDetail />} />
-        <Route path="/NewsList" element={<NewsList />} />
-        <Route path="/NewsDetail/:id" element={<NewsDetail />} />
-        <Route path="/SaleRequest" element={<SaleRequest />} />
-        <Route path="/SaleList" element={<SaleList />} />
-        <Route path="/SaleDetail/:id" element={<SaleDetail />} />
-        <Route path="/ScheduleList" element={<ScheduleList />} />
-        <Route path="/ScheduleDetail/:id/*" element={<ScheduleDetail />} />
-        <Route path="/CertificateCheck" element={<CertificateCheck />} />
-        <Route path="/Contract" element={<Contract />} />
-        <Route path="/Contract/Input" element={<ContractInput />} />
-        <Route path="/LocalSaleList" element={<LocalSaleList />} />
-        <Route path="/LocalSaleDetail/:id" element={<LocalSaleDetail />} />
-        <Route path="/RentalManagement" element={<RentalManagement />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Settings" element={<Settings />} />
-        <Route path="/LoginManagement" element={<LoginManagement />} />
-        <Route path="/PasswordManagement" element={<PasswordManagement />} />
-        <Route path="/PrivacyManagement" element={<PrivacyManagement />} />
-        <Route path="/RealEstateAgency" element={<RealEstateAgency />} />
-        <Route path="/Join" element={<Join />} />
+        <Route path="/map-list" element={<MapList />} />
+        <Route path="/map-view" element={<MapView />} />
+        <Route path="/address-list" element={<AddressList />} />
+        <Route path="/address-reg" element={<AddressReg />} />
+        <Route path="/safety-check-list" element={<SafetyCheckList />} />
+        <Route path="/market-price" element={<MarketPrice />} />
+        <Route path="/map-search" element={<MapSearch />} />
+        <Route path="/change-info-list" element={<ChangeInfoList />} />
+        <Route path="/notice-list" element={<NoticeList />} />
+        <Route path="/notice-detail/:id" element={<NoticeDetail />} />
+        <Route path="/youtube-list" element={<YoutubeList />} />
+        <Route path="/youtube-detail/:id" element={<YoutubeDetail />} />
+        <Route path="/news-list" element={<NewsList />} />
+        <Route path="/news-detail/:id" element={<NewsDetail />} />
+        <Route path="/sale-request" element={<SaleRequest />} />
+        <Route path="/sale-list" element={<SaleList />} />
+        <Route path="/sale-detail/:id" element={<SaleDetail />} />
+        <Route path="/schedule-list" element={<ScheduleList />} />
+        <Route path="/schedule-detail/:id/*" element={<ScheduleDetail />} />
+        <Route path="/certificate-check" element={<CertificateCheck />} />
+        <Route path="/contract" element={<Contract />} />
+        <Route path="/contract/input" element={<ContractInput />} />
+        <Route path="/local-sale-list" element={<LocalSaleList />} />
+        <Route path="/local-sale-detail/:id" element={<LocalSaleDetail />} />
+        <Route path="/rental-management" element={<RentalManagement />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/login-management" element={<LoginManagement />} />
+        <Route path="/password-management" element={<PasswordManagement />} />
+        <Route path="/privacy-management" element={<PrivacyManagement />} />
+        <Route path="/real-estate-agency" element={<RealEstateAgency />} />
+        <Route path="/join" element={<Join />} />
       </Routes> 
     </>
   );

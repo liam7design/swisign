@@ -163,7 +163,7 @@ const Login = () => {
         </Stack>
         <Divider sx={{ my: 3 }} />
         <Stack direction="row" justifyContent="center" spacing={1} sx={{ mt: 4 }}>
-          <Link href="/Join" underline="hover" variant="body2">
+          <Link href="/join" underline="hover" variant="body2">
             회원가입
           </Link>
           <Typography variant="body2" color="text.secondary">|</Typography>

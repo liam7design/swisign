@@ -10,7 +10,7 @@ const ScheduleList = () => {
     <SubpageLayout customBackPath={() => navigate('/')}>
       <BoardList
         data={ScheduleData}
-        detailLink="/ScheduleDetail" 
+        detailLink="/schedule-detail" 
         type="schedule"
       />
     </SubpageLayout>

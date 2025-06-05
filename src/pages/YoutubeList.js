@@ -8,7 +8,7 @@ const YoutubeList = () => {
     <SubpageLayout>
       <BoardList
         data={YoutubeData} 
-        detailLink="/YoutubeDetail" 
+        detailLink="/youtube-detail" 
         type="youtube"
       />
     </SubpageLayout>

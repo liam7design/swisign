@@ -55,8 +55,8 @@ const CustomSwitch = styled(Switch)(({ theme }) => ({
 }));
 
 const SettingMenu1 = [
-  { "name": "로그인 관리", "path": "/LoginManagement" },
-  { "name": "비밀번호 변경", "path": "/PasswordManagement" }
+  { "name": "로그인 관리", "path": "/login-management" },
+  { "name": "비밀번호 변경", "path": "/password-management" }
 ]
 const SettingMenu2 = [
   { "name": "약관 및 개인정보 처리방침" },
@@ -80,7 +80,7 @@ const Settings = () => {
             <Typography variant="h6">{user.name}</Typography>
             <Typography variant="body2" sx={{ color: '#999' }}>{user.nickname}</Typography>
           </Box>
-          <Button href="/PrivacyManagement" variant="outlined" size="small" sx={{ ml: 'auto', fontSize: '12px', lineHeight: 1.2 }}>개인정보변경</Button>
+          <Button href="/privacy-management" variant="outlined" size="small" sx={{ ml: 'auto', fontSize: '12px', lineHeight: 1.2 }}>개인정보변경</Button>
         </UserInfoBox>
       }
       <CustomDivider sx={{ mt: 0 }} />

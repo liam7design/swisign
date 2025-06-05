@@ -3,57 +3,57 @@ const getTitle = (pathname) => {
   switch (true) {
     case pathname === '/':
       return 'SWISIGN';
-    case pathname === '/MapList':
+    case pathname === '/map-list':
       return '지도목록';
-    case pathname.startsWith('/MapView'):
+    case pathname.startsWith('/map-view'):
       return '지도상세';
-    case pathname === '/AddressList':
+    case pathname === '/address-list':
       return '등록된 주소 보기';
-    case pathname === '/AddressReg':
+    case pathname === '/address-reg':
       return '주소등록';
-    case pathname === '/SafetyCheckList':
+    case pathname === '/safety-check-list':
       return '전세안전체크';
-    case pathname === '/MarketPrice':
+    case pathname === '/market-price':
       return '주변 시세보기';
-    case pathname === '/MapSearch':
+    case pathname === '/map-search':
       return '지도 검색';
-    case pathname === '/ChangeInfoList':
+    case pathname === '/change-info-list':
       return '주요 변동정보';
-    case pathname === '/NoticeList':
+    case pathname === '/notice-list':
       return '공지사항';
-    case pathname.startsWith('/NoticeDetail'):
+    case pathname.startsWith('/notice-detail'):
       return '공지사항 상세';
-    case pathname === '/YoutubeList':
+    case pathname === '/youtube-list':
       return '유튜브';
-    case pathname.startsWith('/YoutubeDetail'):
+    case pathname.startsWith('/youtube-detail'):
       return '유튜브 상세';
-    case pathname === '/NewsList':
+    case pathname === '/news-list':
       return '뉴스';
-    case pathname.startsWith('/NewsDetail'):
+    case pathname.startsWith('/news-detail'):
       return '뉴스 상세';
-    case pathname === '/SaleRequest':
+    case pathname === '/sale-request':
       return '매물등록 요청';
-    case pathname === '/SaleList':
+    case pathname === '/sale-list':
       return '매물요청 현황';
-    case pathname.startsWith('/SaleDetail'):
+    case pathname.startsWith('/sale-detail'):
       return '매물요청 현황 상세';
-    case pathname === '/ScheduleList':
+    case pathname === '/schedule-list':
       return '일정 ';
-    case pathname === '/CertificateCheck':
+    case pathname === '/certificate-check':
       return '공인중개사 공제증서 확인';
-    case pathname === '/LocalSaleList':
+    case pathname === '/local-sale-list':
       return '지역매물';
-    case pathname.startsWith('/LocalSaleDetail'):
+    case pathname.startsWith('/local-sale-detail'):
       return '';
-    case pathname === '/Settings':
+    case pathname === '/settings':
       return '환경설정';
-    case pathname === '/LoginManagement':
+    case pathname === '/login-management':
       return '로그인 관리';
-    case pathname === '/PasswordManagement':
+    case pathname === '/password-management':
       return '비밀번호 변경';
-    case pathname === '/PrivacyManagement':
+    case pathname === '/privacy-management':
       return '개인정보 변경';
-    case pathname === '/RealEstateAgency':
+    case pathname === '/real-estate-agency':
       return '중개인 조회';
     default:
       return 'SWISIGN';

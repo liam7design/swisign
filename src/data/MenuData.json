@@ -1,46 +1,46 @@
 [
-  { "name": "전자계약 작성", "path": "/Contract" },
+  { "name": "전자계약 작성", "path": "/contract" },
   {
     "name": "스윗 정보",
     "children": [
-      { "name": "공지사항", "path": "/NoticeList" },
-      { "name": "NEWS", "path": "/NewsList" },
-      { "name": "유튜브", "path": "/YoutubeList" }
+      { "name": "공지사항", "path": "/notice-list" },
+      { "name": "NEWS", "path": "/news-list" },
+      { "name": "유튜브", "path": "/youtube-list" }
     ]
   },
   {
     "name": "임차인",
     "children": [
       { "name": "REPORT(MONTH)", "path": "/" },
-      { "name": "전세안전체크", "path": "/SafetyCheckList" },
-      { "name": "주변 시세", "path": "/MarketPrice" },
+      { "name": "전세안전체크", "path": "/safety-check-list" },
+      { "name": "주변 시세", "path": "/market-price" },
       { "name": "등기부등본 조회", "path": "/" },
-      { "name": "중개인 조회", "path": "/RealEstateAgency" }
+      { "name": "중개인 조회", "path": "/real-estate-agency" }
     ]
   },
   {
     "name": "임대인",
     "children": [
-      { "name": "임대관리", "path": "/RentalManagement" },
-      { "name": "매물등록 요청", "path": "/SaleRequest" },
-      { "name": "주변 시세", "path": "/MarketPrice" }
+      { "name": "임대관리", "path": "/rental-management" },
+      { "name": "매물등록 요청", "path": "/sale-request" },
+      { "name": "주변 시세", "path": "/market-price" }
     ]
   },
   {
     "name": "중개인",
     "children": [
-      { "name": "매물요청 현황", "path": "/SaleList" },
-      { "name": "방문일정 현황", "path": "/ScheduleList" },
-      { "name": "주변 시세", "path": "/MarketPrice" },
+      { "name": "매물요청 현황", "path": "/sale-list" },
+      { "name": "방문일정 현황", "path": "/schedule-list" },
+      { "name": "주변 시세", "path": "/market-price" },
       { "name": "계약관리", "path": "/" }
     ]
   },
   {
     "name": "미정",
     "children": [
-      { "name": "지도 검색", "path": "/MapSearch" },
-      { "name": "주요 변동정보", "path": "/ChangeInfoList" },
-      { "name": "공인중개사 공제증서 확인", "path": "/CertificateCheck" }
+      { "name": "지도 검색", "path": "/map-search" },
+      { "name": "주요 변동정보", "path": "/change-info-list" },
+      { "name": "공인중개사 공제증서 확인", "path": "/certificate-check" }
     ]
   }
 ]

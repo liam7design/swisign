@@ -9,7 +9,7 @@ const MapList = () => {
   const navigate = useNavigate();
   const handleMapClick = (address) => {
     // 지도로 이동할 때 해당 주소를 전달
-    navigate(`/MapView?address=${encodeURIComponent(address)}`);
+    navigate(`/map-view?address=${encodeURIComponent(address)}`);
   };
 
   return (

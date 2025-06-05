@@ -53,7 +53,7 @@ const Menu = ({ open, onClose }) => {
       <MenuTopBox>
         <Typography variant="h2" sx={{ flexGrow: 1, fontSize: '1.125rem', fontWeight: 500 }}>SWISIGN</Typography>
         {user &&
-          <IconButton color="inherit" aria-label="Settings" href="/Settings"><SettingsOutlinedIcon /></IconButton>
+          <IconButton color="inherit" aria-label="Settings" href="/settings"><SettingsOutlinedIcon /></IconButton>
         }
         <IconButton edge="end" color="inherit" aria-label="close" onClick={onClose}><CloseIcon /></IconButton>
       </MenuTopBox>
