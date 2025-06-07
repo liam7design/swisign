@@ -72,7 +72,7 @@ const LocalSaleList = () => {
   };
 
   const handleItemClick = (id) => {
-    navigate(`/LocalSaleDetail/${id}`);
+    navigate(`/local-sale-detail/${id}`);
   };
 
   const handleSettingOpen = () => setOpen(true);

@@ -41,12 +41,12 @@ const ScheduleWrite = ({ data }) => {
         })
       });
     }
-    navigate(`/ScheduleDetail/${id}`);
+    navigate(`/schedule-detail/${id}`);
   };
 
   // 최대 3개 제한 (신규 작성만)
   if (!editMode && (memos[id] || []).length >= 3) {
-    navigate(`/ScheduleDetail/${id}`);
+    navigate(`/schedule-detail/${id}`);
     return null;
   }
 

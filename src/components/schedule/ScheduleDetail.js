@@ -55,7 +55,7 @@ const ScheduleDetail = ({ data }) => {
             date={memo.date}
             time={memo.time}
             content={memo.content}
-            onEdit={() => navigate(`/ScheduleDetail/${id}/Write?edit=1&memoIdx=${idx}`)}
+            onEdit={() => navigate(`/schedule-detail/${id}/write?edit=1&memoIdx=${idx}`)}
             onDelete={() => deleteMemo(id, idx)}
           />
         ))}

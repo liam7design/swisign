@@ -86,11 +86,11 @@ const RecentPosts = ({ title, link, detailLink, data, type, showSource = false }
                 <SwiperSlide key={item.id}>
                   <Card variant="outlined" sx={{ width: '100%', borderRadius: 2, borderColor: 'grey.200' }}>
                     <CardActionArea>
-                      <CardMedia component={Link} to={`/YoutubeDetail/${item.id}`} sx={{ display: 'block' }}>
+                      <CardMedia component={Link} to={`/youtube-detail/${item.id}`} sx={{ display: 'block' }}>
                         <Box component="img" src={`https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`} alt={item.title} sx={{ width: '100%' }} />
                       </CardMedia>
                       <CardContent sx={{ pt: 1, pb: 2 }}>
-                        <PostTitle component={Link} to={`/YoutubeDetail/${item.id}`}>{item.title}</PostTitle>
+                        <PostTitle component={Link} to={`/youtube-detail/${item.id}`}>{item.title}</PostTitle>
                         <PostDate sx={{ mt: 0.5 }}>{item.date}</PostDate>
                       </CardContent>
                     </CardActionArea>
