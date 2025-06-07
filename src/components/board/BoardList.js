@@ -102,7 +102,7 @@ const BoardList = ({ data, detailLink, type, showSource = false }) => {
               <BoardSort sortOption={sortOption} setSortOption={setSortOption} />
             </Box>
           </Box>
-          <Box sx={{ mt: 5, mb: 5, borderTop: 1, borderBottom: 1, borderColor: 'grey.200'}}>
+          <Box sx={{ mt: 5, mb: 5 }}>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
               {filteredData.map((item) => (
                 <Card key={item.id} variant="outlined" sx={{ width: { xs: '100%', sm: 'calc(50% - 0.625rem)' }, borderRadius: 2, borderColor: 'grey.200' }}>

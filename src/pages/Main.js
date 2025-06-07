@@ -12,12 +12,12 @@ import RealEstateInfo from '../components/content/RealEstateInfo';
 import ProgressCard from "../components/content/ProgressCard";
 import LocalSaleRecommend from '../components/localsale/LocalSaleRecommend';
 import NoticeData from '../data/NoticeData.json';
-import YoutubeData from '../data/YoutubeData.json';
 import NewsData from '../data/NewsData.json';
 import SaleData from '../data/SaleData.json';
 import ScheduleData from '../data/ScheduleData.json';
 import LocalSaleData from '../data/LocalSaleData.json';
 import { AuthContext } from '../context/AuthContext';
+import { fetchYoutubeVideos } from '../services/youtubeService';
 
 // Button 스타일 정의, active 클래스에 따른 스타일 지정
 const UserChoiceButton = styled(Button)(({ theme }) => ({
@@ -46,6 +46,9 @@ const MainButton = styled(Button)({
 
 const Main = () => {
   const { user } = useContext(AuthContext);
+  const [youtubeData, setYoutubeData] = useState([]);
+  const [youtubeLoading, setYoutubeLoading] = useState(true);
+  const [youtubeError, setYoutubeError] = useState(null); // eslint-disable-line no-unused-vars
 
   // 로그인한 유저가 있으면 user.type, 없으면 localStorage 또는 기본값
   const getInitialActiveButton = () => {
@@ -75,6 +78,21 @@ const Main = () => {
       setActiveButton(savedActiveButton); // 로그아웃 등으로 user가 없을 때 localStorage 값 사용
     }
   }, [user]);
+
+  useEffect(() => {
+    const loadYoutubeVideos = async () => {
+      try {
+        const data = await fetchYoutubeVideos();
+        setYoutubeData(data);
+        setYoutubeLoading(false);
+      } catch (err) {
+        setYoutubeError('유튜브 데이터를 불러오는 중 오류가 발생했습니다.');
+        setYoutubeLoading(false);
+      }
+    };
+
+    loadYoutubeVideos();
+  }, []);
 
   return (
     <DefaultLayout>
@@ -182,7 +200,7 @@ const Main = () => {
           title="유튜브"
           link="/youtube-list"
           detailLink="/youtube-detail"
-          data={YoutubeData}
+          data={youtubeLoading ? [] : youtubeData}
           type="youtube"
         />
       </Box>
