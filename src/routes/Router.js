@@ -36,6 +36,7 @@ import PasswordManagement from '../pages/PasswordManagement';
 import PrivacyManagement from '../pages/PrivacyManagement';
 import RealEstateAgency from '../pages/RealEstateAgency';
 import Join from '../pages/Join';
+import NaverNews from '../pages/NaverNews';
 
 const Router = () => {
   return (
@@ -76,6 +77,7 @@ const Router = () => {
         <Route path="/privacy-management" element={<PrivacyManagement />} />
         <Route path="/real-estate-agency" element={<RealEstateAgency />} />
         <Route path="/join" element={<Join />} />
+        <Route path="/naver-news" element={<NaverNews />} />
       </Routes> 
     </>
   );
