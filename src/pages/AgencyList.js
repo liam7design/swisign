@@ -1,7 +1,8 @@
-// /pages/AgencyList.js
 import React, { useEffect, useState } from 'react';
 import { fetchAgencyList } from '../services/agencyService';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography, CircularProgress } from '@mui/material';
+import {
+  Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography, CircularProgress
+} from '@mui/material';
 
 export default function AgencyList() {
   const [agencyList, setAgencyList] = useState([]);
@@ -14,11 +15,9 @@ export default function AgencyList() {
         setLoading(true);
         setError(null);
         const data = await fetchAgencyList();
-
-        // 실제 데이터 구조에 맞게 row 추출
-        // 예시: data.ServiceResult.row
-        const rows = data.ServiceResult?.row || [];
-        setAgencyList(Array.isArray(rows) ? rows : [rows]); // 단일 객체일 때 배열로 변환
+        // landBizInfo.row 배열 추출
+        const rows = data.landBizInfo?.row || [];
+        setAgencyList(Array.isArray(rows) ? rows : [rows]);
       } catch (err) {
         setError(err);
       } finally {
@@ -38,23 +37,21 @@ export default function AgencyList() {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>자치구명</TableCell>
-            <TableCell>법정동명</TableCell>
-            <TableCell>중개업자명</TableCell>
-            <TableCell>사업자상호</TableCell>
+            <TableCell>중개업소명</TableCell>
+            <TableCell>대표명</TableCell>
+            <TableCell>소재지</TableCell>
             <TableCell>전화번호</TableCell>
-            <TableCell>상태구분</TableCell>
+            <TableCell>중개업등록번호</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {agencyList.map((item, idx) => (
             <TableRow key={idx}>
-              <TableCell>{item.GU_NM}</TableCell>
-              <TableCell>{item.LAW_DONG_NM}</TableCell>
-              <TableCell>{item.AGENT_NM}</TableCell>
-              <TableCell>{item.OFC_NM}</TableCell>
+              <TableCell>{item.BZMN_CONM}</TableCell>
+              <TableCell>{item.MDT_BSNS_NM}</TableCell>
+              <TableCell>{item.ADDR}</TableCell>
               <TableCell>{item.TELNO}</TableCell>
-              <TableCell>{item.STATUS}</TableCell>
+              <TableCell>{item.REST_BRKR_INFO}</TableCell>
             </TableRow>
           ))}
         </TableBody>

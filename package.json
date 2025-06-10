@@ -27,8 +27,7 @@
     "react-scripts": "5.0.1",
     "react-signature-canvas": "^1.1.0-alpha.1",
     "swiper": "^11.1.14",
-    "web-vitals": "^2.1.4",
-    "xml2js": "^0.6.2"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
