@@ -41,7 +41,8 @@
       { "name": "지도 검색", "path": "/map-search" },
       { "name": "주요 변동정보", "path": "/change-info-list" },
       { "name": "공인중개사 공제증서 확인", "path": "/certificate-check" },
-      { "name": "네이버 뉴스", "path": "/naver-news" }
+      { "name": "네이버 뉴스", "path": "/naver-news" },
+      { "name": "부동산중개업소목록", "path": "/agency-list" }
     ]
   }
 ]
