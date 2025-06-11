@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Box, List, ListItem, IconButton, Checkbox, Typography, Button, styled } from '@mui/material';
+import React, { useState, useEffect, useMemo } from 'react';
+import { Box, List, ListItem, IconButton, Checkbox, Typography, Button, CircularProgress, styled } from '@mui/material';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import RealEstateAgencyData from '../../data/RealEstateAgencyData.json';
+import { fetchAgencyList } from '../../services/agencyService';
 
 const AgencyList = styled(List)(({ theme }) => ({
   paddingTop: 0,
@@ -57,11 +57,8 @@ const renderAgencyItem = (type, agency) => {
 
 const filterAgencies = (data, province, district, keyword) => {
   return data.filter(agency => {
-    // 시도 전체면 무시
     if (province && province !== '시도 전체' && agency.officeAddress && !agency.officeAddress.includes(province)) return false;
-    // 시군구 전체면 무시
     if (district && district !== '시군구 전체' && agency.officeAddress && !agency.officeAddress.includes(district)) return false;
-    // 키워드는 그대로
     if (
       keyword &&
       !(
@@ -83,10 +80,51 @@ const RealEstateAgencyList = ({
   district = '',
   keyword = ''
 }) => {
+    // [추가] API 연동을 위한 상태 관리
+  const [agencies, setAgencies] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const [visibleCount, setVisibleCount] = useState(10);
-  const filteredData = filterAgencies(RealEstateAgencyData, province, district, keyword);
+
+  // [추가] API 데이터를 비동기적으로 가져오는 로직
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const data = await fetchAgencyList();
+        setAgencies(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadData();
+  }, []); // 컴포넌트 마운트 시 한 번만 실행
+
+  // [개선] 데이터나 필터 조건이 바뀔 때만 필터링을 다시 실행하도록 useMemo로 최적화
+  const filteredData = useMemo(() => {
+    return filterAgencies(agencies, province, district, keyword);
+  }, [agencies, province, district, keyword]);
 
   const loadMore = () => setVisibleCount((prev) => prev + 10);
+
+  // [추가] 로딩 및 에러 상태에 대한 UI
+  if (loading) {
+    return (
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 10 }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
+
+  if (error) {
+    return (
+      <Box sx={{ mt: 10, mb: 10, textAlign: 'center', color: 'error.main' }}>
+        데이터를 불러오는 중 오류가 발생했습니다. ({error.message})
+      </Box>
+    );
+  }
 
   return (
     <>
