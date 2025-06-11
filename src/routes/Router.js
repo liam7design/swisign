@@ -38,6 +38,7 @@ import RealEstateAgency from '../pages/RealEstateAgency';
 import Join from '../pages/Join';
 import NaverNews from '../pages/NaverNews';
 import AgencyList from '../pages/AgencyList';
+import Error from '../pages/Error';
 
 const Router = () => {
   return (
@@ -80,6 +81,7 @@ const Router = () => {
         <Route path="/join" element={<Join />} />
         <Route path="/naver-news" element={<NaverNews />} />
         <Route path="/agency-list" element={<AgencyList />} />
+        <Route path="/error" element={<Error />} />
       </Routes> 
     </>
   );
