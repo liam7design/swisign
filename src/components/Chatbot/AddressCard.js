@@ -46,7 +46,7 @@ const AddressCard = ({ node, onNext }) => {
           fullWidth
           onClick={handleNext}
           disabled={!selectedAddress && !useSearch}
-          sx={{ backgroundColor: '#0A84FF', '&:hover': { backgroundColor: '#0070e0' } }}
+          sx={{ backgroundColor: '#010101', '&:hover': { backgroundColor: '#010101' } }}
         >
           다음
         </Button>

@@ -84,7 +84,7 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext, onUserInput }
                   size="small"
                   disabled={selectedResults.length === 0}
                   onClick={() => onNext(message.nextId, `${selectedResults[0]}을 선택할게요.`)}
-                  sx={{ backgroundColor: '#0A84FF' }}
+                  sx={{ backgroundColor: '#010101' }}
                 >
                   다음
                 </Button>
@@ -117,7 +117,7 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext, onUserInput }
               size="small"
               onClick={handleInputSubmit}
               disabled={!inputValue.trim()}
-              sx={{ mt: 1, backgroundColor: '#0A84FF' }}
+              sx={{ mt: 1, backgroundColor: '#010101' }}
             >
               입력완료
             </Button>
@@ -154,7 +154,7 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext, onUserInput }
                 variant="contained"
                 size="small"
                 onClick={() => onNext(message.nextId, '')}
-                sx={{ backgroundColor: '#0A84FF' }}
+                sx={{ backgroundColor: '#010101' }}
               >
                 계약서 확인
               </Button>
@@ -168,7 +168,7 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext, onUserInput }
             <Button
               variant="contained"
               onClick={() => onNext(message.nextId, message.autoText)}
-              sx={{ backgroundColor: '#0A84FF', mr: 1 }}
+              sx={{ backgroundColor: '#010101', mr: 1 }}
             >
               {message.actionText}
             </Button>
@@ -185,7 +185,7 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext, onUserInput }
           <Button
             variant="contained"
             onClick={() => onNext('RESTART', '')}
-            sx={{ mt: 1, backgroundColor: '#0A84FF' }}
+            sx={{ mt: 1, backgroundColor: '#010101' }}
           >
             {message.actionText}
           </Button>
@@ -199,7 +199,7 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext, onUserInput }
   return (
     <Box sx={{ display: 'flex', justifyContent: isUser ? 'flex-end' : 'flex-start', mb: 3 }}>
       <Box sx={{ display: 'flex', flexDirection: isUser ? 'row-reverse' : 'row', alignItems: 'flex-start', gap: 1 }}>
-        <Avatar src={message.sender.profileImage} alt={message.sender.name} sx={{ width: 32, height: 32 }} />
+        <Avatar src={message.sender.profileImage} alt={message.sender.name} sx={{ width: 40, height: 40 }} />
         <Box>
           <Typography variant="caption" sx={{ 
             color: 'text.secondary', 
@@ -214,8 +214,8 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext, onUserInput }
               elevation={0}
               sx={{
                 p: 1.5,
-                borderRadius: isUser ? '20px 5px 20px 20px' : '5px 20px 20px 20px',
-                backgroundColor: isUser ? '#0A84FF' : '#EFEFEF',
+                borderRadius: isUser ? '20px 2px 20px 20px' : '2px 20px 20px 20px',
+                backgroundColor: isUser ? '#010101' : '#EFEFEF',
                 color: isUser ? '#FFFFFF' : '#000000',
                 maxWidth: '280px'
               }}

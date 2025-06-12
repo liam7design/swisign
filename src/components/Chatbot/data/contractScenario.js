@@ -173,11 +173,11 @@ export const contractScenario = {
 export const botProfile = {
   id: 'ai-domi',
   name: 'AI도미',
-  profileImage: null
+  profileImage: '/images/img_avatar_01.jpg'
 };
 
 export const userProfile = {
   id: 'karina',
   name: '카리나',
-  profileImage: null
+  profileImage: '/images/img_avatar_03.jpg'
 };

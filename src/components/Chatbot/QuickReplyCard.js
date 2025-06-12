@@ -12,10 +12,10 @@ const QuickReplyCard = ({ replies, onReply }) => {
           onClick={() => onReply(reply)}
           sx={{
             borderRadius: '20px',
-            borderColor: '#0A84FF',
-            color: '#0A84FF',
+            borderColor: '#010101',
+            color: '#010101',
             '&:hover': {
-              backgroundColor: '#0A84FF',
+              backgroundColor: '#010101',
               color: 'white'
             }
           }}

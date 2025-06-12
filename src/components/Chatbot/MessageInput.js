@@ -34,7 +34,7 @@ const MessageInput = ({ onSend, disabled }) => {
             borderRadius: '20px',
             backgroundColor: '#FFFFFF',
             '&.Mui-focused fieldset': {
-              borderColor: '#0A84FF',
+              borderColor: '#010101',
             },
           },
         }}
@@ -45,9 +45,9 @@ const MessageInput = ({ onSend, disabled }) => {
         disabled={!inputValue.trim() || disabled}
         aria-label="메시지 보내기"
         sx={{ 
-          backgroundColor: '#0A84FF', 
+          backgroundColor: '#010101', 
           color: 'white', 
-          '&:hover': { backgroundColor: '#0070e0' }, 
+          '&:hover': { backgroundColor: '#010101' }, 
           '&.Mui-disabled': { backgroundColor: '#E0E0E0' } 
         }}
       >
