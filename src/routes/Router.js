@@ -38,6 +38,7 @@ import RealEstateAgency from '../pages/RealEstateAgency';
 import Join from '../pages/Join';
 import Error from '../pages/Error';
 import RealEstateAgencyTest from '../test/RealEstateAgencyTest';
+import ChatbotTest from '../test/ChatbotTest';
 
 const Router = () => {
   return (
@@ -80,6 +81,7 @@ const Router = () => {
         <Route path="/join" element={<Join />} />
         <Route path="/error" element={<Error />} />
         <Route path="/real-estate-agency-test" element={<RealEstateAgencyTest />} />
+        <Route path="/chatbot-test" element={<ChatbotTest />} />
       </Routes> 
     </>
   );

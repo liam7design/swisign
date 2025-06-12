@@ -42,7 +42,8 @@
       { "name": "주요 변동정보", "path": "/change-info-list" },
       { "name": "공인중개사 공제증서 확인", "path": "/certificate-check" },
       { "name": "에러페이지 테스트", "path": "/error" },
-      { "name": "중개업소 목록 API 테스트", "path": "/real-estate-agency-test" }
+      { "name": "중개업소 목록 API 테스트", "path": "/real-estate-agency-test" },
+      { "name": "챗봇 테스트", "path": "/chatbot-test" }
     ]
   }
 ]
