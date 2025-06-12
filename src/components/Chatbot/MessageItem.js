@@ -28,7 +28,54 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext, onUserInput }
         return !isUser && <QuickReplyCard replies={message.replies} onReply={onQuickReply} />;
         
       case 'address_selection':
-        return !isUser && <AddressCard node={message} onNext={onNext} />;
+        return !isUser && (
+          <Card elevation={0} sx={{ backgroundColor: '#F0F4F8', borderRadius: '12px', mt: 1, maxWidth: '280px' }}>
+            <CardContent>
+              {message.addresses?.map((address, index) => (
+                <FormControlLabel
+                  key={index}
+                  control={
+                    <Checkbox
+                      checked={selectedResults.includes(address)}
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setSelectedResults([address]);
+                        } else {
+                          setSelectedResults([]);
+                        }
+                      }}
+                    />
+                  }
+                  label={address}
+                  sx={{ display: 'block', mb: 1 }}
+                />
+              ))}
+              <Box sx={{ display: 'flex', gap: 1, mt: 2 }}>
+                <Button
+                  variant="contained"
+                  size="small"
+                  disabled={selectedResults.length === 0}
+                  onClick={() => onNext(message.nextId, `${selectedResults[0]}을 선택할게요.`)}
+                  sx={{ backgroundColor: '#010101' }}
+                >
+                  다음
+                </Button>
+                {message.hasSearch && (
+                  <Button
+                    variant="outlined"
+                    size="small"
+                    onClick={() => {
+                      setSelectedResults([]); // 주소 검색 시 선택된 주소 초기화
+                      onNext(message.nextId, '주소를 검색할게요.');
+                    }}
+                  >
+                    주소검색
+                  </Button>
+                )}
+              </Box>
+            </CardContent>
+          </Card>
+        );
         
       case 'address_guide':
         return !isUser && (
@@ -47,7 +94,7 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext, onUserInput }
                 variant="outlined"
                 size="small"
                 sx={{ mt: 1 }}
-                onClick={() => onNext('ADDRESS_SEARCH_INPUT', '')}
+                onClick={() => onNext('SELECT_ADDRESS_OPTION', '')}
               >
                 검색취소
               </Button>
@@ -91,7 +138,7 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext, onUserInput }
                 <Button
                   variant="outlined"
                   size="small"
-                  onClick={() => onNext(message.reshearchId, '주소를 다시 입력해 주세요.')}
+                  onClick={() => onNext('SEARCH_ADDRESS_GUIDE', '')}
                 >
                   다시검색
                 </Button>
@@ -103,24 +150,9 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext, onUserInput }
       case 'input_required':
         return !isUser && (
           <Box sx={{ mt: 1, maxWidth: '280px' }}>
-            <TextField
-              fullWidth
-              size="small"
-              placeholder={message.placeholder}
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyPress={handleKeyPress}
-              sx={{ backgroundColor: 'white', borderRadius: '8px' }}
-            />
-            <Button
-              variant="contained"
-              size="small"
-              onClick={handleInputSubmit}
-              disabled={!inputValue.trim()}
-              sx={{ mt: 1, backgroundColor: '#010101' }}
-            >
-              입력완료
-            </Button>
+            <Typography variant="caption" color="text.secondary">
+              {message.placeholder}
+            </Typography>
           </Box>
         );
         

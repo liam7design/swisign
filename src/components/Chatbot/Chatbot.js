@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Box } from '@mui/material';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
@@ -14,16 +14,9 @@ const Chatbot = () => {
     contractRole: '',
     contractType: ''
   });
+  const isInitialMount = useRef(true);
 
-  // 초기 메시지 표시
-  useEffect(() => {
-    const startNode = contractScenario[currentNodeId];
-    if (startNode && messages.length === 0) {
-      addBotMessage(startNode);
-    }
-  }, []);
-
-  const addBotMessage = (node) => {
+  const addBotMessage = useCallback((node) => {
     const newMessage = {
       ...node,
       id: Date.now() + Math.random(),
@@ -33,7 +26,18 @@ const Chatbot = () => {
       timestamp: new Date()
     };
     setMessages(prev => [...prev, newMessage]);
-  };
+  }, []);
+
+  // 초기 메시지 표시
+  useEffect(() => {
+    if (isInitialMount.current) {
+      const startNode = contractScenario[currentNodeId];
+      if (startNode) {
+        addBotMessage(startNode);
+      }
+      isInitialMount.current = false;
+    }
+  }, [currentNodeId, addBotMessage]);
 
   const addUserMessage = (text) => {
     if (!text) return;
@@ -47,15 +51,13 @@ const Chatbot = () => {
     setMessages(prev => [...prev, newMessage]);
   };
 
-  const navigateToNode = (nodeId, userText = '') => {
+  const navigateToNode = useCallback((nodeId, userText = '') => {
     if (userText) {
       addUserMessage(userText);
     }
 
-    // 노드 전환 딜레이
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       if (nodeId === 'RESTART') {
-        setCurrentNodeId('START');
         setMessages([]);
         setUserData({
           address: '',
@@ -63,6 +65,8 @@ const Chatbot = () => {
           contractRole: '',
           contractType: ''
         });
+        setCurrentNodeId('START');
+        isInitialMount.current = true;
         return;
       }
 
@@ -71,29 +75,49 @@ const Chatbot = () => {
         setCurrentNodeId(nodeId);
         
         // final_step 타입의 경우 최종 메시지 추가
-        if (nextNode.type === 'final_step' && nextNode.finalText) {
-          setTimeout(() => {
+        if (nextNode.type === 'final_step') {
+          // 메인 메시지 추가
+          addBotMessage({
+            ...nextNode,
+            type: 'text' // final_step 타입을 text로 변경하여 종료 버튼이 표시되지 않도록 함
+          });
+          
+          // finalText가 있는 경우 1초 후에 추가 메시지와 종료 버튼 표시
+          if (nextNode.finalText) {
+            const finalTimeoutId = setTimeout(() => {
+              addBotMessage({
+                type: 'final_step',
+                message: nextNode.finalText,
+                actionText: nextNode.actionText // 종료 버튼 추가
+              });
+            }, 1000);
+            return () => clearTimeout(finalTimeoutId);
+          } else {
+            // finalText가 없는 경우 바로 종료 버튼 표시
             addBotMessage({
-              type: 'text',
-              message: nextNode.finalText
+              type: 'final_step',
+              message: '',
+              actionText: nextNode.actionText
             });
-          }, 1000);
+          }
+        } else {
+          addBotMessage(nextNode);
         }
-        
-        addBotMessage(nextNode);
       }
     }, userText ? 1000 : 100);
-  };
 
-  const handleQuickReply = (reply) => {
+    return () => clearTimeout(timeoutId);
+  }, [addBotMessage]);
+
+  const handleQuickReply = useCallback((reply) => {
     navigateToNode(reply.nextId, reply.autoText);
-  };
+  }, [navigateToNode]);
 
-  const handleNext = (nextId, userText) => {
+  const handleNext = useCallback((nextId, userText) => {
     navigateToNode(nextId, userText);
-  };
+  }, [navigateToNode]);
 
-  const handleUserInput = (inputText, nextId) => {
+  const handleUserInput = useCallback((inputText, nextId) => {
     // 사용자 데이터 저장
     if (currentNodeId === 'DETAIL_ADDRESS_INPUT') {
       setUserData(prev => ({ ...prev, detailAddress: inputText }));
@@ -106,18 +130,21 @@ const Chatbot = () => {
         navigateToNode(nextId);
       }, 1000);
     }
-  };
+  }, [currentNodeId, navigateToNode]);
 
-  const handleSend = ({ text }) => {
+  const handleSend = useCallback(({ text }) => {
     if (currentNodeId === 'ADDRESS_SEARCH_INPUT' || currentNodeId === 'SEARCH_ADDRESS_GUIDE') {
       // 주소 검색 로직
       setTimeout(() => {
         navigateToNode('ADDRESS_SEARCH_RESULTS');
       }, 1000);
+    } else if (currentNodeId === 'DETAIL_ADDRESS_INPUT') {
+      // 상세 주소 입력 처리
+      handleUserInput(text, 'CONFIRM_ADDRESS');
     } else {
       handleUserInput(text);
     }
-  };
+  }, [currentNodeId, handleUserInput, navigateToNode]);
 
   return (
     <Box>
