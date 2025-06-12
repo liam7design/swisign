@@ -37,6 +37,7 @@ import PrivacyManagement from '../pages/PrivacyManagement';
 import RealEstateAgency from '../pages/RealEstateAgency';
 import Join from '../pages/Join';
 import Error from '../pages/Error';
+import RealEstateAgencyTest from '../test/RealEstateAgencyTest';
 
 const Router = () => {
   return (
@@ -78,6 +79,7 @@ const Router = () => {
         <Route path="/real-estate-agency" element={<RealEstateAgency />} />
         <Route path="/join" element={<Join />} />
         <Route path="/error" element={<Error />} />
+        <Route path="/real-estate-agency-test" element={<RealEstateAgencyTest />} />
       </Routes> 
     </>
   );
