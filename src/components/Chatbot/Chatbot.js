@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Box } from '@mui/material';
+import ChatHeader from './ChatHeader';
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
 import { contractScenario, botProfile, userProfile } from './data/contractScenario';
-import { FloatingBox } from '../ui/FloatingBox';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
@@ -147,7 +146,12 @@ const Chatbot = () => {
   }, [currentNodeId, handleUserInput, navigateToNode]);
 
   return (
-    <Box>
+    <>
+      <ChatHeader
+        avatarName={botProfile.name} 
+        avatarSrc={botProfile.profileImage}
+        avatarAlt={botProfile.name}
+      /> 
       <MessageList
         messages={messages}
         currentUser={userProfile}
@@ -155,10 +159,11 @@ const Chatbot = () => {
         onNext={handleNext}
         onUserInput={handleUserInput}
       />
-      <FloatingBox>
-        <MessageInput onSend={handleSend} />
-      </FloatingBox>
-    </Box>
+      <MessageInput 
+        currentUser={userProfile}
+        onSend={handleSend} 
+      />
+    </>
   );
 };
 

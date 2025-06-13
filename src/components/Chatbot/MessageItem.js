@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Box, Paper, Typography, Avatar, Card, CardContent, Button, TextField, FormControlLabel, Checkbox } from '@mui/material';
+import { Box, Paper, Typography, Avatar, Card, CardContent, Button, FormControlLabel, Checkbox } from '@mui/material';
 import QuickReplyCard from './QuickReplyCard';
 import AddressCard from './AddressCard';
 import { formatTimestamp } from './utils/formatTimestamp';
+import { MessageItemWrap } from './ChatbotStyle';
 
 const MessageItem = ({ message, currentUser, onQuickReply, onNext, onUserInput }) => {
   const isUser = message.sender.id === currentUser.id;
@@ -229,41 +230,17 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext, onUserInput }
   };
 
   return (
-    <Box sx={{ display: 'flex', justifyContent: isUser ? 'flex-end' : 'flex-start', mb: 3 }}>
-      <Box sx={{ display: 'flex', flexDirection: isUser ? 'row-reverse' : 'row', alignItems: 'flex-start', gap: 1 }}>
-        <Avatar src={message.sender.profileImage} alt={message.sender.name} sx={{ width: 40, height: 40 }} />
-        <Box>
-          <Typography variant="caption" sx={{ 
-            color: 'text.secondary', 
-            display: 'block', 
-            textAlign: isUser ? 'right' : 'left', 
-            mb: 0.5 
-          }}>
-            {message.sender.name}
-          </Typography>
-          <Box sx={{ display: 'flex', alignItems: 'flex-end', gap: 0.5, flexDirection: isUser ? 'row-reverse' : 'row' }}>
-            <Paper
-              elevation={0}
-              sx={{
-                p: 1.5,
-                borderRadius: isUser ? '20px 2px 20px 20px' : '2px 20px 20px 20px',
-                backgroundColor: isUser ? '#010101' : '#EFEFEF',
-                color: isUser ? '#FFFFFF' : '#000000',
-                maxWidth: '280px'
-              }}
-            >
-              <Typography variant="body1" sx={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
-                {message.text}
-              </Typography>
-              {renderSpecialContent()}
-            </Paper>
-            <Typography variant="caption" sx={{ color: 'text.secondary', flexShrink: 0 }}>
-              {formatTimestamp(message.timestamp, '12h')}
-            </Typography>
-          </Box>
-        </Box>
-      </Box>
-    </Box>
+    <MessageItemWrap className={isUser ? 'user': 'aibot'}>
+      <Paper className="chat-bubble" elevation={0}>
+        <Typography className="chat-text" variant="body2">
+          {message.text}
+        </Typography>
+        {renderSpecialContent()}
+      </Paper>
+      <Typography className="chat-date" variant="caption">
+        {formatTimestamp(message.timestamp, '12h')}
+      </Typography>
+    </MessageItemWrap>
   );
 };
 

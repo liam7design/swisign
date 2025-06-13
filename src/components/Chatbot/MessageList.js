@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import { Box, List } from '@mui/material';
 import MessageItem from './MessageItem';
 
 const MessageList = ({ messages, currentUser, onQuickReply, onNext, onUserInput }) => {
@@ -12,21 +11,19 @@ const MessageList = ({ messages, currentUser, onQuickReply, onNext, onUserInput 
   useEffect(scrollToBottom, [messages]);
 
   return (
-    <Box>
-      <List>
-        {messages.map((msg) => (
-          <MessageItem
-            key={msg.id}
-            message={msg}
-            currentUser={currentUser}
-            onQuickReply={onQuickReply}
-            onNext={onNext}
-            onUserInput={onUserInput}
-          />
-        ))}
-      </List>
+    <>
+      {messages.map((msg) => (
+        <MessageItem
+          key={msg.id}
+          message={msg}
+          currentUser={currentUser}
+          onQuickReply={onQuickReply}
+          onNext={onNext}
+          onUserInput={onUserInput}
+        />
+      ))}
       <div ref={messagesEndRef} />
-    </Box>
+    </>
   );
 };
 
