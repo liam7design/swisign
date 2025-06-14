@@ -7,9 +7,9 @@ const AddressCard = ({ node, onNext }) => {
 
   const handleNext = () => {
     if (useSearch) {
-      onNext(node.nextId, '주소검색을 통해 입력할게요.');
+      onNext(node.searchNextId, '주소검색을 통해 입력할게요.');
     } else if (selectedAddress) {
-      onNext('DETAIL_ADDRESS_INPUT', `${selectedAddress}을 선택할게요.`);
+      onNext(node.nextId, `${selectedAddress}을 선택할게요.`);
     }
   };
 

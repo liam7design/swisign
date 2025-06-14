@@ -67,7 +67,7 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext, onUserInput }
                     size="small"
                     onClick={() => {
                       setSelectedResults([]); // 주소 검색 시 선택된 주소 초기화
-                      onNext(message.nextId, '주소를 검색할게요.');
+                      onNext(message.searchNextId, '주소를 검색할게요.');
                     }}
                   >
                     주소검색

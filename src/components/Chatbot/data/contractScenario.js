@@ -37,7 +37,8 @@ export const contractScenario = {
     message: '계약하실 주소를 선택해주세요.',
     addresses: ['(00000) 서울특별시 강남구 테헤란로 123'],
     hasSearch: true,
-    nextId: 'SEARCH_ADDRESS_GUIDE'
+    nextId: 'DETAIL_ADDRESS_INPUT',
+    searchNextId: 'SEARCH_ADDRESS_GUIDE'
   },
 
   SEARCH_ADDRESS_GUIDE: {
