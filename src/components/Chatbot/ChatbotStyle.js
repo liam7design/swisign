@@ -64,6 +64,7 @@ export const RenderSpecialBox = styled(Box)(({ theme }) => ({
   borderRadius: '8px',
   '& .media-box': {
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
     '& img': {
       maxWidth: '100%'

@@ -194,7 +194,8 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext }) => {
               📄 {message.formType}
             </Typography>
             <Box className="media-box">
-              <img src="/images/img_contract.png" alt="주택임대차표준계약서" />
+              <img src="/images/img_contract_01.jpg" alt="주택임대차표준계약서1" />
+              <img src="/images/img_contract_02.jpg" alt="주택임대차표준계약서2" />
             </Box>
             <Box className="button-box">
               <Button
