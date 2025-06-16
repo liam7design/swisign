@@ -73,7 +73,7 @@ export const contractScenario = {
     id: 'DETAIL_ADDRESS_INPUT',
     type: 'input_required',
     message: '상세 주소를 입력해 주세요.',
-    placeholder: '예: 201호',
+    placeholder: '예시) 201호',
     nextId: 'CONFIRM_ADDRESS'
   },
 
@@ -99,7 +99,7 @@ export const contractScenario = {
     id: 'CONTRACT_INFO_INPUT',
     type: 'dialog_action',
     message: '계약서 내용을 확인하셨나요? 계약관련 기본정보를 입력해 주세요.',
-    actionText: '정보입력',
+    actionText: '기본정보 입력',
     dialogType: 'contract_info',
     nextId: 'ASK_SPECIAL_TERMS',
     autoText: '계약정보 입력 완료'
@@ -119,7 +119,7 @@ export const contractScenario = {
     id: 'SPECIAL_TERMS_INPUT',
     type: 'dialog_action',
     message: '특약사항을 보시고 선택해 주세요.',
-    actionText: '특약사항',
+    actionText: '특약사항 선택',
     dialogType: 'special_terms',
     nextId: 'CONFIRMATION_DOCUMENT',
     autoText: '특약사항 선택 완료'
