@@ -305,7 +305,7 @@ const SafetyCheckList = () => {
         />
       </Box>
 
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }} fullWidth>
+      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         {checklist.map((item, itemIdx) => (
           <ChecklistAccordion key={item.id} sx={{ mb: 1 }}>
             <ChecklistAccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -327,7 +327,7 @@ const SafetyCheckList = () => {
               />
             </ChecklistAccordionSummary>
             <ChecklistAccordionDetails>
-              <Box sx={{ display: 'flex', flexDirection: 'column' }} fullWidth>
+              <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                 {item.details.map((detail, detailIdx) => (
                   <React.Fragment key={detail.id}>
                     <FormControlLabel
