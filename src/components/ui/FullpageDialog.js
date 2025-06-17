@@ -40,6 +40,8 @@ const FullpageDialog = ({
   onClick2,
   btn1 = '확인',
   btn2 = '취소',
+  btn1Type = 'button', // type props 추가, 기본값 'button'
+  btn1Form,             // form id를 받을 props 추가
   title,
   disabled,
   children
@@ -62,7 +64,15 @@ const FullpageDialog = ({
       </DialogContent>
       <DialogActions>
         {onClick2 && <Button variant="outlined" onClick={onClick2} fullWidth>{btn2}</Button>}
-        <Button variant="contained" onClick={onClick1} disabled={!!disabled} autoFocus fullWidth>
+        <Button 
+          variant="contained"
+          type={btn1Type}    // type 적용
+          form={btn1Form}    // form id 적용 
+          onClick={onClick1} 
+          disabled={!!disabled} 
+          autoFocus 
+          fullWidth
+        >
           {btn1}
         </Button>
       </DialogActions>
@@ -73,10 +83,12 @@ const FullpageDialog = ({
 FullpageDialog.propTypes = {
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  onClick1: PropTypes.func.isRequired,
+  onClick1: PropTypes.func, // 필수가 아님 (type="submit"일 경우)
   onClick2: PropTypes.func,
   btn1: PropTypes.string,
   btn2: PropTypes.string,
+  btn1Type: PropTypes.string, // prop type 정의
+  btn1Form: PropTypes.string, // prop type 정의
   title: PropTypes.node,
   disabled: PropTypes.bool,
 };
