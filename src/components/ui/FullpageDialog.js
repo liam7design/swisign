@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Dialog, DialogTitle, DialogContent, DialogActions, IconButton, styled } from '@mui/material';
+import { Box, Button, Dialog, DialogTitle, DialogContent, DialogActions, IconButton, styled } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
 const DialogBox = styled(Dialog)(({ theme }) => ({
@@ -61,6 +61,17 @@ const FullpageDialog = ({
       </DialogTitle>
       <DialogContent>
         {children}
+        <Box
+          sx={{
+            position: 'fixed',
+            left: 0,
+            right: 0,
+            bottom: 68,
+            height: 24,
+            background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1))',
+            zIndex: 1
+          }}
+        />
       </DialogContent>
       <DialogActions>
         {onClick2 && <Button variant="outlined" onClick={onClick2} fullWidth>{btn2}</Button>}
