@@ -7,12 +7,13 @@ import ClearIcon from '@mui/icons-material/Clear';
 
 function InputForm({
   label,
+  placeholder, // placeholder prop 추가
   value,
   onChange,
   error,
   helperText,
   autoFocus,
-  use = 'text', // 기본값은 일반 텍스트 입력
+  use = 'text',
   name,
   ...rest
 }) {
@@ -21,7 +22,6 @@ function InputForm({
   const isPassword = use === 'password';
   const inputType = isPassword ? (show ? 'text' : 'password') : 'text';
 
-  // x버튼 클릭 시 name을 유지한 채로 value만 ''로 변경
   const handleClear = () => {
     if (onChange) {
       onChange({ target: { name, value: '' } });
@@ -31,14 +31,19 @@ function InputForm({
   return (
     <TextField
       label={label}
+      placeholder={placeholder || label} // placeholder가 없으면 label을 placeholder로 사용
       type={inputType}
       name={name}
       value={value}
       onChange={onChange}
-      error={!!error}
-      helperText={error || helperText}
+      error={error}
+      helperText={helperText}
       autoFocus={autoFocus}
       fullWidth
+      // placeholder가 있거나, 값이 있을 때 label을 항상 축소 상태로 유지
+      InputLabelProps={{
+        shrink: !!placeholder || !!value,
+      }}
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">
