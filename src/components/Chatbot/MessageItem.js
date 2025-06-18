@@ -1,12 +1,24 @@
 import React, { useState } from 'react';
 import { Box, Typography, Button, FormControlLabel, Checkbox } from '@mui/material';
 import QuickReplyButton from './QuickReplyButton';
+import ContractInfoDialog from './dialogs/ContractInfoDialog';
+import useContractDialog from './hooks/useContractDialog';
 import { formatTimestamp } from './utils/formatTimestamp';
 import { MessageItemBox, ChatBubbleWBox , RenderSpecialBox } from './ChatbotStyle';
 
 const MessageItem = ({ message, currentUser, onQuickReply, onNext }) => {
   const isUser = message.sender.id === currentUser.id;
   const [selectedResults, setSelectedResults] = useState([]);
+
+  // 계약 정보 다이얼로그 관리
+  const { isOpen: isContractDialogOpen, openDialog: openContractDialog, closeDialog: closeContractDialog } = useContractDialog();
+
+  const handleContractInfoSubmit = (formData) => {
+    console.log('계약 정보:', formData);
+    // 폼 데이터를 서버에 저장하거나 상태 관리
+    // 다이얼로그 닫힌 후 다음 단계로 진행
+    onNext(message.nextId, message.autoText);
+  };
 
   const renderInnerContent = () => {
     switch (message.type) {
@@ -62,17 +74,35 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext }) => {
               <Button 
                 variant="outlined" 
                 size="small"
+                onClick={() => onNext('CANCEL', '')}
               >
                 취소
               </Button>
             )}
-            <Button
-              variant="outlined"
-              size="small"
-              onClick={() => onNext(message.nextId, message.autoText)}
-            >
-              {message.actionText}
-            </Button>
+            {message.dialogType === 'contract_info' ? (
+              <>
+                <Button 
+                  variant="outlined" 
+                  size="small"
+                  onClick={openContractDialog}
+                >
+                  {message.actionText}
+                </Button>
+                <ContractInfoDialog
+                  open={isContractDialogOpen}
+                  onClose={closeContractDialog}
+                  onSubmit={handleContractInfoSubmit}
+                />
+              </>
+            ) : (
+              <Button
+                variant="outlined"
+                size="small"
+                onClick={() => onNext(message.nextId, message.autoText)}
+              >
+                {message.actionText}
+              </Button>
+            )}
           </QuickReplyButton>
         );
         

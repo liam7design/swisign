@@ -99,7 +99,7 @@ export const contractScenario = {
     id: 'CONTRACT_INFO_INPUT',
     type: 'dialog_action',
     message: '계약서 내용을 확인하셨나요? 계약관련 기본정보를 입력해 주세요.',
-    actionText: '기본정보 입력',
+    actionText: '계약정보 입력',
     dialogType: 'contract_info',
     nextId: 'ASK_SPECIAL_TERMS',
     autoText: '계약정보 입력 완료'
