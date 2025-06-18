@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Box, Typography, Button, FormControlLabel, Checkbox } from '@mui/material';
 import QuickReplyButton from './QuickReplyButton';
+
 import ContractInfoDialog from './dialogs/ContractInfoDialog';
-import useContractDialog from './hooks/useContractDialog';
+import SpecialTermsDialog from './dialogs/SpecialTermsDialog';
+import ConfirmationDocumentDialog from './dialogs/ConfirmationDocumentDialog';
+
 import { formatTimestamp } from './utils/formatTimestamp';
 import { MessageItemBox, ChatBubbleWBox , RenderSpecialBox } from './ChatbotStyle';
 
@@ -10,14 +13,19 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext }) => {
   const isUser = message.sender.id === currentUser.id;
   const [selectedResults, setSelectedResults] = useState([]);
 
-  // 계약 정보 다이얼로그 관리
-  const { isOpen: isContractDialogOpen, openDialog: openContractDialog, closeDialog: closeContractDialog } = useContractDialog();
+  // 1. 단일 상태로 현재 활성화된 다이얼로그의 종류를 관리합니다. (null: 닫힘)
+  const [activeDialog, setActiveDialog] = useState(null);
 
-  const handleContractInfoSubmit = (formData) => {
-    console.log('계약 정보:', formData);
-    // 폼 데이터를 서버에 저장하거나 상태 관리
-    // 다이얼로그 닫힌 후 다음 단계로 진행
-    onNext(message.nextId, message.autoText);
+  // 2. 다이얼로그 제출(완료) 핸들러들을 정의합니다.
+  const handleDialogSubmit = (formData) => {
+    console.log(`${activeDialog} 데이터:`, formData);
+    onNext(message.nextId, message.autoText); // 다음 시나리오로 진행
+    setActiveDialog(null); // 다이얼로그 닫기
+  };
+
+  // 3. 다이얼로그 닫기 핸들러
+  const handleDialogClose = () => {
+    setActiveDialog(null);
   };
 
   const renderInnerContent = () => {
@@ -79,33 +87,16 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext }) => {
                 취소
               </Button>
             )}
-            {message.dialogType === 'contract_info' ? (
-              <>
-                <Button 
-                  variant="outlined" 
-                  size="small"
-                  onClick={openContractDialog}
-                >
-                  {message.actionText}
-                </Button>
-                <ContractInfoDialog
-                  open={isContractDialogOpen}
-                  onClose={closeContractDialog}
-                  onSubmit={handleContractInfoSubmit}
-                />
-              </>
-            ) : (
-              <Button
-                variant="outlined"
-                size="small"
-                onClick={() => onNext(message.nextId, message.autoText)}
-              >
-                {message.actionText}
-              </Button>
-            )}
+            <Button
+              variant="outlined" 
+              size="small"
+              onClick={() => setActiveDialog(message.dialogType)}
+            >
+              {message.actionText}
+            </Button>
           </QuickReplyButton>
         );
-        
+
       case 'final_step':
         return !isUser && (
           <QuickReplyButton>
@@ -123,7 +114,6 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext }) => {
         return null;
     }
   };
-
 
   const renderSpecialContent = () => {
     switch (message.type) {
@@ -164,7 +154,7 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext }) => {
                 variant="outlined"
                 size="small"
                 onClick={() => {
-                  setSelectedResults([]); // 주소 검색 시 선택된 주소 초기화
+                  setSelectedResults([]);
                   onNext(message.searchNextId, '주소를 검색할게요.');
                 }}
               >
@@ -258,6 +248,27 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext }) => {
         </Typography>
       </ChatBubbleWBox>
       {renderSpecialContent()}
+      {activeDialog === 'contract_info' && (
+        <ContractInfoDialog
+          open={true}
+          onClose={handleDialogClose}
+          onSubmit={handleDialogSubmit}
+        />
+      )}
+      {activeDialog === 'special_terms' && (
+        <SpecialTermsDialog
+          open={true}
+          onClose={handleDialogClose}
+          onSubmit={handleDialogSubmit}
+        />
+      )}
+      {activeDialog === 'confirmation_document' && (
+        <ConfirmationDocumentDialog
+          open={true}
+          onClose={handleDialogClose}
+          onSubmit={handleDialogSubmit}
+        />
+      )}
     </MessageItemBox>
   );
 };

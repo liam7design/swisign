@@ -74,8 +74,10 @@ const ContractInfoDialog = ({ open, onClose, onSubmit }) => {
         open={open}
         onClose={onClose}
         title="계약 정보 입력"
+        btn1 = '완료'
         btn1Type="submit" // 1. 버튼 타입을 'submit'으로 지정
         btn1Form="contract-info-form" // 2. form의 id를 연결
+        onClick1={onFormSubmit}
         onClick2={onClose}
       >
         <form id="contract-info-form" onSubmit={handleSubmit(onFormSubmit)}>
