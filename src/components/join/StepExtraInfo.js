@@ -11,7 +11,7 @@ const HOUSE_TYPES = [
   { value: "etc", label: "기타" }
 ];
 
-function StepExtraInfo({
+const StepExtraInfo = ({
   houseType, setHouseType,
   zipcode, setZipcode,
   address, setAddress,
@@ -19,7 +19,7 @@ function StepExtraInfo({
   handleSearchZip,
   canNext,
   onNextLogin
-}) {
+}) => {
   return (
     <>
       <Typography variant="subtitle1" sx={{ mb: 3, fontSize: 18, fontWeight: 500, lineHeight: 1.5 }}>추가 정보는 마이페이지에서도 정보 입력이 가능해요.</Typography>

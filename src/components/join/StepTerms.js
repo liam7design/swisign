@@ -26,7 +26,7 @@ const TERMS = [
   }
 ];
 
-function StepTerms({
+const StepTerms = ({
   checkedTerms, 
   allChecked, 
   onTermCheck, 
@@ -36,7 +36,7 @@ function StepTerms({
   canNext,
   termDialog, 
   setTermDialog
-}) {
+}) => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   const handleDialogClose = () => {

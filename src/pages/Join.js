@@ -17,7 +17,7 @@ const steps = [
   "추가정보"
 ];
 
-function Join() {
+const Join = () => {
   const navigate = useNavigate();
   const [activeStep, setActiveStep] = useState(0);
 

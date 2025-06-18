@@ -3,7 +3,7 @@ import { Box, Typography, Button, Stack } from "@mui/material";
 import { FloatingBox, FloatingButton } from '../ui/FloatingBox';
 import InputForm from '../form/InputForm';
 
-function StepPhone({
+const StepPhone = ({
   phone, 
   setPhone, 
   sent, 
@@ -14,7 +14,7 @@ function StepPhone({
   handleCodeCheck,
   verified, 
   handleVerifyComplete
-}) {
+}) => {
 
   const inputTitleSx = {
     mb: 0.5, 

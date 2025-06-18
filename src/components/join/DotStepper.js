@@ -1,7 +1,7 @@
 import React from "react";
 import { Stack, Box } from "@mui/material";
 
-function DotStepper({ count, active }) {
+const DotStepper = ({ count, active }) => {
   return (
     <Stack direction="row" spacing={1}>
       {Array.from({ length: count }).map((_, idx) => (

@@ -19,7 +19,7 @@ const AREA_TYPES = ['전체', '10평이하', '10평대', '20평대', '30평대',
 const AREA_ORDER = AREA_TYPES.reduce((acc, cur, idx) => ({ ...acc, [cur]: idx }), {});
 
 // 금액 포맷 함수 (SearchSetting.js와 동일하게 맞춰주세요)
-function formatMoney(value) {
+const formatMoney = (value) => {
   if (value === 0) return '0원';
   if (value >= 10000) {
     const eok = Math.floor(value / 10000);

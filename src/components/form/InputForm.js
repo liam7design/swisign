@@ -5,7 +5,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOffOutlined';
 
 import ClearIcon from '@mui/icons-material/Clear';
 
-function InputForm({
+const InputForm = ({
   label,
   placeholder, // placeholder prop 추가
   value,
@@ -16,7 +16,7 @@ function InputForm({
   use = 'text',
   name,
   ...rest
-}) {
+}) => {
   const [show, setShow] = useState(false);
 
   const isPassword = use === 'password';

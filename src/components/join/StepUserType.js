@@ -26,7 +26,7 @@ const USER_TYPES = [
   }
 ];
 
-function StepUserType({ selectedTypes, onSelect, onNext, canNext }) {
+const StepUserType = ({ selectedTypes, onSelect, onNext, canNext }) => {
   return (
     <>
       <Typography variant="subtitle1" sx={{ mb: 3, fontSize: 18, fontWeight: 500, lineHeight: 1.5 }}>가입자 유형을 선택해주세요.</Typography>
