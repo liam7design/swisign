@@ -15,7 +15,7 @@ const TermCard = ({ term, type = 'checkbox', isSelected, onToggle, onDelete }) =
             label={
               <Box>
                 {/* 특약사항 본문 */}
-                <Typography variant="body2">{term.text}</Typography>
+                <Typography variant="body1">{term.text}</Typography>
                 {/* 'choice' 수를 활용한 문구 추가 */}
                 <Typography variant="caption" color="text.secondary">
                   {term.choice}명의 회원이 선택했어요

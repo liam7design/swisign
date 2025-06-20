@@ -4,6 +4,7 @@ import FullpageDialog from '../../ui/FullpageDialog';
 import TabPanel from './terms/TabPanel';
 import TermCard from './terms/TermCard';
 import allTermsData from './terms/TermsData.json'; 
+import AddRoundedIcon from '@mui/icons-material/AddRounded';
 
 const fetchTermsData = (type, page = 0, pageSize = 5, query = '') => {
   return new Promise(resolve => {
@@ -127,18 +128,16 @@ const SpecialTermsDialog = ({ open, onClose, onSubmit }) => {
         ))
       ) : (
         // 데이터가 없는 경우만 표시 (로딩 중이 아닐 때)
-        !loading && <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 2 }}>{
+        !loading && <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 10, mb: 10 }}>{
           type === 'ai' && aiInput ? '추천 결과가 없습니다.' : '목록이 없습니다.'
         }</Typography>
       )}
-      {loading && <Box sx={{ display: 'flex', justifyContent: 'center', my: 2 }}><CircularProgress /></Box>}
-      {hasMore[type] ? (
-        <Button fullWidth variant="outlined" onClick={() => loadMoreTerms(type, type === 'ai' ? aiInput : '')} disabled={loading} sx={{ mt: 2 }}>
-          더보기
-        </Button>
+      {loading && <Box sx={{ display: 'flex', justifyContent: 'center', my: 4 }}><CircularProgress /></Box>}
+      {hasMore[type] && terms[type].length > 0 ? (
+        <Button fullWidth variant="text"  onClick={() => loadMoreTerms(type, type === 'ai' ? aiInput : '')} disabled={loading} sx={{ mt: 4 }}><AddRoundedIcon sx={{ fontSize: '1rem' }} />더보기</Button>
       ) : (
         // 더보기 버튼 대신 메시지 표시 (로딩 중이 아닐 때)
-        !loading && terms[type].length > 0 && <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 2 }}>더 이상 없습니다.</Typography>
+        !loading && terms[type].length > 0 && <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 4 }}>더 이상 없습니다.</Typography>
       )}
     </>
   );
@@ -148,7 +147,7 @@ const SpecialTermsDialog = ({ open, onClose, onSubmit }) => {
       btn1="선택 완료" onClick1={handleSubmit} btn2="취소" onClick2={onClose}>
       
       <Box sx={{ margin: '-24px -16px' }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider', width: '100%' }}>
+        <Box sx={{ position: 'fixed', width: '100%', borderBottom: 1, borderColor: 'divider', backgroundColor: '#ffffff', zIndex: 9 }}>
           <Tabs value={activeTab} onChange={handleTabChange} variant="scrollable" scrollButtons="auto">
             <Tab label="기본추천" />
             <Tab label="많은회원선택" />
@@ -166,13 +165,13 @@ const SpecialTermsDialog = ({ open, onClose, onSubmit }) => {
         <TabPanel value={activeTab} index={1}>{renderTermList('popular')}</TabPanel>
         <TabPanel value={activeTab} index={2}>
           <Box sx={{ display: 'flex', gap: 1, mb: 2 }}>
-            <TextField fullWidth label="원하는 특약사항의 키워드를 입력하세요" value={aiInput} onChange={e => setAiInput(e.target.value)} size="small" />
+            <TextField fullWidth placeholder="원하는 특약사항의 키워드를 입력하세요" value={aiInput} onChange={e => setAiInput(e.target.value)} size="small" />
             <Button variant="contained" onClick={handleAiRecommend}>추천</Button>
           </Box>
           {renderTermList('ai')}
         </TabPanel>
         <TabPanel value={activeTab} index={3}>
-          <TextField fullWidth multiline rows={4} label="특약사항을 직접 입력하세요" value={directInput} onChange={e => setDirectInput(e.target.value)} />
+          <TextField fullWidth multiline rows={4} placeholder="특약사항을 직접 입력하세요" value={directInput} onChange={e => setDirectInput(e.target.value)}/>
           <Button fullWidth variant="contained" sx={{ mt: 2 }} onClick={handleAddDirectTerm}>추가하기</Button>
         </TabPanel>
         <TabPanel value={activeTab} index={4}>
@@ -181,7 +180,7 @@ const SpecialTermsDialog = ({ open, onClose, onSubmit }) => {
               <TermCard key={term.id} term={term} type="delete" onDelete={handleDeleteTerm} />
             ))
           ) : (
-            <Typography color="text.secondary" align="center">선택된 특약사항이 없습니다.</Typography>
+            <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 10, mb: 10 }}>선택된 특약사항이 없습니다.</Typography>
           )}
         </TabPanel>
       </Box>

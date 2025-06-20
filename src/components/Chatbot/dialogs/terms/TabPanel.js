@@ -6,7 +6,7 @@ function TabPanel(props) {
   return (
     <div role="tabpanel" hidden={value !== index} {...other}>
       {value === index && (
-        <Box sx={{ px: 2, py: 3, overflowY: 'auto' }}>
+        <Box sx={{ px: 2, pt: 9, pb: 3, overflowY: 'auto' }}>
           {children}
         </Box>
       )}
