@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Box, Typography, Snackbar, Alert } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers';
@@ -13,22 +13,11 @@ import BusinessIcon from '@mui/icons-material/Business';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import EventAvailableOutlinedIcon from '@mui/icons-material/EventAvailableOutlined';
 
-// 분리된 폼 컴포넌트들을 import
 import LessorInfoForm from './forms/LessorInfoForm';
 import LesseeInfoForm from './forms/LesseeInfoForm';
 import RealtorInfoForm from './forms/RealtorInfoForm';
 import ContractDetailsForm from './forms/ContractDetailsForm';
 import PaymentDatesForm from './forms/PaymentDatesForm';
-
-const loadDaumPostcodeScript = () => {
-  const existingScript = document.getElementById('daum-postcode-script');
-  if (!existingScript) {
-    const script = document.createElement('script');
-    script.src = "//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js";
-    script.id = 'daum-postcode-script';
-    document.body.appendChild(script);
-  }
-};
 
 const FormSection = ({ title, icon, children }) => (
   <Box>
@@ -51,10 +40,6 @@ const ContractInfoDialog = ({ open, onClose, onSubmit }) => {
   const { control, handleSubmit, formState: { errors } } = useForm({
     defaultValues: { /* 기본값 설정 */ }
   });
-
-  useEffect(() => {
-    loadDaumPostcodeScript();
-  }, []);
 
   const onFormSubmit = (data) => {
     console.log("제출된 폼 데이터:", data);
