@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Typography, Button, FormControlLabel, Checkbox } from '@mui/material';
 import QuickReplyButton from './QuickReplyButton';
 
@@ -18,7 +18,10 @@ const MessageItem = ({ message, currentUser, onQuickReply, onNext }) => {
 
   // 2. 다이얼로그 제출(완료) 핸들러들을 정의합니다.
   const handleDialogSubmit = (formData) => {
-    console.log(`${activeDialog} 데이터:`, formData);
+    // 개발 환경에서만 로깅
+    if (process.env.NODE_ENV === 'development') {
+      console.log(`${activeDialog} 데이터:`, formData);
+    }
     onNext(message.nextId, message.autoText); // 다음 시나리오로 진행
     setActiveDialog(null); // 다이얼로그 닫기
   };

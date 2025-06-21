@@ -42,7 +42,10 @@ const ContractInfoDialog = ({ open, onClose, onSubmit }) => {
   });
 
   const onFormSubmit = (data) => {
-    console.log("제출된 폼 데이터:", data);
+    // 개발 환경에서만 로깅
+    if (process.env.NODE_ENV === 'development') {
+      console.log("제출된 폼 데이터:", data);
+    }
     onSubmit(data);
     onClose();
   };
