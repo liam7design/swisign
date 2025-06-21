@@ -1,17 +1,19 @@
 import React from 'react';
 import AppRouter from './routes/Router';
 import { AuthProvider } from './context/AuthContext';
+import ErrorBoundary from './components/error/ErrorBoundary';
 
 import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
-      <AuthProvider>
-        <AppRouter />
-      </AuthProvider>
-    </div>
-
+    <ErrorBoundary>
+      <div className="App">
+        <AuthProvider>
+          <AppRouter />
+        </AuthProvider>
+      </div>
+    </ErrorBoundary>
   );
 }
 
