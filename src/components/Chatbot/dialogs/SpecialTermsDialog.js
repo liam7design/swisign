@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Box, Typography, Tabs, Tab, TextField, Button, CircularProgress, Badge } from '@mui/material';
 import FullpageDialog from '../../ui/FullpageDialog';
 import TabPanel from './terms/TabPanel';
@@ -38,6 +38,7 @@ const fetchTermsData = (type, page = 0, pageSize = 5, query = '') => {
 const SpecialTermsDialog = ({ open, onClose, onSubmit }) => {
   const [activeTab, setActiveTab] = useState(0);
   const [selectedTerms, setSelectedTerms] = useState([]);
+  const tabsRef = useRef(null);
 
   // 각 탭별 데이터 및 상태
   const [terms, setTerms] = useState({ basic: [], popular: [], ai: [] });
@@ -48,6 +49,34 @@ const SpecialTermsDialog = ({ open, onClose, onSubmit }) => {
   // 직접 입력 및 AI 추천 입력 상태
   const [directInput, setDirectInput] = useState('');
   const [aiInput, setAiInput] = useState('');
+
+  // 선택된 탭을 중앙으로 이동시키는 함수
+  const scrollToCenter = useCallback((tabIndex) => {
+    if (!tabsRef.current) return;
+    
+    const tabsContainer = tabsRef.current;
+    const tabElements = tabsContainer.querySelectorAll('[role="tab"]');
+    
+    if (tabElements.length === 0 || !tabElements[tabIndex]) return;
+    
+    const activeTabElement = tabElements[tabIndex];
+    const containerWidth = tabsContainer.clientWidth;
+    const tabWidth = activeTabElement.offsetWidth;
+    const tabLeft = activeTabElement.offsetLeft;
+    
+    // 탭을 중앙에 위치시키기 위한 스크롤 위치 계산
+    const targetScrollLeft = tabLeft - (containerWidth / 2) + (tabWidth / 2);
+    
+    // 스크롤 범위 제한
+    const maxScrollLeft = tabsContainer.scrollWidth - containerWidth;
+    const finalScrollLeft = Math.max(0, Math.min(maxScrollLeft, targetScrollLeft));
+    
+    // 부드러운 스크롤 애니메이션 적용
+    tabsContainer.scrollTo({
+      left: finalScrollLeft,
+      behavior: 'smooth'
+    });
+  }, []);
 
   // loadMoreTerms 함수를 useCallback으로 감싸 성능 최적화
   const loadMoreTerms = useCallback(async (type, query = '') => {
@@ -80,6 +109,11 @@ const SpecialTermsDialog = ({ open, onClose, onSubmit }) => {
     // 탭 변경 시 해당 탭의 데이터가 없으면 로딩 시작
     if (newValue === 0 && terms.basic.length === 0) loadMoreTerms('basic');
     if (newValue === 1 && terms.popular.length === 0) loadMoreTerms('popular');
+    
+    // 선택된 탭을 중앙으로 이동
+    setTimeout(() => {
+      scrollToCenter(newValue);
+    }, 100);
   };
 
   const handleToggleTerm = (term) => {
@@ -148,7 +182,13 @@ const SpecialTermsDialog = ({ open, onClose, onSubmit }) => {
       
       <Box sx={{ margin: '-24px -16px' }}>
         <Box sx={{ position: 'fixed', width: '100%', borderBottom: 1, borderColor: 'divider', backgroundColor: '#ffffff', zIndex: 9 }}>
-          <Tabs value={activeTab} onChange={handleTabChange} variant="scrollable" scrollButtons="auto">
+          <Tabs 
+            ref={tabsRef}
+            value={activeTab} 
+            onChange={handleTabChange} 
+            variant="scrollable" 
+            scrollButtons="auto"
+          >
             <Tab label="기본추천" />
             <Tab label="많은회원선택" />
             <Tab label="AI추천" />
