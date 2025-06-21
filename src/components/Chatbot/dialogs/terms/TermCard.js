@@ -15,7 +15,7 @@ const TermCard = ({ term, type = 'checkbox', isSelected, onToggle, onDelete }) =
             label={
               <Box>
                 {/* 특약사항 본문 */}
-                <Typography variant="body1">{term.text}</Typography>
+                <Typography variant="body2" sx={{ fontSize: '15px' }}>{term.text}</Typography>
                 {/* 'choice' 수를 활용한 문구 추가 */}
                 <Typography variant="caption" color="text.secondary">
                   {term.choice}명의 회원이 선택했어요
@@ -25,7 +25,7 @@ const TermCard = ({ term, type = 'checkbox', isSelected, onToggle, onDelete }) =
           />
         ) : (
           // 'delete' 타입 등 다른 타입일 경우, 특약사항 본문만 표시
-          <Typography variant="body2" sx={{ flexGrow: 1 }}>{term.text}</Typography>
+          <Typography variant="body2" sx={{ flexGrow: 1, fontSize: '15px' }}>{term.text}</Typography>
         )}
 
         {/* 'delete' 타입일 경우 삭제 버튼 표시 */}

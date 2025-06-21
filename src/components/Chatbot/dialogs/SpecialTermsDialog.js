@@ -171,8 +171,8 @@ const SpecialTermsDialog = ({ open, onClose, onSubmit }) => {
           {renderTermList('ai')}
         </TabPanel>
         <TabPanel value={activeTab} index={3}>
-          <TextField fullWidth multiline rows={4} placeholder="특약사항을 직접 입력하세요" value={directInput} onChange={e => setDirectInput(e.target.value)}/>
-          <Button fullWidth variant="contained" sx={{ mt: 2 }} onClick={handleAddDirectTerm}>추가하기</Button>
+          <TextField fullWidth multiline rows={8} placeholder="특약사항을 직접 입력하세요" value={directInput} onChange={e => setDirectInput(e.target.value)} />
+          <Button fullWidth variant="outlined" sx={{ mt: 2 }} onClick={handleAddDirectTerm}>추가하기</Button>
         </TabPanel>
         <TabPanel value={activeTab} index={4}>
           {selectedTerms.length > 0 ? (
